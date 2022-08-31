@@ -75,9 +75,15 @@ const Login = () => {
           </div>
         </Col>
       </Row>
+      <div className="Card">
       <CardsR />
-      <AboutUs />
+      </div>
+    <div className="About">
+   <AboutUs />
+    </div>
+    <div className="contact">
       <Contact />
+      </div>
     </>
   );
 };

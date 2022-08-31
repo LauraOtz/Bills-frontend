@@ -5,12 +5,13 @@ import mate1 from "../../assets/mate1.jpg";
 import email1 from "../../assets/email1.jpg";
 import Card from "antd/lib/card/Card";
 import { Row } from "antd";
+import "../login/cards-style.css"
 
 class CardsR extends Component {
   render() {
     return (
       <>
-        <Row>
+        <Row className="Card">
           <Card
             hoverable
             style={{ width: 240, marginBottom: 30 }}
