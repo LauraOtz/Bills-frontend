@@ -1,8 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-//import "../css/TextHome.css";
-//import logoBills1 from "../assets/logoBillsFinal.png";
 
 function TextHome() {
   return (

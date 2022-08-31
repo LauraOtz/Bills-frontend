@@ -6,7 +6,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
-import Contact from "../../pages/login/Contact";
+import Contact from "./Contact";
+
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 
@@ -44,39 +45,17 @@ const Login = () => {
   }, [navigate]);
 
   return (
-<<<<<<< HEAD
-    <div className='form'>
-        <h2>Bills</h2>
-        <p>Iniciar sesión</p>
-        <div className="form-group">
-          <Form layout='vertical' onFinish={handlerSubmit}>
-            <FormItem name="email" label="correo electrónico">
-              <Input/>
-            </FormItem>
-            <FormItem name="password" label="Contraseña">
-              <Input type="password"/>
-            </FormItem>
-            <div className="form-btn-add">
-              <Button htmlType='submit' className='add-new'>Iniciar sesión</Button>
-              <Link className='form-other' to="/register">¡Registrate aquí!</Link>
-=======
     <>
-      <TextHome />
-
       <Row>
         <Col>
-          <h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-            qui?
-          </h1>
+          <TextHome />
         </Col>
         <Col>
           <div className="form">
-            <h2>Bills</h2>
-            <p>iniciar sesión</p>
-
+            <h2>MP POS</h2>
+            <p>Login</p>
             <div className="form-group">
-              <Form layout="horizontal" onFinish={handlerSubmit}>
+              <Form layout="vertical" onFinish={handlerSubmit}>
                 <FormItem name="userId" label="User ID">
                   <Input />
                 </FormItem>
@@ -92,12 +71,10 @@ const Login = () => {
                   </Link>
                 </div>
               </Form>
->>>>>>> 7681bd395c49d0f03bf43f6ec1ecb687102ce71c
             </div>
           </div>
         </Col>
       </Row>
-
       <CardsR />
       <AboutUs />
       <Contact />
