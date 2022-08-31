@@ -1,26 +1,17 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import logoBills1 from "../../assets/logoBills1.png";
 
 function TextHome() {
   return (
     <Container fluid className="TextHomeContainer">
       <Row>
-        <Col
-          lg="12"
-          className="d-flex align-items-center justify-content-center"
-        >
-          <Row className="img-contact">
-            <img src={""} alt="" className="img-c d-flex" />
-          </Row>
-          <Col
-            xs={8}
-            md={11}
-            className="d-flex justify-content-center text-dark"
-          >
-            <h1>Genera tus presupuestos al alcance de un "click"</h1>
-          </Col>
+        <Col xs={8} md={11} className="d-flex justify-content-center text-dark">
+          <h1>Genera tus presupuestos con un "click"</h1>
         </Col>
+
+        <img src={logoBills1} alt="" className="img-c d-flex" />
       </Row>
       <hr />
     </Container>
