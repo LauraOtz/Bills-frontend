@@ -152,7 +152,7 @@ const Products = () => {
       {popModal && (
         <Modal
           title={`${
-            editProduct !== null ? "Edit Product" : "Agregar Producto"
+            editProduct !== null ? "Editar producto" : "Agregar Producto"
           }`}
           visible={popModal}
           onCancel={() => {
@@ -166,17 +166,51 @@ const Products = () => {
             initialValues={editProduct}
             onFinish={handlerSubmit}
           >
-            <FormItem name="name" label="Nombre">
+            <FormItem
+              name="name"
+              label="Nombre"
+              rules={[
+                {
+                  required: true,
+                  message: "Introduzca el nombre del producto.",
+                },
+                {
+                  max: 20,
+                  message: "El nombre no debe contener más de 20 caracteres",
+                },
+              ]}
+            >
               <Input />
             </FormItem>
-            <Form.Item name="category" label="Categoría">
+            <Form.Item
+              name="category"
+              label="Categoría"
+              rules={[{ required: true, message: "Seleccione una categoría" }]}
+            >
               <Select>
                 <Select.Option value="accesorios">Accesorios</Select.Option>
                 <Select.Option value="celulares">Celulares</Select.Option>
                 <Select.Option value="herramientas">Herramientas</Select.Option>
               </Select>
             </Form.Item>
-            <FormItem name="price" label="Precio">
+            <FormItem
+              name="price"
+              label="Precio"
+              rules={[
+                {
+                  required: true,
+                  message: "Introduzca el precio del producto si el signo $.",
+                },
+                {
+                  min: 2,
+                  message: "El precio debe contener al menos dos números.",
+                },
+                {
+                  max: 10,
+                  message: "El precio no debe contener más de 10 números.",
+                },
+              ]}
+            >
               <Input />
             </FormItem>
             <FormItem name="image" label="URL Imagen">

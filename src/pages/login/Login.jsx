@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
 import Contact from "../../pages/login/Contact";
-
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 
@@ -52,7 +51,7 @@ const Login = () => {
         </Col>
         <Col>
           <div className="form">
-            <h2>MP POS</h2>
+            <h2>Bills</h2>
             <p>Login</p>
             <div className="form-group">
               <Form layout="vertical" onFinish={handlerSubmit}>

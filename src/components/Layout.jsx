@@ -77,7 +77,7 @@ const LayoutApp = ({ children }) => {
           )}
           <div className="cart-items" onClick={() => navigate("/cart")}>
             <FileTextOutlined />
-            <span className="cart-badge ">{cartItems.length}</span>
+            <span className="cart-badge">{cartItems.length}</span>
           </div>
         </Header>
         <Content
