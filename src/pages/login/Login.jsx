@@ -77,7 +77,6 @@ const Login = () => {
       </Row>
       <CardsR />
       <AboutUs />
-      <Contact />
     </>
   );
 };

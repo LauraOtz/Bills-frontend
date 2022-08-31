@@ -43,15 +43,15 @@ const Bills = () => {
       dataIndex: "_id",
     },
     {
-      title: "Customer Name",
+      title: "Nombre Cliente",
       dataIndex: "customerName",
     },
     {
-      title: "Contact Number",
+      title: "Número Contacto",
       dataIndex: "customerPhone",
     },
     {
-      title: "Customer Address",
+      title: "Dirección del Cliente",
       dataIndex: "customerAddress",
     },
     {
@@ -59,11 +59,11 @@ const Bills = () => {
       dataIndex: "subTotal",
     },
     {
-      title: "Tax",
+      title: "IVA",
       dataIndex: "tax",
     },
     {
-      title: "Total Amount",
+      title: "Monto Total",
       dataIndex: "totalAmount",
     },
     {
@@ -89,12 +89,12 @@ const Bills = () => {
 
   return (
     <Layout>
-      <h2>All Invoice </h2>
+      <h2>Mis Bills </h2>
       <Table dataSource={billsData} columns={columns} bordered />
 
       {popModal && (
         <Modal
-          title="Invoice Details"
+          title="Detalles"
           width={400}
           pagination={false}
           visible={popModal}
@@ -103,65 +103,65 @@ const Bills = () => {
         >
           <div className="card" ref={componentRef}>
             <div className="cardHeader">
-              <h2 className="logo">MP POS</h2>
+              <h2 className="logo">ROLLING CODE</h2>
               <span>
-                Number: <b>+381/0000000</b>
+                Number: <b>+543814683194</b>
               </span>
               <span>
-                Address: <b>34000 Kragujevac, Serbia</b>
+                Address: <b>GRAL PAZ 576, TUCUMAN, ARGENTINA</b>
               </span>
             </div>
             <div className="cardBody">
               <div className="group">
-                <span>Customer Name:</span>
+                <span>Nombre Cliente::</span>
                 <span>
                   <b>{selectedBill.customerName}</b>
                 </span>
               </div>
               <div className="group">
-                <span>Customer Phone:</span>
+                <span>Teléfono Cliente:</span>
                 <span>
                   <b>{selectedBill.customerPhone}</b>
                 </span>
               </div>
               <div className="group">
-                <span>Customer Address:</span>
+                <span>Dirección Cliente:</span>
                 <span>
                   <b>{selectedBill.customerAddress}</b>
                 </span>
               </div>
               <div className="group">
-                <span>Date Order:</span>
+                <span>Fecha de Compra:</span>
                 <span>
                   <b>{selectedBill.createdAt.toString().substring(0, 10)}</b>
                 </span>
               </div>
               <div className="group">
-                <span>Total Amount:</span>
+                <span>Monto Total:</span>
                 <span>
                   <b>${selectedBill.totalAmount}</b>
                 </span>
               </div>
             </div>
             <div className="cardFooter">
-              <h4>Your Order</h4>
+              <h4>Tu Compra</h4>
               {selectedBill.cartItems.map((product) => (
                 <>
                   <div className="footerCard">
                     <div className="group">
-                      <span>Product:</span>
+                      <span>Producto:</span>
                       <span>
                         <b>{product.name}</b>
                       </span>
                     </div>
                     <div className="group">
-                      <span>Qty:</span>
+                      <span>Cantidad:</span>
                       <span>
                         <b>{product.quantity}</b>
                       </span>
                     </div>
                     <div className="group">
-                      <span>Price:</span>
+                      <span>Precio:</span>
                       <span>
                         <b>${product.price}</b>
                       </span>
@@ -178,13 +178,13 @@ const Bills = () => {
                 </div>
               </div>
               <div className="footerThanks">
-                <span>Thank You for buying from us</span>
+                <span>MUCHAS GRACIAS POR ELEGIRNOS</span>
               </div>
             </div>
           </div>
           <div className="bills-btn-add">
             <Button onClick={handlePrint} htmlType="submit" className="add-new">
-              Generate Invoice
+              Imprimir o Guardar
             </Button>
           </div>
         </Modal>
