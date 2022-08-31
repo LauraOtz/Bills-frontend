@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+import { Button, Modal, Table } from 'antd';
+import axios from 'axios';
+import React, { useEffect, useState, useRef } from 'react'
+
+import { useReactToPrint } from 'react-to-print';
+import { EyeOutlined } from '@ant-design/icons';
+import { useDispatch } from 'react-redux';
+import Layout from '../../components/Layout'
+=======
 import { Button, Modal, Table } from "antd";
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
@@ -6,6 +16,10 @@ import { useReactToPrint } from "react-to-print";
 import { EyeOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import Layout from "../../components/Layout";
+>>>>>>> 7681bd395c49d0f03bf43f6ec1ecb687102ce71c
+
+import "../home/home.css"
+
 
 const Bills = () => {
   const componentRef = useRef();
@@ -13,6 +27,7 @@ const Bills = () => {
   const [billsData, setBillsData] = useState([]);
   const [popModal, setPopModal] = useState(false);
   const [selectedBill, setSelectedBill] = useState(null);
+  
 
   const getAllBills = async () => {
     try {
@@ -89,6 +104,17 @@ const Bills = () => {
 
   return (
     <Layout>
+<<<<<<< HEAD
+        <h2>All Invoice </h2>
+      <div className='ContainerTabla'>
+     <Table width={300}  dataSource={billsData} columns={columns} bordered />
+      </div>
+      
+      {
+        popModal && 
+        <Modal title="Invoice Details" width={300} pagination={false} visible={popModal} onCancel={() => setPopModal(false)} footer={false}>
+          <div className="card " ref={componentRef}>
+=======
       <h2>All Invoice </h2>
       <Table dataSource={billsData} columns={columns} bordered />
 
@@ -102,6 +128,7 @@ const Bills = () => {
           footer={false}
         >
           <div className="card" ref={componentRef}>
+>>>>>>> 7681bd395c49d0f03bf43f6ec1ecb687102ce71c
             <div className="cardHeader">
               <h2 className="logo">MP POS</h2>
               <span>
@@ -111,6 +138,29 @@ const Bills = () => {
                 Address: <b>34000 Kragujevac, Serbia</b>
               </span>
             </div>
+<<<<<<< HEAD
+            <div className="cardBody col-xs-12  ">
+                <div className="group">
+                    <span>Customer Name:</span>
+                    <span><b>{selectedBill.customerName}</b></span>
+                </div>
+                <div className="group col-xs-12  ">
+                    <span>Customer Phone:</span>
+                    <span><b>{selectedBill.customerPhone}</b></span>
+                </div>
+                <div className="group col-xs-12  ">
+                    <span>Customer Address:</span>
+                    <span><b>{selectedBill.customerAddress}</b></span>
+                </div>
+                <div className="group col-xs-12  ">
+                    <span>Date Order:</span>
+                    <span><b>{selectedBill.createdAt.toString().substring(0, 10)}</b></span>
+                </div>
+                <div className="group ">
+                    <span>Total Amount:</span>
+                    <span><b>${selectedBill.totalAmount}</b></span>
+                </div>
+=======
             <div className="cardBody">
               <div className="group">
                 <span>Customer Name:</span>
@@ -142,6 +192,7 @@ const Bills = () => {
                   <b>${selectedBill.totalAmount}</b>
                 </span>
               </div>
+>>>>>>> 7681bd395c49d0f03bf43f6ec1ecb687102ce71c
             </div>
             <div className="cardFooter">
               <h4>Your Order</h4>

@@ -5,7 +5,9 @@ import { DeleteOutlined, PlusCircleOutlined, MinusCircleOutlined } from '@ant-de
 import { Button, Form, Input, message, Modal, Select, Table } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
+import "../home/home.css"
 
 const Cart = () => {
 
@@ -103,7 +105,10 @@ const Cart = () => {
   return (
     <Layout>
       <h2>Cart</h2>
+       <div className='ContainerTabla '>
       <Table dataSource={cartItems} columns={columns} bordered />
+
+       </div>
       <div className="subTotal">
         <h2>Sub Total: <span>$ {(subTotal).toFixed(2)}</span></h2>
         <Button onClick={() => setBillPopUp(true)} className='add-new'>Create Invoice</Button>

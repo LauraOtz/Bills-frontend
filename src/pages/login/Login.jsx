@@ -44,6 +44,22 @@ const Login = () => {
   }, [navigate]);
 
   return (
+<<<<<<< HEAD
+    <div className='form'>
+        <h2>Bills</h2>
+        <p>Iniciar sesión</p>
+        <div className="form-group">
+          <Form layout='vertical' onFinish={handlerSubmit}>
+            <FormItem name="email" label="correo electrónico">
+              <Input/>
+            </FormItem>
+            <FormItem name="password" label="Contraseña">
+              <Input type="password"/>
+            </FormItem>
+            <div className="form-btn-add">
+              <Button htmlType='submit' className='add-new'>Iniciar sesión</Button>
+              <Link className='form-other' to="/register">¡Registrate aquí!</Link>
+=======
     <>
       <TextHome />
 
@@ -76,6 +92,7 @@ const Login = () => {
                   </Link>
                 </div>
               </Form>
+>>>>>>> 7681bd395c49d0f03bf43f6ec1ecb687102ce71c
             </div>
           </div>
         </Col>
