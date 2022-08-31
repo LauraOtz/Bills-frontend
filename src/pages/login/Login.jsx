@@ -50,10 +50,10 @@ const Login = () => {
         <Col>
           <TextHome />
         </Col>
-        <Col>
+        <Col className="formLogin">
           <div className="form">
             <h2>MP POS</h2>
-            <p>Login</p>
+            <p>Iniciar sesión</p>
             <div className="form-group">
               <Form layout="vertical" onFinish={handlerSubmit}>
                 <FormItem name="userId" label="User ID">
