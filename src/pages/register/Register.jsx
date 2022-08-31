@@ -1,67 +1,105 @@
 import { Button, Form, Input, message } from 'antd'
 import FormItem from 'antd/lib/form/FormItem'
 import axios from 'axios'
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+//import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handlerSubmit = async (value) => {
-    try {
-      dispatch({
-        type: "SHOW_LOADING",
-      });
-      await axios.post('/api/users/register', value);
-      message.success("Register Successfully!");
-      navigate("/login");
-      dispatch({
-        type: "HIDE_LOADING",
-      });
+  const postUsuario = async (datos) => {
+    const resp = await axios.get(`api/users/register`, {
+      method: "POST",
+      body: JSON.stringify(datos),
       
+    });
+  
+    const data = await resp.json();
+  
+    return data;
+  };
 
-    } catch(error) {
-      dispatch({
-        type: "HIDE_LOADING",
-      });
-      message.error("Error!")
-      console.log(error);
-    }
-  }
+  const [formValues, setFormValues] = useState({
+    nombre: "",
+    email: "",
+    password: "",
+    role: "ADMIN-ROLE",
+  });
 
-  useEffect(() => {
-    if(localStorage.getItem("auth")) {
-      localStorage.getItem("auth");
-      navigate("/");
-    }
-  }, [navigate]);
+  const [message, setMessage] = useState([]);
 
+  const handleChange = (e) => {
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    postUsuario(formValues).then((respuesta) => {
+      console.log(respuesta);
+      if (respuesta?.errors) {
+        setMessage(respuesta.errors);
+      } else {
+        setMessage([{ ok: true, msg: "Registro exitoso!" }]);
+        setFormValues({
+          nombre: "",
+          email: "",
+          password: "",
+          
+        });
+        setTimeout(() => {
+          setMessage([]);
+        }, 2000);
+      }
+    });
+  };
 
   return (
     <div className='form'>
         <h2>MP POS</h2>
-        <p>Register</p>
+        <p>Registro</p>
         <div className="form-group">
-          <Form layout='vertical' onFinish={handlerSubmit}>
-            <FormItem name="name" label="Name">
+          <Form layout='vertical' onFinish={handleSubmit}>
+            <FormItem name="name" label="Nombre"value={formValues.nombre}
+                onChange={handleChange}
+                required>
               <Input/>
             </FormItem>
-            <FormItem name="userId" label="User ID">
+            <FormItem name="email" label="Correo electrónico"value={formValues.email}
+                onChange={handleChange}
+                required>
               <Input/>
             </FormItem>
-            <FormItem name="password" label="Password">
+            <FormItem name="password" label="Contraseña"value={formValues.password}
+                onChange={handleChange}
+                required >
               <Input type="password"/>
             </FormItem>
             <div className="form-btn-add">
-              <Button htmlType='submit' className='add-new'>Register</Button>
-              <Link className='form-other' to="/login">Login Here!</Link>
+              <Button htmlType='submit' className='add-new'>Registro</Button>
+              <Link className='form-other' to="/login">Iniciar sesión</Link>
             </div>
           </Form>
         </div>
-    </div>
+        {message.length > 0 &&
+            message.map((item, index) => (
+              <div
+                className={
+                  item?.ok
+                    ? "alert alert-success mt-3"
+                    : "alert alert-danger mt-3"
+                }
+                role="alert"
+                key={index}
+              >
+                {item.msg}
+              </div>
+            ))}
+        </div>
+     
+  
   )
 }
 

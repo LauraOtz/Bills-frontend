@@ -4,6 +4,7 @@ import LayoutApp from '../../components/Layout'
 import { Row, Col } from 'antd';
 import Product from '../../components/Product';
 import { useDispatch } from 'react-redux';
+import "../home/home.css"
 
 const Home = () => {
 
@@ -51,7 +52,7 @@ const Home = () => {
 
   return (
     <LayoutApp>
-      <div className="category">
+      <div className="category ">
         {categories.map((category) => (
           <div key={category.name} className={`categoryFlex ${selectedCategory === category.name && 'category-active'}`} onClick={() => setSelectedCategory(category.name)}>
             <h3 className="categoryName">{category.name}</h3>

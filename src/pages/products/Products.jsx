@@ -5,6 +5,7 @@ import LayoutApp from '../../components/Layout'
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Modal, Select, Table, message } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
+import "../home/home.css"
 
 const Products = () => {
 
@@ -137,7 +138,9 @@ const Products = () => {
     <LayoutApp>
       <h2>All Products </h2>
       <Button className='add-new' onClick={() => setPopModal(true)}>Add New</Button>
+      <div className='ContainerTabla'>
       <Table dataSource={productData} columns={columns} bordered />
+      </div>
       
       {
         popModal && 
