@@ -45,16 +45,22 @@ const Login = () => {
 
   return (
     <>
+      <TextHome />
+
       <Row>
         <Col>
-          <TextHome />
+          <h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
+            qui?
+          </h1>
         </Col>
         <Col>
           <div className="form">
             <h2>Bills</h2>
-            <p>Login</p>
+            <p>iniciar sesión</p>
+
             <div className="form-group">
-              <Form layout="vertical" onFinish={handlerSubmit}>
+              <Form layout="horizontal" onFinish={handlerSubmit}>
                 <FormItem name="userId" label="User ID">
                   <Input />
                 </FormItem>
@@ -74,6 +80,7 @@ const Login = () => {
           </div>
         </Col>
       </Row>
+
       <CardsR />
       <AboutUs />
       <Contact />
