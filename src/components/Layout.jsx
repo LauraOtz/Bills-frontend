@@ -35,7 +35,7 @@ const LayoutApp = ({ children }) => {
       {loading && <Spinner />}
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo">
-          <h2 className="logo-title">MP POS</h2>
+          <h2 className="logo-title">Bill$</h2>
         </div>
         <Menu
           theme="dark"
@@ -46,13 +46,13 @@ const LayoutApp = ({ children }) => {
             <Link to="/">Home</Link>
           </Menu.Item>
           <Menu.Item key="/bills" icon={<MoneyCollectOutlined />}>
-            <Link to="/bills">Bills</Link>
+            <Link to="/bills">Mis Bill$</Link>
           </Menu.Item>
           <Menu.Item key="/products" icon={<HomeOutlined />}>
-            <Link to="/products">Products</Link>
+            <Link to="/products">Productos</Link>
           </Menu.Item>
           <Menu.Item key="/customers" icon={<UserSwitchOutlined />}>
-            <Link to="/customers">Customers</Link>
+            <Link to="/customers">Usuarios</Link>
           </Menu.Item>
           <Menu.Item
             key="/logout"
@@ -62,7 +62,7 @@ const LayoutApp = ({ children }) => {
               navigate("/login");
             }}
           >
-            LogOut
+            Cerrar sesión
           </Menu.Item>
         </Menu>
       </Sider>

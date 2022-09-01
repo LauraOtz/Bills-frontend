@@ -6,9 +6,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
-import Contact from "./Contact";
-import Footer from "../login/Footer";
-import NavBar from "../login/NavBar";
+// import Contact from "./Contact";
 
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
@@ -34,7 +32,7 @@ const Login = () => {
       dispatch({
         type: "HIDE_LOADING",
       });
-      message.error("Correo o contraseña invalidos");
+      message.error("Error!");
       console.log(error);
     }
   };
@@ -48,22 +46,19 @@ const Login = () => {
 
   return (
     <>
-      <NavBar />
       <Row>
         <Col>
           <TextHome />
         </Col>
-        <br />
-        <Col className="formLogin">
+        <Col>
           <div className="form">
-            <br />
-
+            <h2>BILL$</h2>
+            <p>Iniciar Sesión</p>
             <div className="form-group">
               <Form layout="vertical" onFinish={handlerSubmit}>
-                <h2>Iniciar sesión</h2>
                 <FormItem
+                  label="Correo Electronico"
                   name="email"
-                  label="Correo electrónico"
                   rules={[
                     {
                       required: true,
@@ -77,11 +72,11 @@ const Login = () => {
                     },
                   ]}
                 >
-                  <Input />
+                  <Input type="email" />
                 </FormItem>
                 <FormItem
                   name="password"
-                  label="Contraseña"
+                  label="Password"
                   rules={[
                     {
                       required: true,
@@ -99,10 +94,10 @@ const Login = () => {
                 </FormItem>
                 <div className="form-btn-add">
                   <Button htmlType="submit" className="add-new">
-                    Enviar
+                    Iniciar Sesión
                   </Button>
                   <Link className="form-other" to="/register">
-                    ¡Registrate aquí!
+                    Registrate Aquí!
                   </Link>
                 </div>
               </Form>
@@ -112,8 +107,6 @@ const Login = () => {
       </Row>
       <CardsR />
       <AboutUs />
-      <Contact />
-      <Footer />
     </>
   );
 };
