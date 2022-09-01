@@ -1,40 +1,41 @@
-
-    @media only screen and (max-width: 600px) {
-      .category  {
-       display: flex;  
-       flex-direction: column;
-
+@media only screen and (max-width: 600px) {
+  .category  {
+   display: flex;  
+   flex-direction: column;
 
 
-       }
-       
-     }
-     
-    @media only screen and (max-width: 1090px) {
-    .ContainerTabla {
-     
-      width: 100%;
-      margin-bottom: 15px;
-      overflow-y: hidden;
-      -ms-overflow-style: -ms-autohiding-scrollbar;
-      border: 1px solid #ddd;
-     
-       }
-       
-     }
-     
-     /* @media screen and (min-width: 500px) and (max-width: 700px)  {
-      .ContainerTabla {
-       
-        overflow:scroll !important;
-       height:200px !important;
-       width: 300px !important;
-       
-       
-         }
-         
-       }
-        */
+
+   }
+   
+ }
+ 
+@media only screen and (max-width: 1090px) {
+.ContainerTabla {
+ 
+  width: 100%;
+  margin-bottom: 15px;
+  overflow-y: hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  border: 1px solid #ddd;
+ 
+   }
+   
+ }
+
+ .about{
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 10px;
+  
+
+ }
+ .Contactos {
+  padding: 10px;
+
+
+ }
       
        
       

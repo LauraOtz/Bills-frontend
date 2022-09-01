@@ -8,6 +8,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+
 }
 
 .product-btn {
@@ -286,6 +287,9 @@ body {
   margin: 40px
 
 }
+
+
+
 .formLogin{
   padding:10px
   
@@ -293,3 +297,19 @@ body {
 .TextHomeContainer{
   padding: 10px;
 }
+.formRegistro{
+  margin-top: 60px;
+  justify-content: center;
+}
+.hr{
+  border: 2px solid rgb(191, 193, 191);
+  position: absolute;
+  width: 60%;
+  left: 20%;
+}
+
+@media only screen and (min-width: 1060px) {
+  .ant-row {
+     display: flex;
+    justify-content:space-around;
+ }}

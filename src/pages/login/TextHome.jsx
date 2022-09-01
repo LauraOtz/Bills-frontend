@@ -13,7 +13,6 @@ function TextHome() {
 
         <img src={logoBills1} alt="" className="img-c d-flex" />
       </Row>
-      <hr />
     </Container>
   );
 }

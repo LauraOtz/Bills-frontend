@@ -5,13 +5,18 @@ import mate1 from "../../assets/mate1.jpg";
 import email1 from "../../assets/email1.jpg";
 import Card from "antd/lib/card/Card";
 import { Row } from "antd";
+import "../login/cards-style.css";
 
 class CardsR extends Component {
   render() {
     return (
       <>
-        <Row>
+        <hr className="hr" />
+        <br />
+        <br />
+        <Row className="Card">
           <Card
+            className="kr"
             hoverable
             style={{ width: 240, marginBottom: 30 }}
             cover={<img src={fondo1} style={{ height: 200 }} />}
@@ -23,6 +28,7 @@ class CardsR extends Component {
             </p>
           </Card>
           <Card
+            className="kr"
             title="Mandalo al instante"
             hoverable
             style={{ width: 240, marginBottom: 30 }}
@@ -34,14 +40,15 @@ class CardsR extends Component {
             </p>
           </Card>
           <Card
+            className="kr"
             title="Seguí disfrutando tu día"
             hoverable
             style={{ width: 240, marginBottom: 30 }}
             cover={<img src={mate1} style={{ height: 200 }} />}
           >
             <p>
-              Presupuestar nunca fue tan rápido y tan fácil. Desde donde estés
-              directo a tus clientes!
+              Presupuestar nunca fue tan rápido y tan fácil. Donde estés directo
+              a tus clientes!
             </p>
           </Card>
         </Row>
