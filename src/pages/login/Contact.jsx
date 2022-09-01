@@ -8,7 +8,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Button, Form, Input, Row, Col } from "antd";
-//import { useForm } from "react-hook-form";
+import "../home/home.css"
 
 const { TextArea } = Input;
 
@@ -38,6 +38,7 @@ const Contact = () => {
 
   return (
     <>
+    <div className="Contactos">
       <hr />
       <h1>Contactanos</h1>
       <Row>
@@ -125,6 +126,7 @@ const Contact = () => {
           </Form>
         </Col>
       </Row>
+      </div>
     </>
   );
 };

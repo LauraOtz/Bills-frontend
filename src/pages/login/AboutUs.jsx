@@ -1,18 +1,21 @@
 import React from "react";
+import "../home/home.css";
 
 function AboutUs() {
   return (
     <div className="about">
-      <h1>De qué se trata esto?</h1>
-      <h3>Automatizamos tus presupuestos!</h3>
+      <hr className="hr" />
       <br />
-      <p>Desde donde te encuentres envialos al instante!</p>
-      Crea la cuenta de tu empresa, carga tus productos por unica vez.
-      <p>podes modificar y agregar los detalles que desees cuando quieras.</p>
-      <p>Tenes un pedido? ingresá, cargalo y listo! enviar al cliente!</p>
+      <h1>¿De qué se trata esto?</h1>
+      <h3>¡Automatizamos tus presupuestos!</h3>
+      <p>¡Desde donde te encuentres envialos al instante!</p>
+      Crea la cuenta de tu empresa, carga tus productos por unica vez. Podes
+      modificar y agregar los detalles que desees cuando quieras.
+      <p>¿Tenes un pedido? Ingresá, cargalo ¡Y listo! Enviar al cliente</p>
       <br />
-      <hr />
-      <h1>Quiénes somos?</h1>
+      <hr className="hr" />
+      <br />
+      <h1>¿Quiénes somos?</h1>
       <p>
         Bills está integrado por un equipo fresco, vibrante y energético con
         talento creativo, conocimiento de la industria y estándares de calidad

@@ -22,19 +22,18 @@
        }
        
      }
-     
-     /* @media screen and (min-width: 500px) and (max-width: 700px)  {
-      .ContainerTabla {
-       
-        overflow:scroll !important;
-       height:200px !important;
-       width: 300px !important;
-       
-       
-         }
-         
-       }
-        */
+    
+     .about{
+      justify-content: center;
+
+      text-align: center;
+    
+      padding: 10px;
       
-       
-      
+
+     }
+     .Contactos {
+      padding: 10px;
+
+
+     }

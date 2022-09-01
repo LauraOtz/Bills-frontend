@@ -32,7 +32,7 @@ const Login = () => {
       dispatch({
         type: "HIDE_LOADING",
       });
-      message.error("Error!");
+      message.error("Correo o contraseña invalidos");
       console.log(error);
     }
   };
@@ -50,24 +50,56 @@ const Login = () => {
         <Col>
           <TextHome />
         </Col>
+        <br />
         <Col className="formLogin">
           <div className="form">
-            <h2>MP POS</h2>
-            <p>Iniciar sesión</p>
+            <br />
+
             <div className="form-group">
               <Form layout="vertical" onFinish={handlerSubmit}>
-                <FormItem name="userId" label="User ID">
+            <h2>Iniciar sesión</h2>
+                <FormItem
+                  name="email"
+                  label="Correo electrónico"
+                  rules={[
+                    {
+                      required: true,
+
+                      message: "Introduzca su correo electrónico",
+                    },
+                    {
+                      max: 60,
+                      message:
+                        "El correo no debe contener más de 60 caracteres",
+                    },
+                  ]}
+                >
                   <Input />
                 </FormItem>
-                <FormItem name="password" label="Password">
+                <FormItem
+                  name="password"
+                  label="Contraseña"
+                  rules={[
+                    {
+                      required: true,
+
+                      message: "Introduzca una contraseña.",
+                    },
+                    {
+                      max: 20,
+                      message:
+                        "El contraseña no debe contener más de 20 caracteres",
+                    },
+                  ]}
+                >
                   <Input type="password" />
                 </FormItem>
                 <div className="form-btn-add">
                   <Button htmlType="submit" className="add-new">
-                    Login
+                    Enviar
                   </Button>
                   <Link className="form-other" to="/register">
-                    Register Here!
+                    ¡Registrate aquí!
                   </Link>
                 </div>
               </Form>
@@ -75,17 +107,11 @@ const Login = () => {
           </div>
         </Col>
       </Row>
-      <div className="Card">
       <CardsR />
-      </div>
-    <div className="About">
-   <AboutUs />
-    </div>
-    <div className="contact">
+      <AboutUs />
       <Contact />
-      </div>
     </>
   );
 };
 
-export default Login;
+export default Login
