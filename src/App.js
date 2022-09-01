@@ -60,6 +60,7 @@ function App() {
               </ProtectedRouter>
             }
           />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

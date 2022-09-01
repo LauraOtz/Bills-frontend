@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
+import Footer from "../login/Footer";
+import NavBar from "../login/NavBar";
 
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
@@ -46,6 +48,7 @@ const Login = () => {
 
   return (
     <>
+      <NavBar />
       <Row>
         <Col>
           <TextHome />
@@ -110,6 +113,7 @@ const Login = () => {
       <CardsR />
       <AboutUs />
       <Contact />
+      <Footer />
     </>
   );
 };
