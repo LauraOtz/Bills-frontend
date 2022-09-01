@@ -1,22 +1,8 @@
-import { Button, Form, Input, message } from "antd";
-import FormItem from "antd/lib/form/FormItem";
-import axios from "axios";
 import React, { useState } from "react";
-//import { useDispatch } from 'react-redux'
-import { Link } from "react-router-dom";
 
-const Register = () => {
-  const postUsuario = async (datos) => {
-    const resp = await axios.get(`api/users/register`, {
-      method: "POST",
-      body: JSON.stringify(datos),
-    });
+import postUsuario from "./fetch";
 
-    const data = await resp.json();
-
-    return data;
-  };
-
+const RegistroUsuario = () => {
   const [formValues, setFormValues] = useState({
     nombre: "",
     email: "",
@@ -35,7 +21,6 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     postUsuario(formValues).then((respuesta) => {
       console.log(respuesta);
       if (respuesta?.errors) {
@@ -46,6 +31,7 @@ const Register = () => {
           nombre: "",
           email: "",
           password: "",
+          role: "ADMIN-ROLE",
         });
         setTimeout(() => {
           setMessage([]);
@@ -55,102 +41,73 @@ const Register = () => {
   };
 
   return (
-    <div className="formRegistro">
-      <div className="form">
-        <h1>Bills</h1>
-        <p>Registro</p>
-        <div className="form-group">
-          <Form layout="vertical" onFinish={handleSubmit}>
-            <FormItem
-              name="name"
-              label="Nombre"
-              value={formValues.nombre}
-              onChange={handleChange}
-              rules={[
-                {
-                  required: true,
-
-                  message: "Introduzca su nombre",
-                },
-                {
-                  max: 20,
-                  message: "El nombre no debe contener más de 20 caracteres",
-                },
-              ]}
-            >
-              <Input />
-            </FormItem>
-            <FormItem
-              name="email"
-              label="Correo electrónico"
-              value={formValues.email}
-              onChange={handleChange}
-              rules={[
-                {
-                  required: true,
-
-                  message: "Introduzca su correo electrónico",
-                },
-                {
-                  max: 60,
-                  message: "El correo no debe contener más de 60 caracteres",
-                },
-              ]}
-            >
-              <Input />
-            </FormItem>
-            <FormItem
-              name="password"
-              label="Contraseña"
-              value={formValues.password}
-              onChange={handleChange}
-              rules={[
-                {
-                  required: true,
-
-                  message: "Introduzca una contraseña.",
-                },
-                {
-                  max: 20,
-                  message:
-                    "El contraseña no debe contener más de 20 caracteres",
-                },
-              ]}
-            >
-              <Input type="password" />
-            </FormItem>
-            <div className="form-btn-add">
-              <Button htmlType="submit" className="add-new">
-                Enviar
-              </Button>
-              <Link className="form-other" to="/login">
-                Iniciar sesión
-              </Link>
-              <br />
-              <br />
-              <Link className="form-other" to="/login">
-                Volver
-              </Link>
-            </div>
-          </Form>
+    <div className="container">
+      <div className="row my-3">
+        <div className="col text-center">
+          <h3>
+            <i className="fa fa-user-circle-o" aria-hidden="true"></i> Registro
+            de usuario
+          </h3>
         </div>
-        {message.length > 0 &&
-          message.map((item, index) => (
-            <div
-              className={
-                item?.ok
-                  ? "alert alert-success mt-3"
-                  : "alert alert-danger mt-3"
-              }
-              role="alert"
-              key={index}
-            >
-              {item.msg}
+      </div>
+      <div className="row">
+        <div className="col-12 col-md-6 offset-md-3">
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Nombre</label>
+              <input
+                type="text"
+                className="form-control mb-2"
+                name="nombre"
+                value={formValues.nombre}
+                onChange={handleChange}
+                required
+              />
             </div>
-          ))}
+            <div className="form-group">
+              <label>Correo</label>
+              <input
+                type="email"
+                className="form-control mb-2"
+                name="email"
+                value={formValues.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Contraseña</label>
+              <input
+                type="password"
+                className="form-control mb-2"
+                name="password"
+                value={formValues.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="d-grid">
+              <button className="btn btn-primary">Guardar</button>
+            </div>
+          </form>
+          {message.length > 0 &&
+            message.map((item, index) => (
+              <div
+                className={
+                  item?.ok
+                    ? "alert alert-success mt-3"
+                    : "alert alert-danger mt-3"
+                }
+                role="alert"
+                key={index}
+              >
+                {item.msg}
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Register;
+export default RegistroUsuario;

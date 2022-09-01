@@ -1,115 +1,118 @@
-import { Button, Form, Input, message, Row } from "antd";
-import Col from "antd/es/grid/col";
-import FormItem from "antd/lib/form/FormItem";
-import axios from "axios";
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+//import "../css/login.css";
+import postAuth from "../register/fetch";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
 import Footer from "../login/Footer";
 import NavBar from "../login/NavBar";
+import "../home/Home";
 
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 
 const Login = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handlerSubmit = async (value) => {
-    //console.log(value);
-    try {
-      dispatch({
-        type: "SHOW_LOADING",
-      });
-      const res = await axios.post("/api/users/login", value);
-      dispatch({
-        type: "HIDE_LOADING",
-      });
-      message.success("User Login Successfully!");
-      localStorage.setItem("auth", JSON.stringify(res.data));
-      navigate("/");
-    } catch (error) {
-      dispatch({
-        type: "HIDE_LOADING",
-      });
-      message.error("Correo o contraseña invalidos");
-      console.log(error);
-    }
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState(null);
 
-  useEffect(() => {
-    if (localStorage.getItem("auth")) {
-      localStorage.getItem("auth");
-      navigate("/");
-    }
-  }, [navigate]);
+  const validarDatos = () => {
+    const datos = {
+      email,
+      password,
+      role: "ADMIN-ROLE",
+    };
+    postAuth(datos).then((respuesta) => {
+      console.log(respuesta);
+      if (respuesta) {
+        setMessage({ ok: true, msg: "Login ok" });
+        localStorage.setItem(JSON.stringify(respuesta));
+        navigate("/");
+      } else {
+        setMessage(respuesta);
+      }
+    });
+  };
 
   return (
     <>
       <NavBar />
-      <Row>
-        <Col>
-          <TextHome />
-        </Col>
-        <br />
-        <Col className="formLogin">
-          <div className="form">
-            <br />
-
-            <div className="form-group">
-              <Form layout="vertical" onFinish={handlerSubmit}>
-                <h2>Iniciar sesión</h2>
-                <FormItem
-                  name="email"
-                  label="Correo electrónico"
-                  rules={[
-                    {
-                      required: true,
-
-                      message: "Introduzca su correo electrónico",
-                    },
-                    {
-                      max: 60,
-                      message:
-                        "El correo no debe contener más de 60 caracteres",
-                    },
-                  ]}
+      <TextHome />
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-12 col-md-6 offset-md-3">
+            <div className="card mt-5">
+              <div className="card-header text-center">
+                <h2>
+                  <i
+                    className="fa fa-user-circle-o me-3"
+                    aria-hidden="true"
+                  ></i>
+                  Iniciar Sesion
+                </h2>
+              </div>
+              <div className="card-body text-center">
+                <label className="me-3">email</label>
+                <br />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <br />
+                <br />
+                <label>Contraseña</label>
+                <br />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="card-footer d-flex justify-content-evenly">
+                <button
+                  className="btn btn-success btn-lg"
+                  onClick={validarDatos}
                 >
-                  <Input />
-                </FormItem>
-                <FormItem
-                  name="password"
-                  label="Contraseña"
-                  rules={[
-                    {
-                      required: true,
-
-                      message: "Introduzca una contraseña.",
-                    },
-                    {
-                      max: 20,
-                      message:
-                        "El contraseña no debe contener más de 20 caracteres",
-                    },
-                  ]}
-                >
-                  <Input type="password" />
-                </FormItem>
-                <div className="form-btn-add">
-                  <Button htmlType="submit" className="add-new">
-                    Enviar
-                  </Button>
-                  <Link className="form-other" to="/register">
-                    ¡Registrate aquí!
-                  </Link>
-                </div>
-              </Form>
+                  Iniciar Sesion
+                </button>
+                <button className="btn btn-success btn-lg">
+                  <link rel="stylesheet" href="/register" />
+                  registrate
+                </button>
+              </div>
             </div>
+            {message && (
+              <div
+                className={
+                  message?.ok
+                    ? "alert alert-success mt-3"
+                    : "alert alert-danger mt-3"
+                }
+                role="alert"
+              >
+                {message.msg}
+              </div>
+            )}
+            {/* {message &&
+            
+              <div
+                className={
+                  item?.token
+                    ? "alert alert-success mt-3"
+                    : "alert alert-danger mt-3"
+                }
+                role="alert"
+                key={index}
+              >
+                {item.msg}
+              </div>
+            )} */}
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
       <CardsR />
       <AboutUs />
       <Contact />
