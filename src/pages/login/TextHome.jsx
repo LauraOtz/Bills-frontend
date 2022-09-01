@@ -9,12 +9,12 @@ function TextHome() {
     <Container fluid className="TextHomeContainer">
       <Row>
         <Col xs={8} md={11} className="d-flex justify-content-center text-dark">
-          <h1>Genera tus presupuestos con un "click"</h1>
+          <h1>Generá tus presupuestos con un "Click"</h1>
         </Col>
 
         <img src={logoBills1} alt="" className="img-c d-flex" />
       </Row>
-     
+
     </Container>
   );
 }

@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import "antd/dist/antd.min.css";
 import "./App.css";
+
 import Home from "./pages/home/Home";
 import Products from "./pages/products/Products";
 import Cart from "./pages/cart/Cart";
@@ -59,6 +60,7 @@ function App() {
               </ProtectedRouter>
             }
           />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

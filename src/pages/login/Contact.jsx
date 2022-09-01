@@ -38,8 +38,12 @@ const Contact = () => {
 
   return (
     <>
+
     <div className="Contactos">
       <hr />
+
+      <hr className="hr" />
+
       <h1>Contactanos</h1>
       <Row>
         <Col span={8}>

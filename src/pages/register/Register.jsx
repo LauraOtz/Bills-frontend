@@ -126,6 +126,13 @@ const Register = () => {
               <Link className="form-other" to="/login">
                 Iniciar sesión
               </Link>
+
+              <br />
+              <br />
+              <Link className="form-other" to="/login">
+                Volver
+              </Link>
+
             </div>
           </Form>
         </div>
@@ -149,3 +156,4 @@ const Register = () => {
 };
 
 export default Register;
+

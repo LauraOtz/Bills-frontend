@@ -3,7 +3,10 @@ import "../home/home.css";
 
 function AboutUs() {
   return (
-    <div className="about">
+
+
+    <section className="about" id="about">
+
       <hr className="hr" />
       <br />
       <h1>¿De qué se trata esto?</h1>
@@ -23,7 +26,7 @@ function AboutUs() {
       </p>
       <p>Queremos ayudarte a hacer tu empresa más rapida, eficaz y rentable.</p>
       <br />
-    </div>
-  );
-}
+    </section>
+  );}
+
 export default AboutUs;
