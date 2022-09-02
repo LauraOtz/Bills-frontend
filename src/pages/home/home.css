@@ -1,11 +1,52 @@
+.ContainerL{
+
+  padding:0;
+  margin: 0;
+overflow: hidden;}
+.about{
+justify-content: center;
+
+text-align: center;
+
+padding: 10px;
+
+}
+
+.ant-row {
+display: flex;
+justify-content: center;
+}
+
+.ant-row.Card {
+display: flex;
+justify-content: center;
+width: 100%;
+}
+
+.Contactos {
+padding: 10px;
+
+
+}
+.img-c  {
+  
+width: 90%;
+
+
+}
+
+
+
 @media only screen and (max-width: 600px) {
-  .category  {
-   display: flex;  
-   flex-direction: column;
+.category  {
+display: flex;  
+flex-direction: column;
+
 
 
 
    }
+   
    
  }
  
@@ -22,20 +63,31 @@
    
  }
 
- .about{
-  justify-content: center;
+ @media screen and (max-width:480px){
+  .TextHomeContainer {
+    font-size:50%;
 
-  text-align: center;
-
-  padding: 10px;
+  } 
+  .img-c  {
   
+    width: 90%;
+    
 
- }
- .Contactos {
-  padding: 10px;
+  }
 
+  .formLogin{
+    justify-content: center;
+    border: none;
+   outline: none;
+    width: 100%;
+   margin-bottom: 20px;
+  }
 
- }
-      
-       
-      
+  .form-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  
+}

@@ -4,6 +4,7 @@ import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   HomeOutlined,
+  MenuOutlined,
   UserSwitchOutlined,
   MoneyCollectOutlined,
   LogoutOutlined,
@@ -48,7 +49,7 @@ const LayoutApp = ({ children }) => {
           <Menu.Item key="/bills" icon={<MoneyCollectOutlined />}>
             <Link to="/bills">Mis Bill$</Link>
           </Menu.Item>
-          <Menu.Item key="/products" icon={<HomeOutlined />}>
+          <Menu.Item key="/products" icon={<MenuOutlined />}>
             <Link to="/products">Productos</Link>
           </Menu.Item>
           <Menu.Item key="/customers" icon={<UserSwitchOutlined />}>

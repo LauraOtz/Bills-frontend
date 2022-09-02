@@ -91,3 +91,7 @@ a{
 	text-decoration: none;
 	color: blanchedalmond;
 }
+
+Link{
+	text-decoration: none !important;
+}

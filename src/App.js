@@ -15,6 +15,8 @@ import Register from "./pages/register/Register";
 import Bills from "./pages/bills/Bills";
 import Customers from "./pages/customers/Customers";
 
+import NotFound from "../src/pages/NotFound";
+
 function App() {
   return (
     <>
@@ -60,6 +62,7 @@ function App() {
               </ProtectedRouter>
             }
           />
+          <Route path="*" element={<NotFound />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

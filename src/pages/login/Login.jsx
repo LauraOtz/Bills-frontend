@@ -6,7 +6,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
-// import Contact from "./Contact";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
@@ -107,6 +108,8 @@ const Login = () => {
       </Row>
       <CardsR />
       <AboutUs />
+      <Contact />
+      <Footer />
     </>
   );
 };

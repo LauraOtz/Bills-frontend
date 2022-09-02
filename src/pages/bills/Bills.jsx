@@ -1,4 +1,3 @@
-
 import { Button, Modal, Table } from "antd";
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
@@ -8,8 +7,7 @@ import { EyeOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import Layout from "../../components/Layout";
 
-import "../home/home.css"
-
+import "../home/home.css";
 
 const Bills = () => {
   const componentRef = useRef();
@@ -47,15 +45,15 @@ const Bills = () => {
       dataIndex: "_id",
     },
     {
-      title: "Customer Name",
+      title: "Nombre del cliente",
       dataIndex: "customerName",
     },
     {
-      title: "Contact Number",
+      title: "Teléfono de contacto",
       dataIndex: "customerPhone",
     },
     {
-      title: "Customer Address",
+      title: "Dirección del cliente",
       dataIndex: "customerAddress",
     },
     {
@@ -63,15 +61,15 @@ const Bills = () => {
       dataIndex: "subTotal",
     },
     {
-      title: "Tax",
+      title: "IVA",
       dataIndex: "tax",
     },
     {
-      title: "Total Amount",
+      title: "Monto total:",
       dataIndex: "totalAmount",
     },
     {
-      title: "Action",
+      title: "Ver",
       dataIndex: "_id",
       render: (id, record) => (
         <div>
@@ -93,9 +91,9 @@ const Bills = () => {
 
   return (
     <Layout>
-      <h2>All Invoice </h2>
+      <h2>Mis presupuestos </h2>
       <div className="ContainerTabla">
-<Table dataSource={billsData} columns={columns} bordered />
+        <Table dataSource={billsData} columns={columns} bordered />
       </div>
 
       {popModal && (
@@ -109,65 +107,65 @@ const Bills = () => {
         >
           <div className="card" ref={componentRef}>
             <div className="cardHeader">
-              <h2 className="logo">MP POS</h2>
+              <h2 className="logo">Bill$</h2>
               <span>
-                Number: <b>+381/0000000</b>
+                Número: <b>+549381/0000000</b>
               </span>
               <span>
-                Address: <b>34000 Kragujevac, Serbia</b>
+                Dirección: <b>34000 Kragujevac, Serbia</b>
               </span>
             </div>
             <div className="cardBody">
               <div className="group">
-                <span>Customer Name:</span>
+                <span>Nombre el cliente:</span>
                 <span>
                   <b>{selectedBill.customerName}</b>
                 </span>
               </div>
               <div className="group">
-                <span>Customer Phone:</span>
+                <span>Teléfono del cliente:</span>
                 <span>
                   <b>{selectedBill.customerPhone}</b>
                 </span>
               </div>
               <div className="group">
-                <span>Customer Address:</span>
+                <span>Dirección del cliente:</span>
                 <span>
                   <b>{selectedBill.customerAddress}</b>
                 </span>
               </div>
               <div className="group">
-                <span>Date Order:</span>
+                <span>Fecha del pedido:</span>
                 <span>
                   <b>{selectedBill.createdAt.toString().substring(0, 10)}</b>
                 </span>
               </div>
               <div className="group">
-                <span>Total Amount:</span>
+                <span>Monto total</span>
                 <span>
                   <b>${selectedBill.totalAmount}</b>
                 </span>
               </div>
             </div>
             <div className="cardFooter">
-              <h4>Your Order</h4>
+              <h4>Tu pedido</h4>
               {selectedBill.cartItems.map((product) => (
                 <>
                   <div className="footerCard">
                     <div className="group">
-                      <span>Product:</span>
+                      <span>Producto:</span>
                       <span>
                         <b>{product.name}</b>
                       </span>
                     </div>
                     <div className="group">
-                      <span>Qty:</span>
+                      <span>Cantidad:</span>
                       <span>
                         <b>{product.quantity}</b>
                       </span>
                     </div>
                     <div className="group">
-                      <span>Price:</span>
+                      <span>Precio:</span>
                       <span>
                         <b>${product.price}</b>
                       </span>
@@ -184,13 +182,13 @@ const Bills = () => {
                 </div>
               </div>
               <div className="footerThanks">
-                <span>Thank You for buying from us</span>
+                <span>¡Gracias por elegirnos!</span>
               </div>
             </div>
           </div>
           <div className="bills-btn-add">
             <Button onClick={handlePrint} htmlType="submit" className="add-new">
-              Generate Invoice
+              Generar presupuesto
             </Button>
           </div>
         </Modal>
