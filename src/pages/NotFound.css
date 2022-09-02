@@ -1,0 +1,21 @@
+.containerNF{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: 0;
+  }
+    
+    .div404{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* .img404{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+    

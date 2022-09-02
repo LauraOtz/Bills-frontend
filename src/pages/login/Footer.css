@@ -1,6 +1,6 @@
 .footer__container{
 
-    background-color: rgb(33, 33, 33);
+    background-color: #01070d ;
     padding: 2rem 0;
     display: flex;
 
@@ -86,4 +86,12 @@
             
 .img-c{
 	align-items: center;
+}
+a{
+	text-decoration: none;
+	color: blanchedalmond;
+}
+
+Link{
+	text-decoration: none !important;
 }

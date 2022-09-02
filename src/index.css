@@ -1,14 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Arima:wght@100;300;500&family=Lato:ital@1&family=Open+Sans&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
+}
+body {
+  color: #052f3c !important;
+}
+h1 {
+  color: #052f3c !important;
+}
+p{
+  color: #052f3c !important;
+}
+h3{
+  color: #052f3c !important;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+
+
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-}
+
+  
+
+
 
 .product-btn {
   margin-top: 25px;
@@ -167,7 +185,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+ 
 }
 
 .form h2 {
@@ -282,3 +300,34 @@ body {
   font-size: 12px !important;
   padding: 5px !important;
 }
+.ant-row{
+  margin: 40px
+
+}
+
+
+
+.formLogin{
+  padding:10px
+  
+}
+.TextHomeContainer{
+  padding: 10px;
+}
+.formRegistro{
+  margin-top: 60px;
+  justify-content: center;
+}
+.hr{
+  border: 1px solid #052f3c;
+  position: absolute;
+  width: 60%;
+  left: 20%;
+ 
+}
+
+@media only screen and (min-width: 1060px) {
+  .ant-row {
+     display: flex;
+    justify-content:space-around;
+ }}

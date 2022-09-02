@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import Layout from '../../components/Layout'
+import "../home/home.css"
 
 const Customers = () => {
 
@@ -33,7 +34,7 @@ const Customers = () => {
       getAllBills();
   }, []);
 
-  const columns = [
+  const columns  = [
     {
         title: "ID",
         dataIndex: "_id"
@@ -54,9 +55,15 @@ const Customers = () => {
   ]
 
   return (
-    <Layout>
+    <Layout> 
+      <div className='Table   '>
+
       <h2>All Customers </h2>
-      <Table dataSource={billsData} columns={columns} bordered />
+
+        <div className='ContainerTabla '>
+      <Table  dataSource={billsData} columns= {columns} bordered />
+      </div>
+    </div>
     </Layout>
   )
 }
