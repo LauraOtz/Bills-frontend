@@ -13,7 +13,7 @@
 
 .Card-body {
     font-family: 'Inconsolata', monospace;
-    width: 100%;
+    width: 80%;
     margin-top: 20px;
    
 }
@@ -27,6 +27,7 @@
 .Card-text{
    
     padding: auto;
+    width: 80%;
 }
         
 .container-fluid-row{

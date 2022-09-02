@@ -44,7 +44,7 @@ const LayoutApp = ({ children }) => {
           defaultSelectedKeys={window.location.pathname}
         >
           <Menu.Item key="/" icon={<HomeOutlined />}>
-            <Link to="/">Home</Link>
+            <Link to="/">Hace tu presupuesto</Link>
           </Menu.Item>
           <Menu.Item key="/bills" icon={<MoneyCollectOutlined />}>
             <Link to="/bills">Mis Bill$</Link>

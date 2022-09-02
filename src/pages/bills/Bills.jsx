@@ -1,7 +1,6 @@
 import { Button, Modal, Table } from "antd";
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
-
 import { useReactToPrint } from "react-to-print";
 import { EyeOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
@@ -91,7 +90,7 @@ const Bills = () => {
 
   return (
     <Layout>
-      <h2>Mis presupuestos </h2>
+      <h2>Mis presupuestos</h2>
       <div className="ContainerTabla">
         <Table dataSource={billsData} columns={columns} bordered />
       </div>
@@ -112,7 +111,7 @@ const Bills = () => {
                 Número: <b>+549381/0000000</b>
               </span>
               <span>
-                Dirección: <b>34000 Kragujevac, Serbia</b>
+                Dirección: <b>Gral. Paz 675, Tucumán, Argentina</b>
               </span>
             </div>
             <div className="cardBody">
@@ -141,7 +140,7 @@ const Bills = () => {
                 </span>
               </div>
               <div className="group">
-                <span>Monto total</span>
+                <span>Monto Total</span>
                 <span>
                   <b>${selectedBill.totalAmount}</b>
                 </span>
@@ -188,7 +187,7 @@ const Bills = () => {
           </div>
           <div className="bills-btn-add">
             <Button onClick={handlePrint} htmlType="submit" className="add-new">
-              Generar presupuesto
+              Generar Presupuesto
             </Button>
           </div>
         </Modal>
