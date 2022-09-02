@@ -16,15 +16,19 @@ const Contact = () => {
   const form = useRef();
   //envio de email js
   const sendEmail = (e) => {
-    e.preventDefault();
+    //  e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_mjmilxq",
-        "template_sevw0is",
-        form.current,
-        "Av9ifBj0zQ-fxT7XP"
-      )
+    // emailjs
+      // .sendForm(
+      //   "service_mjmilxq",
+      //   "template_sevw0is",
+      //   form.current,
+      //   "Av9ifBj0zQ-fxT7XP"
+      // )
+
+      console.log(e);
+
+      emailjs.send("service_j674jg8","template_vay33bg",e,'p-NgmvCaKTkomPPlV')
       .then(
         (result) => {
           console.log(result.text);
@@ -54,7 +58,7 @@ const Contact = () => {
         <Col span={16}>
           <Form
             ref={form}
-            onSubmit={sendEmail}
+            onFinish={sendEmail}
             name="basic"
             labelCol={{
               span: 8,
@@ -70,6 +74,7 @@ const Contact = () => {
             <Form.Item
               label="Nombre y apellido"
               name="name"
+              id="name"
               rules={[
                 {
                   required: true,
@@ -82,6 +87,7 @@ const Contact = () => {
             <Form.Item
               label="Correo electronico"
               name="email"
+              id="email"
               rules={[
                 {
                   required: true,
@@ -92,7 +98,7 @@ const Contact = () => {
               <Input />
             </Form.Item>
 
-            <Form.Item label="Mensaje">
+            <Form.Item label="Mensaje" name="message" id="message">
               <TextArea
                 rows={4}
                 showCount
@@ -116,11 +122,8 @@ const Contact = () => {
                 type="primary"
                 htmlType="submit"
                 value="Send"
-                onSubmit={""}
-              >
-                {" "}
-                Enviar
-              </Button>
+                
+              >Enviar</Button>
             </Form.Item>
           </Form>
         </Col>
