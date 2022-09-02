@@ -1,93 +1,100 @@
 .ContainerL{
+     padding:0;
+      margin: 0;
+    overflow: hidden;}
 
-  padding:0;
-  margin: 0;
-overflow: hidden;}
 .about{
-justify-content: center;
+  justify-content: center;
 
-text-align: center;
+  text-align: center;
 
-padding: 10px;
+  padding: 10px;
 
 }
 
 .ant-row {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .ant-row.Card {
-display: flex;
-justify-content: center;
-width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.Contactos {
+.Contacto {
+
 padding: 10px;
+width: 100%;
 
 
 }
 .img-c  {
+      
+  width: 90%;
   
-width: 90%;
-
 
 }
 
 
 
 @media only screen and (max-width: 600px) {
-.category  {
-display: flex;  
-flex-direction: column;
+  .category  {
+   display: flex;  
+   flex-direction: column;
 
 
 
 
-   }
-   
-   
- }
- 
-@media only screen and (max-width: 1090px) {
-.ContainerTabla {
- 
-  width: 100%;
-  margin-bottom: 15px;
-  overflow-y: hidden;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  border: 1px solid #ddd;
- 
-   }
-   
- }
-
- @media screen and (max-width:480px){
-  .TextHomeContainer {
-    font-size:50%;
-
-  } 
-  .img-c  {
-  
-    width: 90%;
+       }
+       
+       
+     }
+     
+    @media only screen and (max-width: 1090px) {
+    .ContainerTabla {
+     
+      width: 100%;
+      margin-bottom: 15px;
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      border: 1px solid #ddd;
+     
+       }
+       
+     }
     
-
-  }
-
-  .formLogin{
-    justify-content: center;
-    border: none;
-   outline: none;
-    width: 100%;
-   margin-bottom: 20px;
-  }
-
-  .form-group input {
-    border: none;
-    outline: none;
-    width: 100%;
-    margin-bottom: 5px;
-  }
+     @media screen and (max-width:480px){
+      .TextHomeContainer {
+        font-size:50%;
+    
+      } 
+      .img-c  {
+      
+        width: 90%;
+        
   
-}
+      }
+
+      .formLogin{
+        justify-content: center;
+        border: none;
+       outline: none;
+        width: 100%;
+       margin-bottom: 20px;
+      }
+
+      .form-group input {
+        border: none;
+        outline: none;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      
+    }
+
+
+
+     
+     

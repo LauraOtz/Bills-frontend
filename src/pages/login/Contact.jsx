@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Button, Form, Input, Row, Col } from "antd";
+import "../home/home.css"
 
 const { TextArea } = Input;
 
@@ -26,8 +27,9 @@ const Contact = () => {
   return (
     <>
       <hr className="hr" />
+    <div className="Contacto" >
       <h1>Contactanos</h1>
-      <Row>
+      <Row >
         <Col span={8}>
           <p>
             <h5>
@@ -107,6 +109,7 @@ const Contact = () => {
           </Form>
         </Col>
       </Row>
+      </div>
     </>
   );
 };

@@ -7,10 +7,10 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
-import Footer from "./Footer";
-
+import Footer from "../login/Footer";
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
+import "../home/home.css"
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ const Login = () => {
       dispatch({
         type: "HIDE_LOADING",
       });
-      message.error("Error!");
+      message.error("Correo o contraseña invalidos");
       console.log(error);
     }
   };
@@ -46,20 +46,26 @@ const Login = () => {
   }, [navigate]);
 
   return (
+    <div className="ContainerL">
     <>
+      {/* <NavBar /> */}
       <Row>
         <Col>
           <TextHome />
         </Col>
-        <Col>
+        <br />
+        <Col className="formLogin">
           <div className="form">
-            <h2>BILL$</h2>
-            <p>Iniciar Sesión</p>
+            <br />
+
             <div className="form-group">
               <Form layout="vertical" onFinish={handlerSubmit}>
+
+                <h2>Iniciar sesión</h2>
+
                 <FormItem
-                  label="Correo Electronico"
                   name="email"
+                  label="Correo electrónico"
                   rules={[
                     {
                       required: true,
@@ -73,11 +79,11 @@ const Login = () => {
                     },
                   ]}
                 >
-                  <Input type="email" />
+                  <Input />
                 </FormItem>
                 <FormItem
                   name="password"
-                  label="Password"
+                  label="Contraseña"
                   rules={[
                     {
                       required: true,
@@ -95,10 +101,10 @@ const Login = () => {
                 </FormItem>
                 <div className="form-btn-add">
                   <Button htmlType="submit" className="add-new">
-                    Iniciar Sesión
+                    Enviar
                   </Button>
                   <Link className="form-other" to="/register">
-                    Registrate Aquí!
+                    ¡Registrate aquí!
                   </Link>
                 </div>
               </Form>
@@ -111,7 +117,8 @@ const Login = () => {
       <Contact />
       <Footer />
     </>
+    </div>
   );
 };
 
-export default Login;
+export default Login

@@ -45,7 +45,7 @@
 
 
 @media only screen and (max-width: 840px) {
-    .Card {
+    .ant-row.Card {
      display: flex;  
      flex-direction: column;
      align-items: center;
@@ -62,7 +62,7 @@
     .ant-row.Card {
   display: flex;
   justify-content:space-evenly;
-  width: 90%;
+  width: 90% !important;
 
 
 }
