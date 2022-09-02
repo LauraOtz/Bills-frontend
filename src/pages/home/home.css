@@ -20,8 +20,15 @@
 .ant-row.Card {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 90%;
 }
+.ant-card {
+  width: 50%;
+  justify-content: center;
+  margin: 0;
+  font-size: calc(1em + 1vw)
+
+  }
 
 .Contacto {
 
@@ -39,6 +46,7 @@ width: 100%;
 
 
 
+
 @media only screen and (max-width: 600px) {
   .category  {
    display: flex;  
@@ -49,8 +57,17 @@ width: 100%;
 
        }
        
-       
-     }
+      }
+      @media only screen and (max-width: 840px){
+      .prod
+
+      {
+        width: 90%;
+      display: flex;
+   flex-direction: column;
+   justify-content: center;
+      
+      } }
      
     @media only screen and (max-width: 1090px) {
     .ContainerTabla {
@@ -94,7 +111,13 @@ width: 100%;
       
     }
 
+    @media only screen and (max-width: 800px) {
+     
+      .ant-layout-content {
+        padding: 0%;
+      }
 
+    }
 
      
-     
+   

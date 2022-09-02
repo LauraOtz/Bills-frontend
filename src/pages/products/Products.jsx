@@ -143,6 +143,7 @@ const Products = () => {
   };
 
   return (
+    <div className="Home">
     <LayoutApp>
       <h2>Mis Productos</h2>
       <Button className="add-new" onClick={() => setPopModal(true)}>
@@ -231,6 +232,7 @@ const Products = () => {
         </Modal>
       )}
     </LayoutApp>
+    </div>
   );
 };
 
