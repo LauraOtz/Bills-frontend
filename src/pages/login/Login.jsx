@@ -47,6 +47,7 @@ const Login = () => {
   }, [navigate]);
 
   return (
+    <div className="ContainerL">
     <>
       <NavBar />
       <Row>
@@ -117,6 +118,7 @@ const Login = () => {
       <Contact />
       <Footer />
     </>
+    </div>
   );
 };
 

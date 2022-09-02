@@ -1,3 +1,41 @@
+.ContainerL{
+
+      padding:0;
+      margin: 0;
+    overflow: hidden;}
+.about{
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 10px;
+
+}
+
+.ant-row {
+  display: flex;
+  justify-content: center;
+}
+
+.ant-row.Card {
+  display: flex;
+  justify-content: center;
+}
+
+.Contactos {
+padding: 10px;
+
+
+}
+.img-c  {
+      
+  width: 90%;
+  
+
+}
+
+
+
 @media only screen and (max-width: 600px) {
   .category  {
    display: flex;  
@@ -23,50 +61,36 @@
        
      }
     
-     .about{
-      justify-content: center;
-
-      text-align: center;
+     @media screen and (max-width:480px){
+      .TextHomeContainer {
+        font-size:50%;
     
-      padding: 10px;
-
-   }
-   
- 
- 
-@media only screen and (max-width: 1090px) {
-.ContainerTabla {
- 
-  width: 100%;
-  margin-bottom: 15px;
-  overflow-y: hidden;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  border: 1px solid #ddd;
- 
-   }
-   
- }
-
- .about{
-  justify-content: center;
-
-  text-align: center;
-
-  padding: 10px;
-  
-
- }
- .Contactos {
-  padding: 10px;
-
-
- }
-
+      } 
+      .img-c  {
       
+        width: 90%;
+        
+  
+      }
+
+      .formLogin{
+        justify-content: center;
+        border: none;
+       outline: none;
+        width: 100%;
+       margin-bottom: 20px;
+      }
+
+      .form-group input {
+        border: none;
+        outline: none;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      
+    }
+
+
 
      
-     .Contactos {
-      padding: 10px;
-
-
-     }
+     

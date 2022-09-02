@@ -1,8 +1,6 @@
 import React from "react";
 import "font-awesome/css/font-awesome.css";
-
-import "../login/Footer.css";
-//import { Link } from "react-router-dom";
+import "../login/Footer.css"
 
 const FooterApp = () => {
   return (
