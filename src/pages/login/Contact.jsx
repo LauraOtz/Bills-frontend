@@ -1,35 +1,22 @@
-// emailjs.sendForm(
-//   "service_mjmilxq",
-//   "template_sevw0is",
-//   form.current,
-//   "Av9ifBj0zQ-fxT7XP"
-// );
-
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Button, Form, Input, Row, Col } from "antd";
-//import { useForm } from "react-hook-form";
 
 const { TextArea } = Input;
 
 const Contact = () => {
   const form = useRef();
-  //envio de email js
+  //envío de email js
   const sendEmail = (e) => {
-    e.preventDefault();
-
+    console.log(e);
     emailjs
-      .sendForm(
-        "service_mjmilxq",
-        "template_sevw0is",
-        form.current,
-        "Av9ifBj0zQ-fxT7XP"
-      )
+      .send("service_j674jg8", "template_vay33bg", e, "p-NgmvCaKTkomPPlV")
       .then(
         (result) => {
           console.log(result.text);
           alert("Mensaje enviado");
         },
+
         (error) => {
           error(error.text);
         }
@@ -54,7 +41,7 @@ const Contact = () => {
         <Col span={16}>
           <Form
             ref={form}
-            onSubmit={sendEmail}
+            onFinish={sendEmail}
             name="basic"
             labelCol={{
               span: 8,
@@ -64,6 +51,7 @@ const Contact = () => {
             }}
             initialValues={{
               remember: true,
+             
             }}
             autoComplete="off"
           >
@@ -92,7 +80,7 @@ const Contact = () => {
               <Input />
             </Form.Item>
 
-            <Form.Item label="Mensaje">
+            <Form.Item name="message" label="Mensaje">
               <TextArea
                 rows={4}
                 showCount
@@ -112,13 +100,7 @@ const Contact = () => {
                 span: 16,
               }}
             >
-              <Button
-                type="primary"
-                htmlType="submit"
-                value="Send"
-                onSubmit={""}
-              >
-                {" "}
+              <Button type="primary" htmlType="submit" value="Send">
                 Enviar
               </Button>
             </Form.Item>
