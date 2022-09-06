@@ -57,3 +57,34 @@
     letter-spacing: 1.3px;
     color: #ffffff;
 }
+
+
+@media only screen and (max-width:570px) {
+    .ant-row  {
+     display: flex;  
+     flex-direction: column;
+     justify-content: center;
+     width: 4px;
+  
+  
+  
+  
+         }
+         
+         
+        }
+        @media only screen and (min-width:575px)and(max-width:770px) {
+            .ant-row  {
+                flex-flow: row wrap;
+                display: flex;
+            
+                flex-direction: column;
+               
+
+          
+                 }
+                 .ant-col{
+                    max-width: 50%;
+                 }
+                 
+               }

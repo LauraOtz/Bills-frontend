@@ -68,7 +68,7 @@ const Products = () => {
       title: "Imagen",
       dataIndex: "image",
       render: (image, record) => (
-        <img src={image} alt={record.name} height={60} width={60} />
+        <img src={image} alt={record.name} height={50} width={50} />
       ),
     },
     {
