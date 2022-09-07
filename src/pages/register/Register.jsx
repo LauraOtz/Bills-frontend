@@ -57,6 +57,7 @@ const Register = () => {
                   message: "El nombre no debe contener más de 20 caracteres",
                 },
               ]}
+              hasFeedback
             >
               <Input />
             </FormItem>
@@ -74,9 +75,11 @@ const Register = () => {
                   max: 60,
                   message: "El correo no debe contener más de 60 caracteres",
                 },
+                { type: "email", message: "Por favor ingrese un email válido" },
               ]}
+              hasFeedback
             >
-              <Input type="email" />
+              <Input />
             </FormItem>
             <FormItem
               name="password"
@@ -87,14 +90,46 @@ const Register = () => {
 
                   message: "Introduzca una contraseña.",
                 },
+                { min: 6 },
                 {
                   max: 20,
                   message:
                     "El contraseña no debe contener más de 20 caracteres",
                 },
+                {
+                  validator: (_, value) =>
+                    value && value.includes("A-Z")
+                      ? Promise.resolve()
+                      : Promise.reject("Password does not match criteria."),
+                },
               ]}
+              hasFeedback
             >
-              <Input type="password" />
+              <Input.Password />
+            </FormItem>
+
+            <FormItem
+              name="confirmPassword"
+              label="Confirm Password"
+              dependencies={["password"]}
+              rules={[
+                {
+                  required: true,
+                },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      "The two passwords that you entered does not match."
+                    );
+                  },
+                }),
+              ]}
+              hasFeedback
+            >
+              <Input.Password />
             </FormItem>
             <div className="form-btn-add">
               <Button htmlType="submit" className="add-new">
