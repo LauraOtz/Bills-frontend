@@ -2,15 +2,15 @@ import { Button, Form, Input, message, Row } from "antd";
 import Col from "antd/es/grid/col";
 import FormItem from "antd/lib/form/FormItem";
 import axios from "axios";
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
-import Footer from "./Footer";
-
+import Footer from "../login/Footer";
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
+import "../home/home.css";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -22,95 +22,101 @@ const Login = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const res = await axios.post("/api/users/login", value);
+      const res = await axios.post("/api/auth/login", value);
       dispatch({
         type: "HIDE_LOADING",
       });
       message.success("User Login Successfully!");
-      localStorage.setItem("auth", JSON.stringify(res.data));
+      localStorage.setItem("token", JSON.stringify(res.data));
       navigate("/");
     } catch (error) {
       dispatch({
         type: "HIDE_LOADING",
       });
-      message.error("Error!");
+      message.error("Correo o contraseña invalidos");
       console.log(error);
     }
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("auth")) {
-      localStorage.getItem("auth");
-      navigate("/");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   if (localStorage.getItem("token")) {
+  //     localStorage.getItem("token");
+  //     navigate("/");
+  //   }
+  // }, [navigate]);
 
   return (
-    <>
-      <Row>
-        <Col>
-          <TextHome />
-        </Col>
-        <Col>
-          <div className="form">
-            <h2>BILL$</h2>
-            <p>Iniciar Sesión</p>
-            <div className="form-group">
-              <Form layout="vertical" onFinish={handlerSubmit}>
-                <FormItem
-                  label="Correo Electronico"
-                  name="email"
-                  rules={[
-                    {
-                      required: true,
+    <div className="ContainerL">
+      <>
+        {/* <NavBar /> */}
+        <Row>
+          <Col>
+            <TextHome />
+          </Col>
+          <br />
+          <Col className="formLogin">
+            <div className="form">
+              <br />
 
-                      message: "Introduzca su correo electrónico",
-                    },
-                    {
-                      max: 60,
-                      message:
-                        "El correo no debe contener más de 60 caracteres",
-                    },
-                  ]}
-                >
-                  <Input type="email" />
-                </FormItem>
-                <FormItem
-                  name="password"
-                  label="Password"
-                  rules={[
-                    {
-                      required: true,
+              <div className="form-group">
+                <Form layout="vertical" onFinish={handlerSubmit}>
+                  <h2>Iniciar sesión</h2>
 
-                      message: "Introduzca una contraseña.",
-                    },
-                    {
-                      max: 20,
-                      message:
-                        "El contraseña no debe contener más de 20 caracteres",
-                    },
-                  ]}
-                >
-                  <Input type="password" />
-                </FormItem>
-                <div className="form-btn-add">
-                  <Button htmlType="submit" className="add-new">
-                    Iniciar Sesión
-                  </Button>
-                  <Link className="form-other" to="/register">
-                    Registrate Aquí!
-                  </Link>
-                </div>
-              </Form>
+                  <FormItem
+                    name="email"
+                    label="Correo electrónico"
+                    rules={[
+                      {
+                        required: true,
+
+                        message: "Introduzca su correo electrónico",
+                      },
+                      {
+                        max: 60,
+                        message:
+                          "El correo no debe contener más de 60 caracteres",
+                      },
+                    ]}
+                  >
+                    <Input />
+                  </FormItem>
+                  <FormItem
+                    name="password"
+                    label="Contraseña"
+                    rules={[
+                      {
+                        required: true,
+
+                        message: "Introduzca una contraseña.",
+                      },
+                      {
+                        max: 20,
+                        message:
+                          "El contraseña no debe contener más de 20 caracteres",
+                      },
+                    ]}
+                  >
+                    <Input type="password" />
+                  </FormItem>
+                  <div className="form-btn-add">
+                    <Button htmlType="submit" className="add-new">
+                      Enviar
+                    </Button>
+                    <Link className="form-other" to="/register">
+                      ¡Registrate aquí!
+                    </Link>
+                  </div>
+                </Form>
+              </div>
             </div>
-          </div>
-        </Col>
-      </Row>
-      <CardsR />
-      <AboutUs />
-      <Contact />
-      <Footer />
-    </>
+          </Col>
+        </Row>
+        <CardsR />
+        <AboutUs />
+        <Contact />
+        <Footer />
+      </>
+    </div>
   );
 };
 
