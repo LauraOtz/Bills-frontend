@@ -2,7 +2,6 @@ import { Button, Form, Input, message, Row } from "antd";
 import Col from "antd/es/grid/col";
 import FormItem from "antd/lib/form/FormItem";
 import axios from "axios";
-// import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
@@ -26,7 +25,7 @@ const Login = () => {
       dispatch({
         type: "HIDE_LOADING",
       });
-      message.success("User Login Successfully!");
+      message.success("Login Exitoso!");
       localStorage.setItem("token", JSON.stringify(res.data));
       navigate("/");
     } catch (error) {
@@ -38,17 +37,9 @@ const Login = () => {
     }
   };
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("token")) {
-  //     localStorage.getItem("token");
-  //     navigate("/");
-  //   }
-  // }, [navigate]);
-
   return (
     <div className="ContainerL">
       <>
-        {/* <NavBar /> */}
         <Row>
           <Col>
             <TextHome />
