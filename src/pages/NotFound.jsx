@@ -26,7 +26,7 @@ export default function NotFound() {
         <Col>
           <div className="form-btn-add">
             <Button htmlType="submit" className="add-new boton404">
-              Volver
+              <Link to="/login"> Volver </Link>
             </Button>
             <Link className="form-other" to="/"></Link>
           </div>
