@@ -10,8 +10,9 @@ import Contact from "./Contact";
 import Footer from "../login/Footer";
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
-import "../home/home.css";
-import "../login/login.css";
+import "../home/home.css"
+import "./login.css"
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -47,79 +48,83 @@ const Login = () => {
 
   return (
     <div className="ContainerL">
-      <>
-        {/* <NavBar /> */}
+    <>
+      {/* <NavBar /> */}
+      <Row >
+        <div>
 
-        <Row className="ContainerT">
-          <Col>
-            <TextHome />
-          </Col>
-          <br />
-          <Col className="formLogin">
-            <div className="form">
-              <br />
+    
+        <Col>
+          <TextHome />
+        </Col>
+        <br />
+        <Col className="formLogin">
+          <div className="form">
+            <br />
 
-              <div className="form-group">
-                <Form layout="vertical" onFinish={handlerSubmit}>
-                  <h2>Iniciar sesión</h2>
+            <div className="form-group">
+              <Form layout="vertical" onFinish={handlerSubmit}>
 
-                  <FormItem
-                    name="email"
-                    label="Correo electrónico"
-                    rules={[
-                      {
-                        required: true,
+                <h2>Iniciar sesión</h2>
 
-                        message: "Introduzca su correo electrónico",
-                      },
-                      {
-                        max: 60,
-                        message:
-                          "El correo no debe contener más de 60 caracteres",
-                      },
-                    ]}
-                  >
-                    <Input />
-                  </FormItem>
-                  <FormItem
-                    name="password"
-                    label="Contraseña"
-                    rules={[
-                      {
-                        required: true,
+                <FormItem
+                  name="email"
+                  label="Correo electrónico"
+                  rules={[
+                    {
+                      required: true,
 
-                        message: "Introduzca una contraseña.",
-                      },
-                      {
-                        max: 20,
-                        message:
-                          "El contraseña no debe contener más de 20 caracteres",
-                      },
-                    ]}
-                  >
-                    <Input type="password" />
-                  </FormItem>
-                  <div className="form-btn-add">
-                    <Button htmlType="submit" className="add-new">
-                      Enviar
-                    </Button>
-                    <Link className="form-other" to="/register">
-                      ¡Registrate aquí!
-                    </Link>
-                  </div>
-                </Form>
-              </div>
+                      message: "Introduzca su correo electrónico",
+                    },
+                    {
+                      max: 60,
+                      message:
+                        "El correo no debe contener más de 60 caracteres",
+                    },
+                  ]}
+                >
+                  <Input />
+                </FormItem>
+                <FormItem
+                  name="password"
+                  label="Contraseña"
+                  rules={[
+                    {
+                      required: true,
+
+                      message: "Introduzca una contraseña.",
+                    },
+                    {
+                      max: 20,
+                      message:
+                        "El contraseña no debe contener más de 20 caracteres",
+                    },
+                  ]}
+                >
+                  <Input type="password" />
+                </FormItem>
+                <div className="form-btn-add">
+                  <Button htmlType="submit" className="add-new">
+                    Enviar
+                  </Button>
+                  <Link className="form-other" to="/register">
+                    ¡Registrate aquí!
+                  </Link>
+                </div>
+              </Form>
+                
             </div>
-          </Col>
-        </Row>
-
-        <CardsR />
-        <AboutUs />
-        <Contact />
-        <Footer />
-      </>
+          </div>
+        </Col>
+        </div>
+      </Row>
+      <CardsR />
+      <AboutUs />
+      <Contact />
+      <Footer />
+    </>
     </div>
   );
 };
 
-export default Login;
+export default Login
