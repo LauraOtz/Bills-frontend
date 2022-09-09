@@ -10,7 +10,7 @@ function TextHome() {
       <Row>
         <img src={logoBills1} alt="" className="img-c d-flex" />
         <Col xs={8} md={11} className="d-flex justify-content-start text-light">
-          <h1 className=" text-light">
+          <h1 className= "h1T text-light">
             Generá tus presupuestos con un "Click"
           </h1>
         </Col>
