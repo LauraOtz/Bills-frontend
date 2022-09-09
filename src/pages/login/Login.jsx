@@ -54,7 +54,7 @@ const Login = () => {
           <Col>
             <TextHome />
           </Col>
-          <br />
+
           <Col className="formLogin">
             <div className="form">
               <br />
