@@ -1,9 +1,12 @@
 import React from "react";
 import "../home/home.css";
+import { Col } from "react-bootstrap";
+
 
 function AboutUs() {
   return (
     <section className="about" id="about">
+      <Col className="Col">
       <hr className="hr" />
       <br />
       <h1>¿De qué se trata esto?</h1>
@@ -13,6 +16,8 @@ function AboutUs() {
       modificar y agregar los detalles que desees cuando quieras.
       <p>¿Tenes un pedido? Ingresá, cargalo ¡Y listo! Enviar al cliente</p>
       <br />
+      </Col>
+      <Col className="Col">
       <hr className="hr" />
       <br />
       <h1>¿Quiénes somos?</h1>
@@ -23,6 +28,7 @@ function AboutUs() {
       </p>
       <p>Queremos ayudarte a hacer tu empresa más rapida, eficaz y rentable.</p>
       <br />
+      </Col>
     </section>
   );
 }

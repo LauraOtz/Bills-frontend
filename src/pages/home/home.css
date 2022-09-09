@@ -2,13 +2,20 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
-}
+  background-color: rgb(234, 238, 238);}
+
 
 .about {
   justify-content: center;
+  display: -ms-flex;
+  display: -webkit-flex;
+  
+  text-align:left;
 
-  text-align: center;
-
+  padding: 10px;
+}
+.about .Col {
+  width: 50%;
   padding: 10px;
 }
 
@@ -34,6 +41,8 @@
   width: 20%;
   height: 20%;
   border-radius: 150px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 @media only screen and (max-width: 600px) {

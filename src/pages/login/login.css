@@ -4,9 +4,14 @@
   font-size: 14px;
   min-height: 35em;
   margin: 0px;
+  padding: 0;
 }
 .h1T {
   color: #fafafa !important;
   margin-top: 40px;
   text-shadow: 0.1em 0.1em 0.2em black;
+  
+}
+.CC{
+  box-shadow:0.1em 0.1em 0.2em rgb(200, 200, 200) ;
 }
