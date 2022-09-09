@@ -1,0 +1,16 @@
+.btnR{
+    margin-right: 20px;
+}
+.textR{
+    margin-left: 20px;
+}
+.logoR{
+    height: 100px;
+}
+.ContainerR {
+    background-image: url("");
+    background-size: cover;
+    font-size: 14px;
+    min-height: 35em;
+    margin: 0px;
+  }
