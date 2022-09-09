@@ -1,15 +1,15 @@
-.ContainerL{
-     padding:0;
-      margin: 0;
-    overflow: hidden;}
+.ContainerL {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
 
-.about{
+.about {
   justify-content: center;
 
   text-align: center;
 
   padding: 10px;
-
 }
 
 .ant-row {
@@ -24,77 +24,55 @@
 }
 
 .Contacto {
-
-padding: 10px;
-width: 100%;
-
-
+  padding: 10px;
+  width: 100%;
 }
-.img-c  {
-      
-  width: 90%;
-  
-
+.TextHomeContainer {
+  margin-left: 0px;
 }
-
-
+.img-c {
+  width: 20%;
+  height: 20%;
+  border-radius: 150px;
+}
 
 @media only screen and (max-width: 600px) {
-  .category  {
-   display: flex;  
-   flex-direction: column;
+  .category {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
+@media only screen and (max-width: 1090px) {
+  .ContainerTabla {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+}
 
+@media screen and (max-width: 480px) {
+  .TextHomeContainer {
+    font-size: 50%;
+  }
+  .img-c {
+    width: 90%;
+  }
 
+  .formLogin {
+    justify-content: center;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-       }
-       
-       
-     }
-     
-    @media only screen and (max-width: 1090px) {
-    .ContainerTabla {
-     
-      width: 100%;
-      margin-bottom: 15px;
-      overflow-y: hidden;
-      -ms-overflow-style: -ms-autohiding-scrollbar;
-      border: 1px solid #ddd;
-     
-       }
-       
-     }
-    
-     @media screen and (max-width:480px){
-      .TextHomeContainer {
-        font-size:50%;
-    
-      } 
-      .img-c  {
-      
-        width: 90%;
-        
-  
-      }
-
-      .formLogin{
-        justify-content: center;
-        border: none;
-       outline: none;
-        width: 100%;
-       margin-bottom: 20px;
-      }
-
-      .form-group input {
-        border: none;
-        outline: none;
-        width: 100%;
-        margin-bottom: 5px;
-      }
-      
-    }
-
-
-
-     
-     
+  .form-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
