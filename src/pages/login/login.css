@@ -1,5 +1,12 @@
-.ContainerT{
-    background-image: url(../../assets/b1.jpg),
-
-    
+.ContainerT {
+  background-image: url(../../assets/b3.jpg);
+  background-size: cover;
+  font-size: 14px;
+  min-height: 35em;
+  margin: 0px;
+}
+h1 {
+  color: #fafafa !important;
+  margin-top: 40px;
+  text-shadow: 0.1em 0.1em 0.2em black;
 }
