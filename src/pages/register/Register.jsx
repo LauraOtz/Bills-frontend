@@ -1,7 +1,7 @@
 import { Button, Form, Input, message } from "antd";
 import FormItem from "antd/lib/form/FormItem";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const Register = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post("/api/users/register", value);
+      await axios.post("/api/usuarios", value);
       message.success("Registro Exitoso!");
       navigate("/login");
       dispatch({
@@ -29,20 +29,18 @@ const Register = () => {
     }
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("auth")) {
-      localStorage.getItem("auth");
-      navigate("/");
-    }
-  }, [navigate]);
-
   return (
     <div className="formRegistro">
       <div className="form">
         <h2>BILL$</h2>
         <p>Registro de Usuario</p>
         <div className="form-group">
-          <Form layout="vertical" onFinish={handlerSubmit}>
+          <Form
+            layout="vertical"
+            onFinish={handlerSubmit}
+            labelCol={{ span: 10 }}
+            wrapperCol={{ span: 14 }}
+          >
             <FormItem
               name="name"
               label="Nombre"
@@ -57,6 +55,7 @@ const Register = () => {
                   message: "El nombre no debe contener más de 20 caracteres",
                 },
               ]}
+              hasFeedback
             >
               <Input />
             </FormItem>
@@ -70,14 +69,17 @@ const Register = () => {
 
                   message: "Introduzca su correo electrónico",
                 },
+                { type: "email", message: "Introduzca un correo válido" },
                 {
                   max: 60,
                   message: "El correo no debe contener más de 60 caracteres",
                 },
               ]}
+              hasFeedback
             >
-              <Input type="email" />
+              <Input />
             </FormItem>
+
             <FormItem
               name="password"
               label="Password"
@@ -92,10 +94,45 @@ const Register = () => {
                   message:
                     "El contraseña no debe contener más de 20 caracteres",
                 },
+                {
+                  min: 6,
+                  message: "La contraseña debe contener al menos 6 caracteres.",
+                },
+                {
+                  validator: (_, value) =>
+                    value && value.includes("A")
+                      ? Promise.resolve()
+                      : Promise.reject("Contraseña inválida"),
+                },
               ]}
+              hasFeedback
             >
-              <Input type="password" />
+              <Input.Password />
             </FormItem>
+
+            <FormItem
+              name="confirmPassword"
+              label="Confirmar contraseña"
+              dependencies={["password"]}
+              rules={[
+                {
+                  required: true,
+                  message: "Vuelva a introducir la contraseña.",
+                },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject("Las contraseñas no coinciden.");
+                  },
+                }),
+              ]}
+              hasFeedback
+            >
+              <Input.Password placeholder="Confirm your password" />
+            </FormItem>
+
             <div className="form-btn-add">
               <Button htmlType="submit" className="add-new">
                 Registro
