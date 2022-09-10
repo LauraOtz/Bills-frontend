@@ -34,19 +34,22 @@ const Register = () => {
   return (
     <Row className="ContainerR">
       <div className="formRegistro">
-        <div className="form">
-          <img src={logoBills1} alt="logo" className="logoR" />
-          <h2>Registro de Usuario</h2>
-          <div className="form-group">
+        <div className="form formRt">
+          <div className="form-group formRu">
             <Form
               layout="vertical"
               onFinish={handlerSubmit}
               labelCol={{ span: 10 }}
               wrapperCol={{ span: 14 }}
             >
+              <Row>
+                <img src={logoBills1} alt="logo" className="logoR" />
+                <h1> Registro de Usuario</h1>
+              </Row>
               <FormItem
                 name="nombre"
                 label="Nombre"
+                style={{ fontWeight: "bold" }}
                 rules={[
                   {
                     required: true,
@@ -66,6 +69,7 @@ const Register = () => {
               <FormItem
                 name="email"
                 label="Correo Electrónico"
+                style={{ fontWeight: "bold" }}
                 rules={[
                   {
                     required: true,
@@ -85,7 +89,8 @@ const Register = () => {
 
               <FormItem
                 name="password"
-                label="Password"
+                label="Contraseña"
+                style={{ fontWeight: "bold" }}
                 rules={[
                   {
                     max: 10,
@@ -108,6 +113,7 @@ const Register = () => {
               <FormItem
                 name="confirmPassword"
                 label="Confirmar contraseña"
+                style={{ fontWeight: "bold" }}
                 dependencies={["password"]}
                 rules={[
                   {
@@ -125,22 +131,35 @@ const Register = () => {
                 ]}
                 hasFeedback
               >
-                <Input.Password placeholder="Confirm your password" />
+                <Input.Password />
               </FormItem>
 
               <div className="form-btn-add btnR">
-                <Button htmlType="submit" className="add-new">
+                <Button
+                  htmlType="submit"
+                  className="add-new"
+                  style={{ fontWeight: "bold" }}
+                >
                   Registro
                 </Button>
-                <Link className="form-other textR" to="/login">
-                  Iniciar Sesión Aquí!
+                <Link
+                  className="form-other textR"
+                  to="/login"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Iniciar sesión aquí!
                 </Link>
                 <br />
                 <br />
-                <Link className="form-other textR" to="/login">
+                <Link
+                  className="form-other textR"
+                  to="/login"
+                  style={{ fontWeight: "bold" }}
+                >
                   Volver
                 </Link>
               </div>
+              <br />
             </Form>
           </div>
         </div>
