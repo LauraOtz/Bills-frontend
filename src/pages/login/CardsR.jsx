@@ -7,7 +7,7 @@ import Card from "antd/lib/card/Card";
 import { Row } from "antd";
 import "../login/cards-style.css";
 
-class CardsR extends Component {
+class CardsR1 extends Component {
   render() {
     return (
       <>
@@ -56,4 +56,4 @@ class CardsR extends Component {
     );
   }
 }
-export default CardsR;
+export default CardsR1;

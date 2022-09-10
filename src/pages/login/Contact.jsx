@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Button, Form, Input, Row, Col } from "antd";
-import "../home/home.css"
+// import "../home/home.css"
+import "../login/Contactanos.css";
 
 const { TextArea } = Input;
 
@@ -27,26 +28,33 @@ const Contact = () => {
   return (
     <>
       <hr className="hr" />
-    <div className="Contacto" >
-      <h1>Contactanos</h1>
-      <Row >
-        <Col span={8}>
+      <br />
+      
+    <div>
+      <h1 span={24} className="H1Contactanos">Contactanos</h1>
+      
+      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+        <Col offset={0}>
+          <div>
           <p>
-            <h5>
+            <h5 className="H5Contactanos">
               Ofrecemos un servicio personalizado, profesional y confiable.
             </h5>
           </p>
           <p>
-            <h5>Dejanos tu consulta y responderemos a la brevedad</h5>
+            <h5 className="H5Contactanos">Dejanos tu consulta y responderemos a la brevedad</h5>
           </p>
+          </div>
         </Col>
-        <Col span={16}>
+        <Col offset={0}>
           <Form
+          className="FormContactanos"
             ref={form}
             onFinish={sendEmail}
             name="basic"
+           
             labelCol={{
-              span: 8,
+              span: 12,
             }}
             wrapperCol={{
               span: 16,
@@ -58,8 +66,10 @@ const Contact = () => {
             autoComplete="off"
           >
             <Form.Item
+            
               label="Nombre y apellido"
               name="name"
+              
               rules={[
                 {
                   required: true,
@@ -70,6 +80,7 @@ const Contact = () => {
               <Input />
             </Form.Item>
             <Form.Item
+            
               label="Correo electronico"
               name="email"
               rules={[
@@ -82,7 +93,10 @@ const Contact = () => {
               <Input />
             </Form.Item>
 
-            <Form.Item name="message" label="Mensaje">
+            <Form.Item 
+            
+            name="message" 
+            label="Mensaje">
               <TextArea
                 rows={4}
                 showCount
@@ -98,7 +112,7 @@ const Contact = () => {
 
             <Form.Item
               wrapperCol={{
-                offset: 8,
+                offset: 20,
                 span: 16,
               }}
             >

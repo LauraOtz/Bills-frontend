@@ -11,6 +11,7 @@ import Footer from "../login/Footer";
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 import "../home/home.css"
+import CardsR2 from "./CardsR2";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -114,6 +115,7 @@ const Login = () => {
       </Row>
       <CardsR />
       <AboutUs />
+      <CardsR2 />
       <Contact />
       <Footer />
     </>
