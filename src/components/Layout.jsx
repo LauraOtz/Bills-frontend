@@ -79,7 +79,7 @@ const LayoutApp = ({ children }) => {
             <Link to="/products">Productos</Link>
           </Menu.Item>
           <Menu.Item key="/customers" icon={<UserSwitchOutlined />}>
-            <Link to="/customers">Usuarios</Link>
+            <Link to="/customers">Clientes</Link>
           </Menu.Item>
 
           <Menu.Item

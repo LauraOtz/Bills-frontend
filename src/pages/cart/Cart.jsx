@@ -111,7 +111,7 @@ const Cart = () => {
             Number(subTotal) + Number(((subTotal / 100) * 10).toFixed(2))
           ).toFixed(2)
         ),
-        userId: JSON.parse(localStorage.getItem("auth"))._id,
+        userId: JSON.parse(localStorage.getItem("token"))._id,
       };
       await axios.post("/api/bills/addbills", newObject);
       message.success("Bill Generated!");
@@ -168,23 +168,14 @@ const Cart = () => {
 
                 message: "Introduzca el teléfono del cliente.",
               },
-              {
-                required: true,
 
-                message: "Introduzca el teléfono del cliente.",
-              },
-              {
-                type: "phone",
-
-                message: "Introduzca el teléfono del cliente.",
-              },
               {
                 max: 15,
                 message: "El teléfono no puede tener más de 15 caracteres.",
               },
             ]}
           >
-            <Input pattern="[0-9]{3}" />
+            <Input />
           </FormItem>
           <FormItem
             name="customerAddress"

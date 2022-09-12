@@ -1,12 +1,11 @@
-import { Table } from 'antd';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
-import Layout from '../../components/Layout'
-import "../home/home.css"
+import { Table } from "antd";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import Layout from "../../components/Layout";
+import "../home/home.css";
 
 const Customers = () => {
-
   const dispatch = useDispatch();
   const [billsData, setBillsData] = useState([]);
 
@@ -15,14 +14,13 @@ const Customers = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const {data} = await axios.get('/api/bills/getbills');
+      const { data } = await axios.get("/api/bills/getbills");
       setBillsData(data);
       dispatch({
         type: "HIDE_LOADING",
       });
       console.log(data);
-
-    } catch(error) {
+    } catch (error) {
       dispatch({
         type: "HIDE_LOADING",
       });
@@ -31,41 +29,39 @@ const Customers = () => {
   };
 
   useEffect(() => {
-      getAllBills();
+    getAllBills();
   }, []);
 
-  const columns  = [
+  const columns = [
     {
-        title: "ID",
-        dataIndex: "_id"
+      title: "ID",
+      dataIndex: "_id",
     },
     {
-        title: "Customer Name",
-        dataIndex: "customerName",
-    }, 
+      title: "Cliente",
+      dataIndex: "customerName",
+    },
     {
-        title: "Contact Number",
-        dataIndex: "customerPhone",
-    }
-    , 
+      title: "Contacto",
+      dataIndex: "customerPhone",
+    },
     {
-        title: "Customer Address",
-        dataIndex: "customerAddress",
-    }
-  ]
+      title: "Dirección",
+      dataIndex: "customerAddress",
+    },
+  ];
 
   return (
-    <Layout> 
-      <div className='Table   '>
+    <Layout>
+      <div className="Table   ">
+        <h2>Clientes </h2>
 
-      <h2>All Customers </h2>
-
-        <div className='ContainerTabla '>
-      <Table  dataSource={billsData} columns= {columns} bordered />
+        <div className="ContainerTabla ">
+          <Table dataSource={billsData} columns={columns} bordered />
+        </div>
       </div>
-    </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Customers
+export default Customers;
