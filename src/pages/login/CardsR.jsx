@@ -4,7 +4,7 @@ import { Card, Col, Row } from 'antd';
 import "../login/cards-style.css";
 import {DollarCircleFilled, MailOutlined , LikeOutlined} from "@ant-design/icons";
 
-class CardsR extends Component {
+class CardsR1 extends Component {
   render() {
     return(
       <div className="ContainerC
@@ -37,4 +37,4 @@ class CardsR extends Component {
     
   }
 }
-export default CardsR;
+export default CardsR1;

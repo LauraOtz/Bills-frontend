@@ -314,6 +314,8 @@ body {
   left: 20%;
 } */
 
+
+
 @media only screen and (min-width: 1060px) {
   .ant-row {
     display: flex;

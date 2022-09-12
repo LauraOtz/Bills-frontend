@@ -12,6 +12,8 @@ import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 import "../home/home.css";
 import "../login/login.css";
+import "../home/home.css";
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
