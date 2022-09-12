@@ -140,5 +140,14 @@ padding: 0;
   flex: auto;
   max-width: 80%;
 }
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
+
+}
+
+
+
