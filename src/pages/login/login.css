@@ -14,15 +14,17 @@
 .CC {
   box-shadow: 0.1em 0.1em 0.2em rgb(200, 200, 200);
 }
+.ant-card{
+  width: 100%;
+}
 
 
 @media only screen and (max-width:970px) and ( min-width:550px) {
 
-  .ContainerT {
+  .ContainerL.ContainerT {
     background-image: url(../../assets/b3.jpg);
     background-size:cover;
-    background-position: bottom right;
-
+   
     font-size: 10px;
     min-height: 35em;
     margin: 0px;
@@ -30,6 +32,9 @@
     
 
 
+}
+h1.h1T{
+  font-size: 90%;
 }
 .ant-row.ContainerT {
   display: flex;
@@ -50,6 +55,90 @@
 h2{
   font-size: 30px;
 }
+.form-group
+{
+  background-color: rgba(220, 217, 213, 0.635);
+  display: flex;
+  
+  justify-content: center;
+  flex-direction: column;
+  
+  margin-bottom: 20%;
+  margin-top: 0%;
+}
 
 }
 
+@media only screen and (max-width:830px)  {
+
+
+ .ant-row{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  font-size:30px;
+
+ }
+ .ant-col-7{
+ 
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top:10px;
+
+  
+ }
+ 
+.ContainerC{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+
+}
+.ant-col-7.ant-card{
+  width: 100%;
+}
+.ContainerT{
+  width: 100%;
+}
+}
+@media  screen and (max-width:550px)  {
+  .form-group
+{
+  background-color: rgba(220, 217, 213, 0.635);
+  display: flex;
+  
+  justify-content: center;
+  flex-direction: column;
+  
+  margin-bottom: 10%;
+  margin-top: 0%;
+}
+
+.h1T {
+  color: #fafafa !important;
+  margin-top: 10px;
+  text-shadow: 0.1em 0.1em 0.2em black;
+  font-size: 70%;
+}
+.CC {
+  box-shadow: 0.1em 0.1em 0.2em rgb(200, 200, 200);
+}
+.img-c {
+  width: 20%;
+  height: 20%;
+  border-radius: 150px;
+  display: flex;
+  justify-content: flex-start;
+}
+.ant-row.ContainerT{
+margin-top: 2px;
+padding: 0;
+}
+.ant-form-item-control-input-content {
+  flex: auto;
+  max-width: 80%;
+}
+
+}
