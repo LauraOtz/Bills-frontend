@@ -2,6 +2,7 @@ import { Button, Form, Input, message, Row } from "antd";
 import Col from "antd/es/grid/col";
 import FormItem from "antd/lib/form/FormItem";
 import axios from "axios";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
@@ -10,6 +11,8 @@ import Footer from "../login/Footer";
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 import "../home/home.css";
+import "../login/login.css";
+
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -40,7 +43,8 @@ const Login = () => {
   return (
     <div className="ContainerL">
       <>
-        <Row>
+
+        <Row className="ContainerT">
           <Col>
             <TextHome />
           </Col>
@@ -83,6 +87,7 @@ const Login = () => {
                       {
                         max: 20,
                         message:
+
                           "La contraseña no debe contener más de 20 caracteres",
                       },
                     ]}
@@ -111,4 +116,4 @@ const Login = () => {
   );
 };
 
-export default Login
+export default Login;
