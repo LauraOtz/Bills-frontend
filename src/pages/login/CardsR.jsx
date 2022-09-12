@@ -6,7 +6,7 @@ import email1 from "../../assets/email1.jpg";
 import Card from "antd/lib/card/Card";
 import { Row } from "antd";
 import "../login/cards-style.css";
-
+ 
 class CardsR1 extends Component {
   render() {
     return (

@@ -8,7 +8,7 @@ function AboutUs() {
     <div className="about  text-dark">
     <Row className="aboutrow">
         <Col className="text-dark">
-
+ 
     <div className="divArriba">
     
       <h1>De qué se trata esto?.</h1>

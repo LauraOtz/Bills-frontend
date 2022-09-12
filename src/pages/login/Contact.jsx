@@ -89,7 +89,7 @@ const Contact = () => {
                 },
                 
                 {
-                min: 4,
+                min: 4, 
                 max: 30,
                 message: "Tiene que tener entre 4 y 30 Caracteres"
                 },
