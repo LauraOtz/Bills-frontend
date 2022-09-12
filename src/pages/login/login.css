@@ -10,8 +10,11 @@
   color: #fafafa !important;
   margin-top: 40px;
   text-shadow: 0.1em 0.1em 0.2em black;
-  
 }
-.CC{
-  box-shadow:0.1em 0.1em 0.2em rgb(200, 200, 200) ;
+.CC {
+  box-shadow: 0.1em 0.1em 0.2em rgb(200, 200, 200);
+}
+.ant-row {
+  display: flex;
+  justify-content: space-around;
 }
