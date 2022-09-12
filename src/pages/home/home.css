@@ -50,7 +50,7 @@ width: 100%;
 
 .divArriba{
   width: 100%;
-  font-family: 'Inconsolata', monospace;
+  
   
   justify-content: center;
   align-items: center;
@@ -68,7 +68,7 @@ width: 100%;
 
 .divAbajo{
   width: 100%;
-  font-family: 'Inconsolata', monospace;
+  
   justify-content: center;
   align-items: center;
   text-align: center;

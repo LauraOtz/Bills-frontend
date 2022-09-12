@@ -11,7 +11,7 @@ function AboutUs() {
 
     <div className="divArriba">
     
-      <h1>De qué se trata esto?</h1>
+      <h1>De qué se trata esto?.</h1>
       <h3>Automatizamos tus presupuestos!</h3>
       <br />
       <h4>

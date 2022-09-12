@@ -31,18 +31,18 @@ const Contact = () => {
       <br />
       
     <div>
-      <h1 span={24} className="H1Contactanos">Contactanos</h1>
+      <h1 span={12} className="H1Contactanos">Contactanos</h1>
       
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
         <Col offset={0}>
           <div>
           <p>
-            <h5 className="H5Contactanos">
+            <h3 className="H3Contactanos">
               Ofrecemos un servicio personalizado, profesional y confiable.
-            </h5>
+            </h3>
           </p>
           <p>
-            <h5 className="H5Contactanos">Dejanos tu consulta y responderemos a la brevedad</h5>
+            <h3 className="H3Contactanos">Dejanos tu consulta y responderemos a la brevedad</h3>
           </p>
           </div>
         </Col>
@@ -52,9 +52,9 @@ const Contact = () => {
             ref={form}
             onFinish={sendEmail}
             name="basic"
-           
+            id="FormContactanos"
             labelCol={{
-              span: 12,
+              span: 8,
             }}
             wrapperCol={{
               span: 16,
@@ -67,17 +67,49 @@ const Contact = () => {
           >
             <Form.Item
             
-              label="Nombre y apellido"
+              label="Nombre"
               name="name"
-              
-              rules={[
+               
+               rules={[
+                
                 {
+                
                   required: true,
-                  message: "Por favor introduzca su nombre.",
+                  message: "Por favor introduzca su nombre",
                 },
+                
+                // {
+                //   whitespace: true,
+                // },
+                
+                {
+                  type: "regexp",
+                  pattern: new RegExp("^[a-zA-Z]*$"),
+                  message: "Wrong format!"
+                },
+                
+                {
+                min: 4,
+                max: 30,
+                message: "Tiene que tener entre 4 y 30 Caracteres"
+                },
+                {
+                validator: (_, value)=>
+                value.match(/^[a-zA-Z]+$/,)
+                ? Promise.resolve()
+                : Promise.reject("Solo se puede ingresar letras para el nombre!")
+                },
+                
+                // {
+                //   validator:(_, value)=>
+                //   value && 
+                //   value.includes("a") 
+                //   || value.includes("b") 
+                // }
               ]}
+              hasFeedback
             >
-              <Input />
+              <Input/>
             </Form.Item>
             <Form.Item
             
@@ -87,8 +119,15 @@ const Contact = () => {
                 {
                   required: true,
                   message: "Por favor introduzca su correo electrónico.",
+                },{
+                  type: "email",
+                   message: "Ingrese un Correo Electrónico Valido!"
                 },
+                {
+                  whitespace: true
+                }
               ]}
+                hasFeedback
             >
               <Input />
             </Form.Item>
@@ -96,17 +135,33 @@ const Contact = () => {
             <Form.Item 
             
             name="message" 
-            label="Mensaje">
-              <TextArea
-                rows={4}
-                showCount
-                maxLength={150}
+            label="Mensaje"
                 rules={[
                   {
                     required: true,
-                    message: "Por favor introduzca su correo electrónico.",
+                    message: "Ingrese su mensaje!",
                   },
+                  {
+                    min: 4,
+                    max: 150,
+                    message: "Ingrese un mensaje valido, entre 4 y 150 Caracteres"
+                  },
+
+                  {
+                    whitespace: true
+                  }
                 ]}
+            hasFeedback
+            >
+              <TextArea
+              name="textarea"
+               cols={100}
+                rows={4}
+                showCount
+                
+                maxLength={150}
+                
+            hasFeedback   
               />
             </Form.Item>
 
@@ -116,7 +171,7 @@ const Contact = () => {
                 span: 16,
               }}
             >
-              <Button type="primary" htmlType="submit" value="Send">
+              <Button type="primary" htmlType="submit" value="Send" class="ant-btn ant-btn-default add-new">
                 Enviar
               </Button>
             </Form.Item>
