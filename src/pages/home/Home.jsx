@@ -72,7 +72,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <Row>
+      <Row className='prod'>
         {productData
           .filter((i) => i.category === selectedCategory)
           .map((product) => (

@@ -9,17 +9,14 @@ import {
 import { Button, Form, Input, message, Modal, Select, Table } from "antd";
 import FormItem from "antd/lib/form/FormItem";
 import { useNavigate } from "react-router-dom";
-
 import axios from "axios";
 import "../home/home.css";
 
 const Cart = () => {
   const [subTotal, setSubTotal] = useState(0);
   const [billPopUp, setBillPopUp] = useState(false);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const { cartItems } = useSelector((state) => state.rootReducer);
 
   const handlerIncrement = (record) => {
@@ -111,7 +108,7 @@ const Cart = () => {
             Number(subTotal) + Number(((subTotal / 100) * 10).toFixed(2))
           ).toFixed(2)
         ),
-        userId: JSON.parse(localStorage.getItem("auth"))._id,
+        userId: JSON.parse(localStorage.getItem("token"))._id,
       };
       await axios.post("/api/bills/addbills", newObject);
       message.success("Bill Generated!");
@@ -184,7 +181,7 @@ const Cart = () => {
               },
             ]}
           >
-            <Input pattern="[0-9]{3}" />
+            <Input />
           </FormItem>
           <FormItem
             name="customerAddress"
@@ -215,9 +212,9 @@ const Cart = () => {
             ]}
           >
             <Select>
-              <Select.Option value="cash">Efectivo</Select.Option>
-              <Select.Option value="paypal">Transferencia</Select.Option>
-              <Select.Option value="Card">Tarjeta</Select.Option>
+              <Select.Option value="efectivo">Efectivo</Select.Option>
+              <Select.Option value="transferencia">Transferencia</Select.Option>
+              <Select.Option value="tarjeta">Tarjeta</Select.Option>
             </Select>
           </Form.Item>
           <div className="total">
@@ -227,7 +224,7 @@ const Cart = () => {
             <h3>
               Total: $
               {(
-                Number(subTotal) + Number(((subTotal / 100) * 10).toFixed(2))
+                Number(subTotal) + Number(((subTotal / 100) * 21).toFixed(2))
               ).toFixed(2)}
             </h3>
           </div>

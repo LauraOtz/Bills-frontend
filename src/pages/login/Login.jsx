@@ -13,6 +13,7 @@ import TextHome from "./TextHome";
 import "../home/home.css";
 import "../login/login.css";
 
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ const Login = () => {
   return (
     <div className="ContainerL">
       <>
+
         <Row className="ContainerT">
           <Col>
             <TextHome />
@@ -85,11 +87,12 @@ const Login = () => {
                       {
                         max: 20,
                         message:
-                          "El contraseña no debe contener más de 20 caracteres",
+
+                          "La contraseña no debe contener más de 20 caracteres",
                       },
                     ]}
                   >
-                    <Input.Password />
+                    <Input type="password" />
                   </FormItem>
                   <div className="form-btn-add">
                     <Button htmlType="submit" className="add-new">
