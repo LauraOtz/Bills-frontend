@@ -83,7 +83,7 @@ const Login = () => {
                       {
                         max: 20,
                         message:
-                          "El contraseña no debe contener más de 20 caracteres",
+                          "La contraseña no debe contener más de 20 caracteres",
                       },
                     ]}
                   >
@@ -111,4 +111,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Login

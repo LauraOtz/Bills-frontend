@@ -319,7 +319,7 @@ body {
   justify-content: center;
 }
 .hr{
-  border: 1px solid #052f3c;
+  border: 1px solid #052f3c !important;
   position: absolute;
   width: 60%;
   left: 20%;
