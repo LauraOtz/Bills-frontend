@@ -1,7 +1,7 @@
 import { Button, Form, Input, message } from "antd";
 import FormItem from "antd/lib/form/FormItem";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const Register = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post("/api/users/register", value);
+      await axios.post("/api/usuarios", value);
       message.success("Registro Exitoso!");
       navigate("/login");
       dispatch({
@@ -28,13 +28,6 @@ const Register = () => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    if (localStorage.getItem("auth")) {
-      localStorage.getItem("auth");
-      navigate("/");
-    }
-  }, [navigate]);
 
   return (
     <div className="formRegistro">
