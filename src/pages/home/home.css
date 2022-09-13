@@ -5,23 +5,6 @@
   background-color: rgb(234, 238, 238);}
 
 
-<<<<<<< HEAD
-.about {
-  justify-content: center;
-  display: -ms-flex;
-  display: -webkit-flex;
-  
-  text-align:left;
-
-  padding: 10px;
-}
-.about .Col {
-  width: 50%;
-  padding: 10px;
-}
-=======
-
->>>>>>> 9670b28cf8d9d023a30dc4152869601f4e405aaa
 
 .ant-row {
   display: flex;
@@ -48,8 +31,6 @@
   display: flex;
   justify-content: flex-start;
 }
-<<<<<<< HEAD
-=======
 
 .about{
   display:flex;
@@ -70,7 +51,7 @@
 
 .divArriba{
   width: 100%;
-  font-family: 'Inconsolata', monospace;
+ 
   
   justify-content: center;
   align-items: center;
@@ -88,7 +69,6 @@
 
 .divAbajo{
   width: 100%;
-  font-family: 'Inconsolata', monospace;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -103,7 +83,6 @@
 }
 
 
->>>>>>> 9670b28cf8d9d023a30dc4152869601f4e405aaa
 
 @media only screen and (max-width: 600px) {
   .category {
@@ -112,49 +91,13 @@
   }
 }
 
-<<<<<<< HEAD
-@media only screen and (max-width: 1090px) {
-  .ContainerTabla {
-    width: 100%;
-    margin-bottom: 15px;
-    overflow-y: hidden;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .TextHomeContainer {
-    font-size: 50%;
-  }
-  .img-c {
-    width: 90%;
-  }
-
-  .formLogin {
-    justify-content: center;
-    border: none;
-    outline: none;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .form-group input {
-    border: none;
-    outline: none;
-    width: 100%;
-    margin-bottom: 5px;
-  }
-}
-=======
-       }
+       
 
        .aboutrow{
         display: flex;
         flex-direction: column;
     }
        
-     }
      
     @media only screen and (max-width: 1090px) {
     .ContainerTabla {
@@ -201,9 +144,12 @@
     }
 
     
+    
+    @media screen and (min-width:500px){
 
+
+    }
 
 
      
      
->>>>>>> 9670b28cf8d9d023a30dc4152869601f4e405aaa

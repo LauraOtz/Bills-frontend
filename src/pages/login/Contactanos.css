@@ -1,16 +1,14 @@
 .H1Contactanos{
-color: blue !important;
+
 display: flex;
 justify-content: center;
-align-items: center;
-padding: 10px;
+
+padding: 5px;
 }
 
 .H5Contactanos{
 display: flex;
 justify-content: center;
-align-items: center;
-color: blue !important;
-padding: 10px;
+font-size:medium;
 }
 
