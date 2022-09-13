@@ -9,11 +9,13 @@ import {
   MoneyCollectOutlined,
   LogoutOutlined,
   FileTextOutlined,
+  WarningOutlined,
 } from "@ant-design/icons";
 import "./layout.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Spinner from "./Spinner";
+import { Button, notification } from "antd";
 
 const { Header, Sider, Content } = Layout;
 
@@ -30,6 +32,30 @@ const LayoutApp = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
+
+  const openNotification = () => {
+    const key = `open${Date.now()}`;
+    const btn = (
+      <Button
+        size="small"
+        className="add-new"
+        onClick={() => {
+          localStorage.removeItem("token");
+          navigate("/login");
+          notification.close(key);
+        }}
+      >
+        Confirmar
+      </Button>
+    );
+    notification.open({
+      message: "¿Seguro desea cerrar sesión?",
+
+      icon: <WarningOutlined style={{ color: "#ff7f50" }} />,
+      btn,
+      key,
+    });
+  };
 
   return (
     <Layout>
@@ -55,18 +81,19 @@ const LayoutApp = ({ children }) => {
           <Menu.Item key="/customers" icon={<UserSwitchOutlined />}>
             <Link to="/customers">Usuarios</Link>
           </Menu.Item>
+
           <Menu.Item
             key="/logout"
             icon={<LogoutOutlined />}
             onClick={() => {
-              localStorage.removeItem("auth");
-              navigate("/login");
+              openNotification();
             }}
           >
             Cerrar sesión
           </Menu.Item>
         </Menu>
       </Sider>
+
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
           {React.createElement(

@@ -2,7 +2,7 @@ import { Button, Form, Input, message, Row } from "antd";
 import Col from "antd/es/grid/col";
 import FormItem from "antd/lib/form/FormItem";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import AboutUs from "./AboutUs";
@@ -11,6 +11,11 @@ import Footer from "../login/Footer";
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 import "../home/home.css";
+<<<<<<< HEAD
+=======
+import "../login/login.css";
+
+>>>>>>> dfa3508f8bf6bd17b8516dd7ab968386946e9624
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -22,12 +27,17 @@ const Login = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const res = await axios.post("/api/users/login", value);
+      const res = await axios.post("/api/auth/login", value);
       dispatch({
         type: "HIDE_LOADING",
       });
+<<<<<<< HEAD
       message.success("Sesión Iniciada con Éxito!");
       localStorage.setItem("auth", JSON.stringify(res.data));
+=======
+      message.success("Login Exitoso!");
+      localStorage.setItem("token", JSON.stringify(res.data));
+>>>>>>> dfa3508f8bf6bd17b8516dd7ab968386946e9624
       navigate("/");
     } catch (error) {
       dispatch({
@@ -38,16 +48,10 @@ const Login = () => {
     }
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("auth")) {
-      localStorage.getItem("auth");
-      navigate("/");
-    }
-  }, [navigate]);
-
   return (
     <div className="ContainerL">
       <>
+<<<<<<< HEAD
         {/* <NavBar /> */}
         <Row>
           <Col>
@@ -83,16 +87,61 @@ const Login = () => {
                   <FormItem
                     name="password"
                     label="Contraseña"
+=======
+
+        <Row className="ContainerT">
+          <Col>
+            <TextHome />
+          </Col>
+          <br />
+          <Col className="formLogin">
+            <div className="form">
+              <br />
+
+              <div className="form-group">
+                <Form layout="vertical" onFinish={handlerSubmit}>
+                  <h2>Iniciar sesión</h2>
+
+                  <FormItem
+                    name="email"
+                    label="Correo electrónico"
+>>>>>>> dfa3508f8bf6bd17b8516dd7ab968386946e9624
                     rules={[
                       {
                         required: true,
 
+<<<<<<< HEAD
+=======
+                        message: "Introduzca su correo electrónico",
+                      },
+                      {
+                        max: 60,
+                        message:
+                          "El correo no debe contener más de 60 caracteres",
+                      },
+                    ]}
+                  >
+                    <Input />
+                  </FormItem>
+                  <FormItem
+                    name="password"
+                    label="Contraseña"
+                    rules={[
+                      {
+                        required: true,
+
+>>>>>>> dfa3508f8bf6bd17b8516dd7ab968386946e9624
                         message: "Introduzca una contraseña.",
                       },
                       {
                         max: 20,
                         message:
+<<<<<<< HEAD
                           "El contraseña no debe contener más de 20 caracteres",
+=======
+
+                          "La contraseña no debe contener más de 20 caracteres",
+>>>>>>> dfa3508f8bf6bd17b8516dd7ab968386946e9624
                       },
                     ]}
                   >

@@ -5,7 +5,6 @@ import { useReactToPrint } from "react-to-print";
 import { EyeOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import Layout from "../../components/Layout";
-
 import "../home/home.css";
 
 const Bills = () => {
@@ -111,7 +110,7 @@ const Bills = () => {
                 Número: <b>+549381/0000000</b>
               </span>
               <span>
-                Dirección: <b>Gral. Paz 675, Tucumán, Argentina</b>
+                Dirección: <b>Gral. Paz 576 - Tucuman </b>
               </span>
             </div>
             <div className="cardBody">
