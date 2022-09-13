@@ -4,7 +4,7 @@ import LayoutApp from "../../components/Layout";
 import { Row, Col } from "antd";
 import Product from "../../components/Product";
 import { useDispatch } from "react-redux";
-import "../home.css";
+import "../home/home.css";
 const Home = () => {
   const dispatch = useDispatch();
 
@@ -69,7 +69,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <Row className='prod'>
+      <Row className="prod">
         {productData
           .filter((i) => i.category === selectedCategory)
           .map((product) => (
