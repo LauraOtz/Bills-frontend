@@ -98,7 +98,7 @@ const Products = () => {
 
   const handlerSubmit = async (value) => {
     //console.log(value);
-    if (editProduct === null) {
+    if (editProduct === false) {
       try {
         dispatch({
           type: "SHOW_LOADING",
@@ -144,94 +144,109 @@ const Products = () => {
 
   return (
     <div className="Home">
-    <LayoutApp>
-      <h2>Mis Productos</h2>
-      <Button className="add-new" onClick={() => setPopModal(true)}>
-        Agregar Nuevo
-      </Button>
-      <Table
-        className="ContainerTable"
-        dataSource={productData}
-        columns={columns}
-        bordered
-      />
+      <LayoutApp>
+        <h2>Mis Productos</h2>
+        <Button className="add-new" onClick={() => setPopModal(true)}>
+          Agregar Nuevo
+        </Button>
+        <Table
+          className="ContainerTable"
+          dataSource={productData}
+          columns={columns}
+          bordered
+        />
 
-      {popModal && (
-        <Modal
-          title={`${
-            editProduct !== null ? "Editar producto" : "Agregar Producto"
-          }`}
-          visible={popModal}
-          onCancel={() => {
-            setEditProduct(null);
-            setPopModal(false);
-          }}
-          footer={false}
-        >
-          <Form
-            layout="vertical"
-            initialValues={editProduct}
-            onFinish={handlerSubmit}
+        {popModal && (
+          <Modal
+            title={`${
+              editProduct !== false ? "Editar producto" : "Agregar Producto"
+            }`}
+            visible={popModal}
+            onCancel={() => {
+              setEditProduct(false);
+              setPopModal(false);
+            }}
+            footer={false}
           >
-            <FormItem
-              name="name"
-              label="Nombre"
-              rules={[
-                {
-                  required: true,
-                  message: "Introduzca el nombre del producto.",
-                },
-                {
-                  max: 20,
-                  message: "El nombre no debe contener más de 20 caracteres",
-                },
-              ]}
+            <Form
+              layout="vertical"
+              initialValues={editProduct}
+              onFinish={handlerSubmit}
             >
-              <Input />
-            </FormItem>
-            <Form.Item
-              name="category"
-              label="Categoría"
-              rules={[{ required: true, message: "Seleccione una categoría" }]}
-            >
-              <Select>
-                <Select.Option value="accesorios">Accesorios</Select.Option>
-                <Select.Option value="celulares">Celulares</Select.Option>
-                <Select.Option value="herramientas">Herramientas</Select.Option>
-              </Select>
-            </Form.Item>
-            <FormItem
-              name="price"
-              label="Precio"
-              rules={[
-                {
-                  required: true,
-                  message: "Introduzca el precio del producto si el signo $.",
-                },
-                {
-                  min: 2,
-                  message: "El precio debe contener al menos dos números.",
-                },
-                {
-                  max: 10,
-                  message: "El precio no debe contener más de 10 números.",
-                },
-              ]}
-            >
-              <Input />
-            </FormItem>
-            <FormItem name="image" label="URL Imagen">
-              <Input />
-            </FormItem>
-            <div className="form-btn-add">
-              <Button htmlType="submit" className="add-new">
-                Agregar
-              </Button>
-            </div>
-          </Form>
-        </Modal>
-      )}
-    </LayoutApp>
+              <FormItem
+                name="name"
+                label="Nombre"
+                rules={[
+                  {
+                    required: true,
+                    message: "Por favor introduzca el nombre del producto.",
+                  },
+                  {
+                    max: 20,
+                    message: "El nombre no debe contener más de 20 caracteres",
+                  },
+                  {
+                    pattern: "^[a-zA-Z]+(([',.- ][a-zA-Z ])?[a-zA-Z]*)*$",
+                    message:
+                      "Ha ingresado un nombre inválido, intente nuevamente",
+                  },
+                ]}
+              >
+                <Input />
+              </FormItem>
+              <Form.Item
+                name="category"
+                label="Categoría"
+                rules={[
+                  { required: true, message: "Seleccione una categoría" },
+                ]}
+              >
+                <Select>
+                  <Select.Option value="accesorios">Accesorios</Select.Option>
+                  <Select.Option value="celulares">Celulares</Select.Option>
+                  <Select.Option value="herramientas">
+                    Herramientas
+                  </Select.Option>
+                </Select>
+              </Form.Item>
+              <FormItem
+                name="price"
+                label="Precio"
+                rules={[
+                  {
+                    required: true,
+                    message:
+                      "Introduzca el precio del producto sin el signo $.",
+                  },
+                  {
+                    min: 1,
+                    message: "El precio debe contener al menos un número.",
+                  },
+                  {
+                    max: 10,
+                    message: "El precio no debe contener más de 10 números.",
+                  },
+                  {
+                    pattern: "",
+                    message:
+                      "El valor ingresado es inválido, por favor intente nuevamente",
+                  },
+                ]}
+              >
+                <Input />
+              </FormItem>
+              <FormItem name="image" label="URL Imagen">
+                <Input />
+              </FormItem>
+              <div className="form-btn-add">
+                <Button htmlType="submit" className="add-new">
+                  Agregar
+                </Button>
+              </div>
+            </Form>
+          </Modal>
+        )}
+      </LayoutApp>
     </div>
   );
 };

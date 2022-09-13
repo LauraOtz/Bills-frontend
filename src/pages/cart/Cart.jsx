@@ -102,16 +102,16 @@ const Cart = () => {
         ...value,
         cartItems,
         subTotal,
-        tax: Number(((subTotal / 100) * 10).toFixed(2)),
+        tax: Number(((subTotal / 100) * 21).toFixed(2)),
         totalAmount: Number(
           (
-            Number(subTotal) + Number(((subTotal / 100) * 10).toFixed(2))
+            Number(subTotal) + Number(((subTotal / 100) * 21).toFixed(2))
           ).toFixed(2)
         ),
         userId: JSON.parse(localStorage.getItem("token"))._id,
       };
       await axios.post("/api/bills/addbills", newObject);
-      message.success("Bill Generated!");
+      message.success("Presupuesto generado con éxito");
       navigate("/bills");
     } catch (error) {
       message.error("Error!");
@@ -149,8 +149,12 @@ const Cart = () => {
                 message: "Introduzca el nombre del cliente.",
               },
               {
-                max: 15,
-                message: "El nombre no puede tener más de 15 caracteres.",
+                max: 20,
+                message: "El nombre no puede tener más de 20 caracteres.",
+              },
+              {
+                pattern: "^[a-zA-Z]+(([',.- ][a-zA-Z ])?[a-zA-Z]*)*$",
+                message: "Ha ingresado un nombre inválido, intente nuevamente",
               },
             ]}
           >
