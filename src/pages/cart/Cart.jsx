@@ -5,8 +5,18 @@ import {
   DeleteOutlined,
   PlusCircleOutlined,
   MinusCircleOutlined,
+  WarningOutlined,
 } from "@ant-design/icons";
-import { Button, Form, Input, message, Modal, Select, Table } from "antd";
+import {
+  Button,
+  Form,
+  Input,
+  message,
+  Modal,
+  Select,
+  Table,
+  notification,
+} from "antd";
 import FormItem from "antd/lib/form/FormItem";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -34,6 +44,31 @@ const Cart = () => {
       });
     }
   };
+  //---------------
+  const openNotification = (record) => {
+    const key = `open${Date.now()}`;
+    const btn = (
+      <Button
+        size="small"
+        className="add-new"
+        onClick={() => {
+          handlerDelete(record);
+          notification.close(key);
+        }}
+      >
+        Confirmar
+      </Button>
+    );
+    notification.open({
+      message: "¿Seguro desea eliminar el producto?",
+
+      icon: <WarningOutlined style={{ color: "#ff7f50" }} />,
+      btn,
+      key,
+    });
+  };
+
+  //--------------
 
   const handlerDelete = (record) => {
     dispatch({
@@ -81,7 +116,7 @@ const Cart = () => {
       render: (id, record) => (
         <DeleteOutlined
           className="cart-action"
-          onClick={() => handlerDelete(record)}
+          onClick={() => openNotification(record)}
         />
       ),
     },

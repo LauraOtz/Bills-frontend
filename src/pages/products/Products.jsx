@@ -211,10 +211,6 @@ const Products = () => {
                 label="Precio"
                 rules={[
                   {
-                    max: 25,
-                    message: "Por favor ingrese menos de 25 caracteres.",
-                  },
-                  {
                     required: true,
                     pattern: new RegExp(
                       /^(\d*[1-9]\d*(\.\d+)?|0*\.\d*[1-9]\d*)$/
