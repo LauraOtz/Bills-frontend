@@ -138,7 +138,7 @@ const Products = () => {
 
   const handlerSubmit = async (value) => {
     //console.log(value);
-    if (editProduct === null) {
+    if (editProduct === false) {
       try {
         dispatch({
           type: "SHOW_LOADING",
@@ -219,15 +219,19 @@ const Products = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Introduzca el nombre del producto.",
+
+                    pattern: new RegExp(/^[A-Za-z0-9 - -]*$/),
+                    message: "Por favor ingrese nombre válido.",
                   },
                   {
-                    max: 20,
-                    message: "El nombre no debe contener más de 20 caracteres",
+                    min: 2,
+                    max: 25,
+                    message: "El nombre debe contener entre 2 y 25 caracteres.",
                   },
                 ]}
               >
-                <Input />
+                <Input placeholder="Ingrese el nombre del producto." />
+
               </FormItem>
               <Form.Item
                 name="category"
@@ -236,7 +240,9 @@ const Products = () => {
                   { required: true, message: "Seleccione una categoría" },
                 ]}
               >
-                <Select>
+
+                <Select placeholder="Seleccione una categoría">
+
                   <Select.Option value="accesorios">Accesorios</Select.Option>
                   <Select.Option value="celulares">Celulares</Select.Option>
                   <Select.Option value="herramientas">
@@ -250,22 +256,19 @@ const Products = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Introduzca el precio del producto si el signo $.",
-                  },
-                  {
-                    min: 2,
-                    message: "El precio debe contener al menos dos números.",
-                  },
-                  {
-                    max: 10,
-                    message: "El precio no debe contener más de 10 números.",
+
+                    pattern: new RegExp(
+                      /^(\d*[1-9]\d*(\.\d+)?|0*\.\d*[1-9]\d*)$/
+                    ),
+                    message: "Por favor ingrese un precio válido.",
                   },
                 ]}
               >
-                <Input />
+                <Input placeholder="Ingrese el precio del producto sin el signo $" />
               </FormItem>
-              <FormItem name="image" label="URL Imagen">
-                <Input />
+              <FormItem name="image" label="URL Imagen (opcional)">
+                <Input placeholder="Ingrese dirección de la imagen de su producto." />
+
               </FormItem>
               <div className="form-btn-add">
                 <Button htmlType="submit" className="add-new">
