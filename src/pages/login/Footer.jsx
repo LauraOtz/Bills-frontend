@@ -2,14 +2,18 @@ import React from "react";
 import "font-awesome/css/font-awesome.css";
 import "../login/Footer.css";
 import { Col, Row } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const FooterApp = () => {
   return (
     <>
       <div className="footer__container">
-      <Row className="FooterRow">
-      <Col className="FooterCol col-md-12">
+      <Row className="FooterRow ">
+      <Col className="FooterColMail col-md-12">
+        <a className="text-dark" href="">2022 © billscompany22@gmail.com</a>
+      </Col>
+      
+      <Col className="FooterColIcon col-md-12">
 
         <div className="social__media--wrap">
           <div className="button" >
@@ -48,9 +52,7 @@ const FooterApp = () => {
           </div>
         </div>
       </Col>
-      <Col className="FooterCol col-md-12">
-        <a className="text-dark" href="">2022 © billscompany22@gmail.com</a>
-      </Col>
+      
       </Row>
       </div>
         
