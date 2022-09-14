@@ -2,8 +2,21 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import LayoutApp from "../../components/Layout";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import { Button, Form, Input, Modal, Select, Table, message } from "antd";
+import {
+  DeleteOutlined,
+  EditOutlined,
+  WarningOutlined,
+} from "@ant-design/icons";
+import {
+  Button,
+  Form,
+  Input,
+  Modal,
+  Select,
+  Table,
+  message,
+  notification,
+} from "antd";
 import FormItem from "antd/lib/form/FormItem";
 import "../home/home.css";
 
@@ -36,6 +49,30 @@ const Products = () => {
     getAllProducts();
   }, []);
 
+  const openNotification = (record) => {
+    const key = `open${Date.now()}`;
+    const btn = (
+      <Button
+        size="small"
+        className="add-new"
+        onClick={() => {
+          handlerDelete(record);
+          notification.close(key);
+        }}
+      >
+        Confirmar
+      </Button>
+    );
+    notification.open({
+      message: "¿Seguro desea borrar el producto?",
+
+      icon: <WarningOutlined style={{ color: "#ff7f50" }} />,
+      btn,
+      key,
+    });
+  };
+
+  //---------------------------------
   const handlerDelete = async (record) => {
     try {
       dispatch({
@@ -58,6 +95,9 @@ const Products = () => {
       console.log(error);
     }
   };
+  //-------------------------
+
+  //------------------------
 
   const columns = [
     {
@@ -68,7 +108,7 @@ const Products = () => {
       title: "Imagen",
       dataIndex: "image",
       render: (image, record) => (
-        <img src={image} alt={record.name} height={60} width={60} />
+        <img src={image} alt={record.name} height={50} width={50} />
       ),
     },
     {
@@ -82,7 +122,7 @@ const Products = () => {
         <div>
           <DeleteOutlined
             className="cart-action"
-            onClick={() => handlerDelete(record)}
+            onClick={() => openNotification(record)}
           />
           <EditOutlined
             className="cart-edit"
@@ -98,7 +138,7 @@ const Products = () => {
 
   const handlerSubmit = async (value) => {
     //console.log(value);
-    if (editProduct === null) {
+    if (editProduct === false) {
       try {
         dispatch({
           type: "SHOW_LOADING",
@@ -143,94 +183,103 @@ const Products = () => {
   };
 
   return (
-    <LayoutApp>
-      <h2>Mis Productos</h2>
-      <Button className="add-new" onClick={() => setPopModal(true)}>
-        Agregar Nuevo
-      </Button>
-      <Table
-        className="ContainerTable"
-        dataSource={productData}
-        columns={columns}
-        bordered
-      />
+    <div className="Home">
+      <LayoutApp>
+        <h2>Mis Productos</h2>
+        <Button className="add-new" onClick={() => setPopModal(true)}>
+          Agregar Nuevo
+        </Button>
+        <Table
+          className="ContainerTable"
+          dataSource={productData}
+          columns={columns}
+          bordered
+        />
 
-      {popModal && (
-        <Modal
-          title={`${
-            editProduct !== null ? "Editar producto" : "Agregar Producto"
-          }`}
-          visible={popModal}
-          onCancel={() => {
-            setEditProduct(null);
-            setPopModal(false);
-          }}
-          footer={false}
-        >
-          <Form
-            layout="vertical"
-            initialValues={editProduct}
-            onFinish={handlerSubmit}
+        {popModal && (
+          <Modal
+            title={`${
+              editProduct !== false ? "Editar producto" : "Agregar Producto"
+            }`}
+            visible={popModal}
+            onCancel={() => {
+              setEditProduct(false);
+              setPopModal(false);
+            }}
+            footer={false}
           >
-            <FormItem
-              name="name"
-              label="Nombre"
-              rules={[
-                {
-                  required: true,
-                  message: "Introduzca el nombre del producto.",
-                },
-                {
-                  max: 20,
-                  message: "El nombre no debe contener más de 20 caracteres",
-                },
-              ]}
+            <Form
+              layout="vertical"
+              initialValues={editProduct}
+              onFinish={handlerSubmit}
             >
-              <Input />
-            </FormItem>
-            <Form.Item
-              name="category"
-              label="Categoría"
-              rules={[{ required: true, message: "Seleccione una categoría" }]}
-            >
-              <Select>
-                <Select.Option value="accesorios">Accesorios</Select.Option>
-                <Select.Option value="celulares">Celulares</Select.Option>
-                <Select.Option value="herramientas">Herramientas</Select.Option>
-              </Select>
-            </Form.Item>
-            <FormItem
-              name="price"
-              label="Precio"
-              rules={[
-                {
-                  required: true,
-                  message: "Introduzca el precio del producto si el signo $.",
-                },
-                {
-                  min: 2,
-                  message: "El precio debe contener al menos dos números.",
-                },
-                {
-                  max: 10,
-                  message: "El precio no debe contener más de 10 números.",
-                },
-              ]}
-            >
-              <Input />
-            </FormItem>
-            <FormItem name="image" label="URL Imagen">
-              <Input />
-            </FormItem>
-            <div className="form-btn-add">
-              <Button htmlType="submit" className="add-new">
-                Agregar
-              </Button>
-            </div>
-          </Form>
-        </Modal>
-      )}
-    </LayoutApp>
+              <FormItem
+                name="name"
+                label="Nombre"
+                rules={[
+                  {
+                    required: true,
+
+                    pattern: new RegExp(/^[A-Za-z0-9 - -]*$/),
+                    message: "Por favor ingrese nombre válido.",
+                  },
+                  {
+                    min: 2,
+                    max: 25,
+                    message: "El nombre debe contener entre 2 y 25 caracteres.",
+                  },
+                ]}
+              >
+                <Input placeholder="Ingrese el nombre del producto." />
+
+              </FormItem>
+              <Form.Item
+                name="category"
+                label="Categoría"
+                rules={[
+                  { required: true, message: "Seleccione una categoría" },
+                ]}
+              >
+
+                <Select placeholder="Seleccione una categoría">
+
+                  <Select.Option value="accesorios">Accesorios</Select.Option>
+                  <Select.Option value="celulares">Celulares</Select.Option>
+                  <Select.Option value="herramientas">
+                    Herramientas
+                  </Select.Option>
+                </Select>
+              </Form.Item>
+              <FormItem
+                name="price"
+                label="Precio"
+                rules={[
+                  {
+                    required: true,
+
+                    pattern: new RegExp(
+                      /^(\d*[1-9]\d*(\.\d+)?|0*\.\d*[1-9]\d*)$/
+                    ),
+                    message: "Por favor ingrese un precio válido.",
+                  },
+                ]}
+              >
+                <Input placeholder="Ingrese el precio del producto sin el signo $" />
+              </FormItem>
+              <FormItem name="image" label="URL Imagen (opcional)">
+                <Input placeholder="Ingrese dirección de la imagen de su producto." />
+
+              </FormItem>
+              <div className="form-btn-add">
+                <Button htmlType="submit" className="add-new">
+                  Agregar
+                </Button>
+              </div>
+            </Form>
+          </Modal>
+        )}
+      </LayoutApp>
+    </div>
   );
 };
 

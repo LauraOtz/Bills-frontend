@@ -1,12 +1,10 @@
 import { Button, Modal, Table } from "antd";
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
-
 import { useReactToPrint } from "react-to-print";
 import { EyeOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import Layout from "../../components/Layout";
-
 import "../home/home.css";
 
 const Bills = () => {
@@ -98,7 +96,7 @@ const Bills = () => {
 
       {popModal && (
         <Modal
-          title="Invoice Details"
+          title="Presupuesto Detallado"
           width={400}
           pagination={false}
           visible={popModal}
@@ -112,7 +110,7 @@ const Bills = () => {
                 Número: <b>+549381/0000000</b>
               </span>
               <span>
-                Dirección: <b>34000 Kragujevac, Serbia</b>
+                Dirección: <b>Gral. Paz 576 - Tucuman </b>
               </span>
             </div>
             <div className="cardBody">

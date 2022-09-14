@@ -1,9 +1,11 @@
-import { Button, Form, Input, message } from "antd";
+import { Button, Form, Input, message, Row } from "antd";
 import FormItem from "antd/lib/form/FormItem";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import "./register.css";
+import logoBills1 from "../../assets/logoBills1.png";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -14,7 +16,7 @@ const Register = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post("/api/users/register", value);
+      await axios.post("/api/usuarios", value);
       message.success("Registro Exitoso!");
       navigate("/login");
       dispatch({
@@ -29,125 +31,140 @@ const Register = () => {
     }
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("auth")) {
-      localStorage.getItem("auth");
-      navigate("/");
-    }
-  }, [navigate]);
-
   return (
-    <div className="formRegistro">
-      <div className="form">
-        <h2>BILL$</h2>
-        <p>Registro de Usuario</p>
-        <div className="form-group">
-          <Form layout="vertical" onFinish={handlerSubmit}>
-            <FormItem
-              name="name"
-              label="Nombre"
-              rules={[
-                {
-                  required: true,
-
-                  message: "Introduzca su nombre",
-                },
-                {
-                  max: 20,
-                  message: "El nombre no debe contener más de 20 caracteres",
-                },
-              ]}
-              hasFeedback
+    <Row className="ContainerR">
+      <div className="formRegistro">
+        <div className="form formRt">
+          <div className="form-group formRu">
+            <Form
+              layout="vertical"
+              onFinish={handlerSubmit}
+              labelCol={{ span: 10 }}
+              wrapperCol={{ span: 14 }}
             >
-              <Input />
-            </FormItem>
+              <Row>
+                <img src={logoBills1} alt="logo" className="logoR" />
+                <h1> Registro de Usuario</h1>
+              </Row>
+              <FormItem
+                name="nombre"
+                label="Nombre"
+                style={{ fontWeight: "bold" }}
+                rules={[
+                  {
+                    required: true,
 
-            <FormItem
-              name="email"
-              label="Correo Electrónico"
-              rules={[
-                {
-                  required: true,
-
-                  message: "Introduzca su correo electrónico",
-                },
-                {
-                  max: 60,
-                  message: "El correo no debe contener más de 60 caracteres",
-                },
-                { type: "email", message: "Por favor ingrese un email válido" },
-              ]}
-              hasFeedback
-            >
-              <Input />
-            </FormItem>
-            <FormItem
-              name="password"
-              label="Password"
-              rules={[
-                {
-                  required: true,
-
-                  message: "Introduzca una contraseña.",
-                },
-                { min: 6 },
-                {
-                  max: 20,
-                  message:
-                    "El contraseña no debe contener más de 20 caracteres",
-                },
-                {
-                  validator: (_, value) =>
-                    value && value.includes("A-Z")
-                      ? Promise.resolve()
-                      : Promise.reject("Password does not match criteria."),
-                },
-              ]}
-              hasFeedback
-            >
-              <Input.Password />
-            </FormItem>
-
-            <FormItem
-              name="confirmPassword"
-              label="Confirm Password"
-              dependencies={["password"]}
-              rules={[
-                {
-                  required: true,
-                },
-                ({ getFieldValue }) => ({
-                  validator(_, value) {
-                    if (!value || getFieldValue("password") === value) {
-                      return Promise.resolve();
-                    }
-                    return Promise.reject(
-                      "The two passwords that you entered does not match."
-                    );
+                    message: "Introduzca su nombre",
                   },
-                }),
-              ]}
-              hasFeedback
-            >
-              <Input.Password />
-            </FormItem>
-            <div className="form-btn-add">
-              <Button htmlType="submit" className="add-new">
-                Registro
-              </Button>
-              <Link className="form-other" to="/login">
-                Iniciar Sesión Aquí!
-              </Link>
+                  {
+                    max: 20,
+                    message: "El nombre no debe contener más de 20 caracteres",
+                  },
+                ]}
+                hasFeedback
+              >
+                <Input />
+              </FormItem>
+
+              <FormItem
+                name="email"
+                label="Correo Electrónico"
+                style={{ fontWeight: "bold" }}
+                rules={[
+                  {
+                    required: true,
+
+                    message: "Introduzca su correo electrónico",
+                  },
+                  { type: "email", message: "Introduzca un correo válido" },
+                  {
+                    max: 60,
+                    message: "El correo no debe contener más de 60 caracteres",
+                  },
+                ]}
+                hasFeedback
+              >
+                <Input />
+              </FormItem>
+
+              <FormItem
+                name="password"
+                label="Contraseña"
+                style={{ fontWeight: "bold" }}
+                rules={[
+                  {
+                    max: 10,
+                    message:
+                      "El contraseña no debe contener más de 20 caracteres",
+                  },
+
+                  {
+                    required: true,
+                    pattern: new RegExp(/^(?=.*\d).{6,10}$/i),
+                    message:
+                      "La contraseña debe contener de seis a diez caracteres y al menos un número",
+                  },
+                ]}
+                hasFeedback
+              >
+                <Input.Password />
+              </FormItem>
+
+              <FormItem
+                name="confirmPassword"
+                label="Confirmar contraseña"
+                style={{ fontWeight: "bold" }}
+                dependencies={["password"]}
+                rules={[
+                  {
+                    required: true,
+                    message: "Vuelva a introducir la contraseña.",
+                  },
+                  ({ getFieldValue }) => ({
+                    validator(_, value) {
+                      if (!value || getFieldValue("password") === value) {
+                        return Promise.resolve();
+                      }
+                      return Promise.reject("Las contraseñas no coinciden.");
+                    },
+                  }),
+                ]}
+                hasFeedback
+              >
+                <Input.Password />
+              </FormItem>
+
+              <div className="form-btn-add btnR">
+                <Button
+                  htmlType="submit"
+                  className="add-new"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Registro
+                </Button>
+                <Link
+                  className="form-other textR"
+                  to="/login"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Iniciar sesión aquí!
+                </Link>
+                <br />
+                <br />
+                <Link
+                  className="form-other textR"
+                  to="/login"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Volver
+                </Link>
+              </div>
               <br />
-              <br />
-              <Link className="form-other" to="/login">
-                Volver
-              </Link>
-            </div>
-          </Form>
+            </Form>
+          </div>
         </div>
       </div>
-    </div>
+    </Row>
   );
 };
 
