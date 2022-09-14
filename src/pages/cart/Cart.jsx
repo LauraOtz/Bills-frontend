@@ -145,20 +145,17 @@ const Cart = () => {
             rules={[
               {
                 required: true,
-
-                message: "Introduzca el nombre del cliente.",
+                pattern: new RegExp(/^[A-Za-z - -]*$/),
+                message: "Por favor ingrese nombre válido.",
               },
               {
-                max: 20,
-                message: "El nombre no puede tener más de 20 caracteres.",
-              },
-              {
-                pattern: "^[a-zA-Z]+(([',.- ][a-zA-Z ])?[a-zA-Z]*)*$",
-                message: "Ha ingresado un nombre inválido, intente nuevamente",
+                min: 2,
+                max: 25,
+                message: "El nombre debe contener entre 5 y 25 caracteres",
               },
             ]}
           >
-            <Input />
+            <Input placeholder="Por favor ingrese el nombre del cliente." />
           </FormItem>
           <FormItem
             name="customerPhone"
@@ -166,26 +163,14 @@ const Cart = () => {
             rules={[
               {
                 required: true,
-
-                message: "Introduzca el teléfono del cliente.",
-              },
-              {
-                required: true,
-
-                message: "Introduzca el teléfono del cliente.",
-              },
-              {
-                type: "phone",
-
-                message: "Introduzca el teléfono del cliente.",
-              },
-              {
-                max: 15,
-                message: "El teléfono no puede tener más de 15 caracteres.",
+                pattern: new RegExp(
+                  /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/
+                ),
+                message: "Por favor ingrese un télefono válido.",
               },
             ]}
           >
-            <Input />
+            <Input placeholder="Ingrese número de teléfono." />
           </FormItem>
           <FormItem
             name="customerAddress"
@@ -193,16 +178,17 @@ const Cart = () => {
             rules={[
               {
                 required: true,
-
-                message: "Introduzca la dirección del cliente.",
+                pattern: new RegExp(/^[A-Za-z0-9 - -]*$/),
+                message: "Por favor ingrese dirección válida.",
               },
               {
-                max: 20,
-                message: "La dirección no puede tener más de 20 caracteres.",
+                min: 5,
+                max: 25,
+                message: "La dirección debe contener entre 5 y 25 caracteres",
               },
             ]}
           >
-            <Input />
+            <Input placeholder="Ingrese dirección del cliente." />
           </FormItem>
           <Form.Item
             name="paymentMethod"

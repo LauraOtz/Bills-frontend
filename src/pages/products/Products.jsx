@@ -179,8 +179,13 @@ const Products = () => {
                 rules={[
                   {
                     required: true,
-                    pattern: new RegExp(/^[^\W_]{4,20}$/),
-                    message: "Campo requerido",
+                    pattern: new RegExp(/^[A-Za-z0-9 - -]*$/),
+                    message: "Por favor ingrese nombre válido.",
+                  },
+                  {
+                    min: 2,
+                    max: 25,
+                    message: "El nombre debe contener entre 2 y 25 caracteres.",
                   },
                 ]}
               >
@@ -206,9 +211,8 @@ const Products = () => {
                 label="Precio"
                 rules={[
                   {
-                    required: true,
-
-                    message: "Campo requerido.",
+                    max: 25,
+                    message: "Por favor ingrese menos de 25 caracteres.",
                   },
                   {
                     required: true,
@@ -216,11 +220,6 @@ const Products = () => {
                       /^(\d*[1-9]\d*(\.\d+)?|0*\.\d*[1-9]\d*)$/
                     ),
                     message: "Por favor ingrese un precio válido.",
-                  },
-
-                  {
-                    max: 10,
-                    message: "El precio no debe contener más de 10 números.",
                   },
                 ]}
               >
