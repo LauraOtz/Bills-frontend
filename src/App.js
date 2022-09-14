@@ -75,7 +75,7 @@ function App() {
 export default App;
 
 export function ProtectedRouter({ children }) {
-  if (localStorage.getItem("auth")) {
+  if (localStorage.getItem("token")) {
     return children;
   } else {
     return <Navigate to="/login" />;
