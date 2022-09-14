@@ -2,8 +2,21 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import LayoutApp from "../../components/Layout";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import { Button, Form, Input, Modal, Select, Table, message } from "antd";
+import {
+  DeleteOutlined,
+  EditOutlined,
+  WarningOutlined,
+} from "@ant-design/icons";
+import {
+  Button,
+  Form,
+  Input,
+  Modal,
+  Select,
+  Table,
+  message,
+  notification,
+} from "antd";
 import FormItem from "antd/lib/form/FormItem";
 import "../home/home.css";
 
@@ -36,6 +49,30 @@ const Products = () => {
     getAllProducts();
   }, []);
 
+  const openNotification = (record) => {
+    const key = `open${Date.now()}`;
+    const btn = (
+      <Button
+        size="small"
+        className="add-new"
+        onClick={() => {
+          handlerDelete(record);
+          notification.close(key);
+        }}
+      >
+        Confirmar
+      </Button>
+    );
+    notification.open({
+      message: "¿Seguro desea borrar el producto?",
+
+      icon: <WarningOutlined style={{ color: "#ff7f50" }} />,
+      btn,
+      key,
+    });
+  };
+
+  //---------------------------------
   const handlerDelete = async (record) => {
     try {
       dispatch({
@@ -58,6 +95,9 @@ const Products = () => {
       console.log(error);
     }
   };
+  //-------------------------
+
+  //------------------------
 
   const columns = [
     {
@@ -68,7 +108,7 @@ const Products = () => {
       title: "Imagen",
       dataIndex: "image",
       render: (image, record) => (
-        <img src={image} alt={record.name} height={60} width={60} />
+        <img src={image} alt={record.name} height={50} width={50} />
       ),
     },
     {
@@ -82,7 +122,7 @@ const Products = () => {
         <div>
           <DeleteOutlined
             className="cart-action"
-            onClick={() => handlerDelete(record)}
+            onClick={() => openNotification(record)}
           />
           <EditOutlined
             className="cart-edit"
@@ -179,6 +219,7 @@ const Products = () => {
                 rules={[
                   {
                     required: true,
+
                     pattern: new RegExp(/^[A-Za-z0-9 - -]*$/),
                     message: "Por favor ingrese nombre válido.",
                   },
@@ -190,6 +231,7 @@ const Products = () => {
                 ]}
               >
                 <Input placeholder="Ingrese el nombre del producto." />
+
               </FormItem>
               <Form.Item
                 name="category"
@@ -198,7 +240,9 @@ const Products = () => {
                   { required: true, message: "Seleccione una categoría" },
                 ]}
               >
+
                 <Select placeholder="Seleccione una categoría">
+
                   <Select.Option value="accesorios">Accesorios</Select.Option>
                   <Select.Option value="celulares">Celulares</Select.Option>
                   <Select.Option value="herramientas">
@@ -212,6 +256,7 @@ const Products = () => {
                 rules={[
                   {
                     required: true,
+
                     pattern: new RegExp(
                       /^(\d*[1-9]\d*(\.\d+)?|0*\.\d*[1-9]\d*)$/
                     ),
@@ -223,6 +268,7 @@ const Products = () => {
               </FormItem>
               <FormItem name="image" label="URL Imagen (opcional)">
                 <Input placeholder="Ingrese dirección de la imagen de su producto." />
+
               </FormItem>
               <div className="form-btn-add">
                 <Button htmlType="submit" className="add-new">
