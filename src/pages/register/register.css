@@ -1,0 +1,42 @@
+.btnR{
+    margin-right: 20px;
+}
+.textR{
+    margin-left: 20px;
+}
+.logoR{
+    height: 100px;
+}
+.ContainerR {
+    background-image: url(../../assets/b1.jpg);
+    background-size: cover;
+    font-size: 14px;
+    min-height: 100vh;
+    margin: 0px;
+    position: relative;
+    
+  }
+ 
+  .formRu{
+background-color: rgba(246, 245, 244, 0.635);
+display: flex;
+
+justify-content: center;
+flex-direction: column;
+
+margin-bottom: 20%;
+margin-top: 0%;
+
+
+
+  }
+  h1{
+    display: flex;
+    justify-content: center;
+    color: black !important;
+  }
+  .logoR{
+    margin-left: -80px;
+    border-radius: 150px;
+   
+  }

@@ -237,7 +237,22 @@ body {
   color: #001e28;
   letter-spacing: 1.3px;
 }
-
+.Items {
+  padding: 20px;
+  box-sizing: border-box;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  margin: 0 0 24px;
+  vertical-align: top;
+}
+.form-otherL{
+  padding: 20px;
+  color: #000;
+}
 .cardBody {
   margin-top: 30px;
 }
@@ -293,12 +308,10 @@ body {
   font-size: 12px !important;
   padding: 5px !important;
 }
-.ant-row {
-  margin: 40px;
-}
+
 
 .formLogin {
-  padding: 10px;
+  padding: 20px;
 }
 .TextHomeContainer {
   padding: 10px;

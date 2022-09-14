@@ -6,10 +6,23 @@
   margin: 0px;
   padding: 0;
 }
+.Items {
+  padding: 20px;
+  box-sizing: border-box;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  margin: 0 0 24px;
+  vertical-align: top;
+}
 .h1T {
   color: #fafafa !important;
   margin-top: 40px;
   text-shadow: 0.1em 0.1em 0.2em black;
+  width: 100%;
 }
 .CC {
   box-shadow: 0.1em 0.1em 0.2em rgb(200, 200, 200);
@@ -18,6 +31,16 @@
   width: 100%;
 }
 
+.BL{
+  margin-right: 20px;
+}
+.form-otherL
+{
+padding-left: 80px;
+margin-left: 0%;
+padding-right: 0%;
+
+}
 
 @media only screen and (max-width:970px) and ( min-width:550px) {
 
@@ -34,23 +57,15 @@
 
 }
 h1.h1T{
-  font-size: 90%;
+  font-size: 100%;
 }
 .ant-row.ContainerT {
   display: flex;
   justify-content: space-around;
 }
 
-.ant-form-item-label>label {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  max-width: 100%;
-  height: 50px;
-  color: rgba(15, 14, 14, 0.85);
 
-  text-shadow: 0.1em 0.1em 0.2em rgb(254, 248, 248);
-}
+
 
 h2{
   font-size: 30px;
@@ -70,6 +85,11 @@ h2{
 }
 
 @media only screen and (max-width:830px)  {
+  .TextHomeContainer
+  {
+    display: flex;
+    justify-content: center;
+  }
 
   .ContainerT {
     background-image: url(../../assets/b3.jpg);
@@ -87,6 +107,10 @@ h2{
 
 
  }
+
+ .BL{
+  margin-right: 20px;
+}
  .ant-col-7{
  
   max-width: 100%;
@@ -128,7 +152,8 @@ h2{
   color: #fafafa !important;
   margin-top: 10px;
   text-shadow: 0.1em 0.1em 0.2em black;
-  font-size: 70%;
+  font-size: 100%;
+  justify-content: center;
 }
 .CC {
   box-shadow: 0.1em 0.1em 0.2em rgb(200, 200, 200);
@@ -136,17 +161,18 @@ h2{
 .img-c {
   width: 20%;
   height: 20%;
-  border-radius: 150px;
+  border-radius: 70px;
   display: flex;
   justify-content: flex-start;
+  margin:5px;
 }
 .ant-row.ContainerT{
 margin-top: 2px;
 padding: 0;
 }
-.ant-form-item-control-input-content {
-  flex: auto;
-  max-width: 80%;
+
+.BL {
+  padding: 20px;
 }
 .about {
   display: flex;
@@ -159,3 +185,13 @@ padding: 0;
 
 
 
+@media only screen and (min-width:1130px){
+  .ContainerT {
+    display: flex;
+    justify-content: space-between;
+   padding: 40px;
+   padding-top: 5px;
+
+  }
+
+}
