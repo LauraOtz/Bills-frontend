@@ -183,14 +183,15 @@ const Products = () => {
   };
 
   return (
-    <div className="Home">
+    
+    <div className="Hidden">
       <LayoutApp>
         <h2>Mis Productos</h2>
         <Button className="add-new" onClick={() => setPopModal(true)}>
           Agregar Nuevo
         </Button>
         <Table
-          className="ContainerTable"
+          className="ContainerTabla"
           dataSource={productData}
           columns={columns}
           bordered
