@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
-  background-color: rgb(234, 238, 238);}
+  background-color: white;}
 
 
 
@@ -39,60 +39,6 @@
   justify-content: flex-start;
 }
 
-<<<<<<< HEAD
-.about{
-  display:flex;
-  padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 20px;
-  margin-left: 30px;
-  margin-right: 30px;
-
-
-}
-
-.aboutrow{
-  display: flex;
-  flex-direction: row;
-}
-
-
-.divArriba{
-  width: 100%;
- 
-  
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  flex-direction: column;
-
-  
-    
-    margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 30px;
-  
-}
-
-.divAbajo{
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  
-  flex-direction: column;
-
-  
-   
-    margin-bottom: 10px;
-    margin-left: 20px;
-    margin-right: 50px;
-}
-
-
-=======
->>>>>>> 36a1625662775547a9792c1933b7ba365a7da30c
 
 @media only screen and (max-width: 600px) {
 
@@ -129,12 +75,7 @@
         font-size:50%;
     
       } 
-      .img-c  {
-      
-        width: 90%;
-        
-  
-      }
+     
 
       .formLogin{
         justify-content: center;

@@ -46,7 +46,7 @@ const Register = () => {
                 <img src={logoBills1} alt="logo" className="logoR" />
                 <h1> Registro de Usuario</h1>
               </Row>
-              <FormItem
+              <FormItem 
                 name="nombre"
                 label="Nombre"
                 style={{ fontWeight: "bold" }}
@@ -63,10 +63,11 @@ const Register = () => {
                 ]}
                 hasFeedback
               >
-                <Input />
+                <Input className="ItemR "/>
               </FormItem>
 
               <FormItem
+              
                 name="email"
                 label="Correo Electrónico"
                 style={{ fontWeight: "bold" }}
@@ -84,10 +85,11 @@ const Register = () => {
                 ]}
                 hasFeedback
               >
-                <Input />
+                <Input className="ItemR" />
               </FormItem>
 
-              <FormItem
+              <FormItem  
+              className="ItemR"
                 name="password"
                 label="Contraseña"
                 style={{ fontWeight: "bold" }}
@@ -111,6 +113,7 @@ const Register = () => {
               </FormItem>
 
               <FormItem
+              className="ItemR"
                 name="confirmPassword"
                 label="Confirmar contraseña"
                 style={{ fontWeight: "bold" }}

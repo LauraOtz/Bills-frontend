@@ -6,6 +6,10 @@
   margin: 0px;
   padding: 0;
 }
+p.Par{
+  font-size: small;
+  
+}
 .Items {
   padding: 20px;
   box-sizing: border-box;
@@ -24,9 +28,9 @@
   text-shadow: 0.1em 0.1em 0.2em black;
   width: 100%;
 }
-.CC {
+/* .CC {
   box-shadow: 0.1em 0.1em 0.2em rgb(200, 200, 200);
-}
+} */
 .ant-card{
   width: 100%;
 }
@@ -34,13 +38,7 @@
 .BL{
   margin-right: 20px;
 }
-.form-otherL
-{
-padding-left: 80px;
-margin-left: 0%;
-padding-right: 0%;
 
-}
 
 @media only screen and (max-width:970px) and ( min-width:550px) {
 
@@ -56,6 +54,10 @@ padding-right: 0%;
 
 
 }
+
+
+
+
 h1.h1T{
   font-size: 100%;
 }
@@ -134,6 +136,14 @@ h2{
 .ContainerT{
   width: 100%;
 }
+.img-c {
+  width: 20%;
+  height: 20%;
+  border-radius: 150px;
+  display: flex;
+  justify-content: flex-start;
+  margin:5px;
+}
 }
 @media  screen and (max-width:550px)  {
   .form-group
@@ -170,7 +180,13 @@ h2{
 margin-top: 2px;
 padding: 0;
 }
+.form-otherL
+{
+padding-left: 80px;
+margin-left: 0%;
+padding-right: 0%;
 
+}
 .BL {
   padding: 20px;
 }

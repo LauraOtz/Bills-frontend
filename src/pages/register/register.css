@@ -5,12 +5,15 @@
     margin-left: 20px;
 }
 .logoR{
-    height: 100px;
+  width: 20%;
+  height: 20%;
+  border-radius: 70px;
+  margin:5px;
 }
 .ContainerR {
     background-image: url(../../assets/b1.jpg);
     background-size: cover;
-    font-size: 14px;
+    font-size: 8px;
     min-height: 100vh;
     margin: 0px;
     position: relative;
@@ -23,10 +26,9 @@ display: flex;
 
 justify-content: center;
 flex-direction: column;
-
 margin-bottom: 20%;
 margin-top: 0%;
-
+width: 80%;
 
 
   }
@@ -40,3 +42,8 @@ margin-top: 0%;
    
   }
 
+  .form-group .ItemR{
+
+    width: 90%;
+
+  }
