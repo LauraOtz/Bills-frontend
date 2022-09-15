@@ -2,7 +2,9 @@ import React, { Component } from "react";
 
 import { Card, Col, Row } from 'antd';
 import "../login/cards-style.css";
+
 import {DollarCircleFilled, MailOutlined , LikeOutlined} from "@ant-design/icons";
+
 
 class CardsR1 extends Component {
   render() {
