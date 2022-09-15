@@ -70,16 +70,16 @@ const LayoutApp = ({ children }) => {
           defaultSelectedKeys={window.location.pathname}
         >
           <Menu.Item key="/" icon={<HomeOutlined />}>
-            <Link to="/">Hace tu presupuesto</Link>
+            <Link to="/">Crear presupuesto</Link>
           </Menu.Item>
           <Menu.Item key="/bills" icon={<MoneyCollectOutlined />}>
-            <Link to="/bills">Mis Bill$</Link>
+            <Link to="/bills">Mis presupuestos</Link>
           </Menu.Item>
           <Menu.Item key="/products" icon={<MenuOutlined />}>
             <Link to="/products">Productos</Link>
           </Menu.Item>
           <Menu.Item key="/customers" icon={<UserSwitchOutlined />}>
-            <Link to="/customers">Usuarios</Link>
+            <Link to="/customers">Clientes</Link>
           </Menu.Item>
 
           <Menu.Item

@@ -1,0 +1,14 @@
+.H1Contactanos{
+
+display: flex;
+justify-content: center;
+
+padding: 5px;
+}
+
+.H5Contactanos{
+display: flex;
+justify-content: center;
+font-size:medium;
+}
+

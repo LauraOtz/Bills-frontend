@@ -96,7 +96,7 @@ const Bills = () => {
 
       {popModal && (
         <Modal
-          title="Invoice Details"
+          title="Presupuesto Detallado"
           width={400}
           pagination={false}
           visible={popModal}
