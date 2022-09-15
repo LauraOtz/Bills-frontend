@@ -80,7 +80,11 @@
   }
 
   .anticon {
-    margin-left: 0;
+    margin-left: 1px;
+  }
+
+  svg {
+    font-size: 15px !important;
   }
 
   .ant-table-tbody > tr > td,
@@ -88,6 +92,7 @@
   .ant-table tfoot > tr > td,
   .ant-table tfoot > tr > th {
     padding: 5px;
+    font-size: 8px;
   }
 
   img {
@@ -100,6 +105,18 @@
   }
 
   button.ant-btn.ant-btn-default.add-new {
-    margin-left: 145px !important;
+    margin-left: 155px !important;
+  }
+
+  .ant-modal {
+    width: 70% !important;
+  }
+
+  h2 {
+    margin-left: 10px;
+  }
+
+  span.ant-menu-title-content {
+    font-size: 14px;
   }
 }
