@@ -53,28 +53,33 @@ const Login = () => {
 
               <div className="form-group">
                 <Form layout="vertical" onFinish={handlerSubmit}>
-                  <h2>Iniciar sesión</h2>
+                  <h1>Iniciar sesión</h1>
 
                   <FormItem
                     name="email"
                     label="Correo electrónico"
+                    style={{ fontWeight: "bold" }}
                     rules={[
                       {
                         required: true,
-                       message: "Introduzca su correo electrónico",
+
+                        message: "Introduzca su correo electrónico",
                       },
+                      { type: "email", message: "Introduzca un correo válido" },
                       {
-                        max: 60,
+                        max: 25,
                         message:
-                          "El correo no debe contener más de 60 caracteres",
+                          "El correo no debe contener más de 25 caracteres",
                       },
                     ]}
+                    hasFeedback
                   >
                     <Input />
                   </FormItem>
                   <FormItem
                     name="password"
                     label="Contraseña"
+                    style={{ fontWeight: "bold" }}
                     rules={[
                       {
                         required: true,
@@ -83,18 +88,26 @@ const Login = () => {
                       {
                         max: 20,
                         message:
-
                           "La contraseña no debe contener más de 20 caracteres",
                       },
                     ]}
                   >
-                    <Input type="password" />
+                    <Input.Password />
                   </FormItem>
-                  <div className="form-btn-add">
-                    <Button htmlType="submit" className="add-new">
+                  <div className="form-btn-add btnL">
+                    <Button
+                      htmlType="submit"
+                      className="add-new "
+                      style={{ fontWeight: "bold" }}
+                    >
                       Enviar
                     </Button>
-                    <Link className="form-other" to="/register">
+
+                    <Link
+                      className="form-other linkR"
+                      to="/register"
+                      style={{ fontWeight: "bold" }}
+                    >
                       ¡Registrate aquí!
                     </Link>
                   </div>

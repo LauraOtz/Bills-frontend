@@ -78,8 +78,8 @@ const Register = () => {
                   },
                   { type: "email", message: "Introduzca un correo válido" },
                   {
-                    max: 60,
-                    message: "El correo no debe contener más de 60 caracteres",
+                    max: 25,
+                    message: "El correo no debe contener más de 25 caracteres",
                   },
                 ]}
                 hasFeedback
@@ -95,7 +95,7 @@ const Register = () => {
                   {
                     max: 10,
                     message:
-                      "El contraseña no debe contener más de 20 caracteres",
+                      "El contraseña no debe contener más de 10 caracteres",
                   },
 
                   {
