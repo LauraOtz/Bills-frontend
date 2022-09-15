@@ -2,12 +2,12 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "../home/home.css";
 
-
 function AboutUs() {
   return (
     <div className="about  text-dark">
-    <Row className="aboutrow">
+      <Row className="aboutrow">
         <Col className="text-dark">
+
  
     <div className="divArriba">
     
@@ -50,6 +50,7 @@ function AboutUs() {
     </Col>
     </Row>
     
+
     </div>
   );
 }

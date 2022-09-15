@@ -1,8 +1,8 @@
-.ContainerL{
-     padding:0;
-      margin: 0;
-    overflow: hidden;}
-
+.ContainerL {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: rgb(234, 238, 238);}
 
 
 
@@ -14,21 +14,29 @@
 .ant-row.Card {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 90%;
 }
+.ant-card {
+  width: 50%;
+  justify-content: center;
+  margin: 0;
+  font-size: calc(1em + 1vw)
+
+  }
 
 .Contacto {
-
-padding: 10px;
-width: 100%;
-
-
+  padding: 10px;
+  width: 100%;
 }
-.img-c  {
-      
-  width: 90%;
-  
-
+.TextHomeContainer {
+  margin-left: 0px;
+}
+.img-c {
+  width: 20%;
+  height: 20%;
+  border-radius: 150px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .about{
@@ -50,7 +58,7 @@ width: 100%;
 
 .divArriba{
   width: 100%;
-  
+
   
   justify-content: center;
   align-items: center;
@@ -66,9 +74,10 @@ width: 100%;
   
 }
 
+
 .divAbajo{
   width: 100%;
-  
+
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -84,19 +93,22 @@ width: 100%;
 
 
 
-@media only screen and (max-width: 600px) {
-  .category  {
-   display: flex;  
-   flex-direction: column;
 
-       }
+@media only screen and (max-width: 600px) {
+
+  .category {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+       
 
        .aboutrow{
         display: flex;
         flex-direction: column;
     }
        
-     }
      
     @media only screen and (max-width: 1090px) {
     .ContainerTabla {
@@ -143,7 +155,11 @@ width: 100%;
     }
 
     
+    
+    @media screen and (min-width:500px){
 
+
+    }
 
 
      

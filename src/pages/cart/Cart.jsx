@@ -5,21 +5,28 @@ import {
   DeleteOutlined,
   PlusCircleOutlined,
   MinusCircleOutlined,
+  WarningOutlined,
 } from "@ant-design/icons";
-import { Button, Form, Input, message, Modal, Select, Table } from "antd";
+import {
+  Button,
+  Form,
+  Input,
+  message,
+  Modal,
+  Select,
+  Table,
+  notification,
+} from "antd";
 import FormItem from "antd/lib/form/FormItem";
 import { useNavigate } from "react-router-dom";
-
 import axios from "axios";
 import "../home/home.css";
 
 const Cart = () => {
   const [subTotal, setSubTotal] = useState(0);
   const [billPopUp, setBillPopUp] = useState(false);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const { cartItems } = useSelector((state) => state.rootReducer);
 
   const handlerIncrement = (record) => {
@@ -37,6 +44,31 @@ const Cart = () => {
       });
     }
   };
+  //---------------
+  const openNotification = (record) => {
+    const key = `open${Date.now()}`;
+    const btn = (
+      <Button
+        size="small"
+        className="add-new"
+        onClick={() => {
+          handlerDelete(record);
+          notification.close(key);
+        }}
+      >
+        Confirmar
+      </Button>
+    );
+    notification.open({
+      message: "¿Seguro desea eliminar el producto?",
+
+      icon: <WarningOutlined style={{ color: "#ff7f50" }} />,
+      btn,
+      key,
+    });
+  };
+
+  //--------------
 
   const handlerDelete = (record) => {
     dispatch({
@@ -84,7 +116,7 @@ const Cart = () => {
       render: (id, record) => (
         <DeleteOutlined
           className="cart-action"
-          onClick={() => handlerDelete(record)}
+          onClick={() => openNotification(record)}
         />
       ),
     },
@@ -105,16 +137,16 @@ const Cart = () => {
         ...value,
         cartItems,
         subTotal,
-        tax: Number(((subTotal / 100) * 10).toFixed(2)),
+        tax: Number(((subTotal / 100) * 21).toFixed(2)),
         totalAmount: Number(
           (
-            Number(subTotal) + Number(((subTotal / 100) * 10).toFixed(2))
+            Number(subTotal) + Number(((subTotal / 100) * 21).toFixed(2))
           ).toFixed(2)
         ),
-        userId: JSON.parse(localStorage.getItem("auth"))._id,
+        userId: JSON.parse(localStorage.getItem("token"))._id,
       };
       await axios.post("/api/bills/addbills", newObject);
-      message.success("Bill Generated!");
+      message.success("Presupuesto generado con éxito");
       navigate("/bills");
     } catch (error) {
       message.error("Error!");
@@ -148,16 +180,17 @@ const Cart = () => {
             rules={[
               {
                 required: true,
-
-                message: "Introduzca el nombre del cliente.",
+                pattern: new RegExp(/^[A-Za-z - -]*$/),
+                message: "Por favor ingrese nombre válido.",
               },
               {
-                max: 15,
-                message: "El nombre no puede tener más de 15 caracteres.",
+                min: 2,
+                max: 25,
+                message: "El nombre debe contener entre 5 y 25 caracteres",
               },
             ]}
           >
-            <Input />
+            <Input placeholder="Por favor ingrese el nombre del cliente." />
           </FormItem>
           <FormItem
             name="customerPhone"
@@ -166,25 +199,15 @@ const Cart = () => {
               {
                 required: true,
 
-                message: "Introduzca el teléfono del cliente.",
-              },
-              {
-                required: true,
+                pattern: new RegExp(
+                  /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/
+                ),
+                message: "Por favor ingrese un télefono válido.",
 
-                message: "Introduzca el teléfono del cliente.",
-              },
-              {
-                type: "phone",
-
-                message: "Introduzca el teléfono del cliente.",
-              },
-              {
-                max: 15,
-                message: "El teléfono no puede tener más de 15 caracteres.",
               },
             ]}
           >
-            <Input pattern="[0-9]{3}" />
+            <Input placeholder="Ingrese número de teléfono." />
           </FormItem>
           <FormItem
             name="customerAddress"
@@ -192,16 +215,17 @@ const Cart = () => {
             rules={[
               {
                 required: true,
-
-                message: "Introduzca la dirección del cliente.",
+                pattern: new RegExp(/^[A-Za-z0-9 - -]*$/),
+                message: "Por favor ingrese dirección válida.",
               },
               {
-                max: 20,
-                message: "La dirección no puede tener más de 20 caracteres.",
+                min: 5,
+                max: 25,
+                message: "La dirección debe contener entre 5 y 25 caracteres",
               },
             ]}
           >
-            <Input />
+            <Input placeholder="Ingrese dirección del cliente." />
           </FormItem>
           <Form.Item
             name="paymentMethod"
@@ -215,9 +239,9 @@ const Cart = () => {
             ]}
           >
             <Select>
-              <Select.Option value="cash">Efectivo</Select.Option>
-              <Select.Option value="paypal">Transferencia</Select.Option>
-              <Select.Option value="Card">Tarjeta</Select.Option>
+              <Select.Option value="efectivo">Efectivo</Select.Option>
+              <Select.Option value="transferencia">Transferencia</Select.Option>
+              <Select.Option value="tarjeta">Tarjeta</Select.Option>
             </Select>
           </Form.Item>
           <div className="total">
@@ -227,7 +251,7 @@ const Cart = () => {
             <h3>
               Total: $
               {(
-                Number(subTotal) + Number(((subTotal / 100) * 10).toFixed(2))
+                Number(subTotal) + Number(((subTotal / 100) * 21).toFixed(2))
               ).toFixed(2)}
             </h3>
           </div>

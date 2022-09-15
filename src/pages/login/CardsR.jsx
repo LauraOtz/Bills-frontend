@@ -1,59 +1,42 @@
 import React, { Component } from "react";
-// import Cards from "../../components/Cards";
-import fondo1 from "../../assets/fondo1.jpg";
-import mate1 from "../../assets/mate1.jpg";
-import email1 from "../../assets/email1.jpg";
-import Card from "antd/lib/card/Card";
-import { Row } from "antd";
+
+import { Card, Col, Row } from 'antd';
 import "../login/cards-style.css";
- 
+
+import {DollarCircleFilled, MailOutlined , LikeOutlined} from "@ant-design/icons";
+
+
 class CardsR1 extends Component {
   render() {
-    return (
-      <>
-        <hr className="hr" />
-        <br />
-        <br />
-        <Row className="Card">
-          <Card
-            className="kr"
-            hoverable
-            style={{ width: 240, marginBottom: 30 }}
-            cover={<img src={fondo1} style={{ height: 200 }} />}
-            title="Armá tu presupuesto"
-          >
-            <p>
-              Crearás un archivo con todos los detalles de tus productos en sólo
-              unos minutos.
-            </p>
-          </Card>
-          <Card
-            className="kr"
-            title="Mandalo al instante"
-            hoverable
-            style={{ width: 240, marginBottom: 30 }}
-            cover={<img src={email1} style={{ height: 200 }} />}
-          >
-            <p>
-              Archivo listo para enviar vía email desde el mismo sitio! todo
-              automaticamente!
-            </p>
-          </Card>
-          <Card
-            className="kr"
-            title="Seguí disfrutando tu día"
-            hoverable
-            style={{ width: 240, marginBottom: 30 }}
-            cover={<img src={mate1} style={{ height: 200 }} />}
-          >
-            <p>
-              Presupuestar nunca fue tan rápido y tan fácil. Donde estés directo
-              a tus clientes!
-            </p>
-          </Card>
+    return(
+      <div className="ContainerC
+       site-card-wrapper">
+        <hr />
+        <Row gutter={20} >
+          <Col className="CC" span={7}>
+      
+            <Card   title=  "Armá tu presupuesto"    bordered={false}>
+            Crearás un archivo con todos los detalles de tus productos en sólo
+                  unos minutos.  {<DollarCircleFilled/>}
+            </Card>
+          </Col>
+          <Col className="CC" span={7}>
+            <Card title="Mandalo al instante" bordered={false}>
+            Archivo listo para enviar vía email desde el mismo sitio! todo
+                  automaticamente!  {<MailOutlined />}
+            </Card>
+          </Col>
+          <Col className="CC" span={7}>
+            <Card title="Seguí disfrutando tu día" bordered={false}>
+            Presupuestar nunca fue tan rápido y tan fácil. Donde estés directo
+                  a tus clientes!  {<LikeOutlined />}
+            </Card>
+          </Col>
         </Row>
-      </>
+        <hr />
+      </div>
     );
+    
   }
 }
 export default CardsR1;

@@ -29,6 +29,7 @@ const Contact = () => {
     <>
       <hr className="hr" />
       <br />
+
       
     <div>
       <h1 span={12} className="H1Contactanos">Contactanos</h1>
@@ -136,6 +137,7 @@ const Contact = () => {
             
             name="message" 
             label="Mensaje"
+
                 rules={[
                   {
                     required: true,
@@ -151,6 +153,7 @@ const Contact = () => {
                     whitespace: true
                   }
                 ]}
+
             hasFeedback
             >
               <TextArea
@@ -178,6 +181,7 @@ const Contact = () => {
           </Form>
         </Col>
       </Row>
+
       </div>
     </>
   );
