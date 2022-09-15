@@ -4,6 +4,10 @@
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3
     
   
     text-align:left;
@@ -12,6 +16,7 @@
   }
 
 @media only screen and (max-width: 600px) {
+<<<<<<< HEAD
     .category  {
      display: flex;  
      flex-direction: column;
@@ -21,6 +26,21 @@
          
        }
        @media  screen and (Max-width:700px) and (Min-width:520px){
+=======
+    .about{
+        display: flex;
+        align-items: center;
+    margin: 5px;
+
+    }
+                  
+       }
+
+      
+
+
+       /* @media  screen and (Max-width:700px) and (Min-width:520px){
+>>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3
   .about {
         
     justify-content: center;
@@ -30,6 +50,7 @@
 
 
        }
+<<<<<<< HEAD
     }
     /* @media only screen and (max-width: 520px){
 
@@ -42,3 +63,40 @@
      }
 
     } */
+=======
+    } */
+    /* @media only screen and (min-width: 600px) {
+       
+    } */
+
+    
+      
+    
+    h3.hA{
+        display: flex;
+        justify-content: center;
+        color: #fe642c !important;
+    
+    }
+
+    @media only screen and (min-width: 600px){
+        .colAb{
+            width: 50%;
+            padding: 20px;
+        }
+
+    }
+    
+    @media only screen and (max-width: 600px){
+        .colAb{
+            width:100%
+         }
+       }
+
+       @media only screen and (max-width: 280px){
+.hA{
+    display: flex;
+    justify-content: center;
+}
+       }
+>>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3

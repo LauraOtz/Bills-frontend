@@ -90,14 +90,14 @@ const Bills = () => {
   return (
     <div className="Hidden" >
     <Layout>
-      <h2>Mis presupuestos </h2>
+      <h2>Mis presupuestos</h2>
       <div className="ContainerTabla">
         <Table dataSource={billsData} columns={columns} bordered />
       </div>
 
       {popModal && (
         <Modal
-          title="Invoice Details"
+          title="Presupuesto Detallado"
           width={400}
           pagination={false}
           visible={popModal}
@@ -140,7 +140,7 @@ const Bills = () => {
                 </span>
               </div>
               <div className="group">
-                <span>Monto total</span>
+                <span>Monto Total</span>
                 <span>
                   <b>${selectedBill.totalAmount}</b>
                 </span>
@@ -187,7 +187,7 @@ const Bills = () => {
           </div>
           <div className="bills-btn-add">
             <Button onClick={handlePrint} htmlType="submit" className="add-new">
-              Generar presupuesto
+              Generar Presupuesto
             </Button>
           </div>
         </Modal>

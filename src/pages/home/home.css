@@ -2,9 +2,14 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
+<<<<<<< HEAD
   background-color: white;}
 
 
+=======
+  background-color: rgb(234, 238, 238);
+}
+>>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3
 
 .ant-row {
   display: flex;
@@ -20,9 +25,8 @@
   width: 50%;
   justify-content: center;
   margin: 0;
-  font-size: calc(1em + 1vw)
-
-  }
+  font-size: calc(1em + 1vw);
+}
 
 .Contacto {
   padding: 10px;
@@ -39,16 +43,17 @@
   justify-content: flex-start;
 }
 
-
 @media only screen and (max-width: 600px) {
-
   .category {
     display: flex;
     flex-direction: column;
   }
 }
 
-       
+.aboutrow {
+  display: flex;
+  flex-direction: column;
+}
 
        .aboutrow{
         display: flex;
@@ -77,27 +82,32 @@
       } 
      
 
-      .formLogin{
-        justify-content: center;
-        border: none;
-       outline: none;
-        width: 100%;
-       margin-bottom: 20px;
-      }
+@media screen and (max-width: 480px) {
+  .TextHomeContainer {
+    font-size: 50%;
+  }
 
-      .form-group input {
-        border: none;
-        outline: none;
-        width: 100%;
-        margin-bottom: 5px;
-      }
+  .formLogin {
+    justify-content: center;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-      
-    }
+  .form-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 5px;
+  }
 
     
     
     
 
-     
-     
+  button.ant-btn.ant-btn-default.add-new {
+    margin-left: 145px !important;
+  }
+}
+     }

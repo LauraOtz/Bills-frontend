@@ -12,7 +12,10 @@ import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 import "../home/home.css";
 import "../login/login.css";
+<<<<<<< HEAD
 
+=======
+>>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -43,7 +46,6 @@ const Login = () => {
   return (
     <div className="ContainerL">
       <>
-
         <Row className="ContainerT">
           <Col>
             <TextHome />
@@ -55,50 +57,69 @@ const Login = () => {
 
               <div className="form-group">
                 <Form layout="vertical" onFinish={handlerSubmit}>
-                  <h2>Iniciar sesión</h2>
+                  <h1>Iniciar sesión</h1>
 
                   <FormItem className="Items"
                     name="email"
                     label="Correo electrónico"
+                    style={{ fontWeight: "bold" }}
                     rules={[
                       {
                         required: true,
 
                         message: "Introduzca su correo electrónico",
                       },
+                      { type: "email", message: "Introduzca un correo válido" },
                       {
-                        max: 60,
+                        max: 25,
                         message:
-                          "El correo no debe contener más de 60 caracteres",
+                          "El correo no debe contener más de 25 caracteres",
                       },
                     ]}
+                    hasFeedback
                   >
                     <Input />
                   </FormItem>
                   <FormItem className="Items"
                     name="password"
                     label="Contraseña"
+                    style={{ fontWeight: "bold" }}
                     rules={[
                       {
                         required: true,
-
                         message: "Introduzca una contraseña.",
                       },
                       {
                         max: 20,
                         message:
-
                           "La contraseña no debe contener más de 20 caracteres",
                       },
                     ]}
                   >
-                    <Input type="password" />
+                    <Input.Password />
                   </FormItem>
+<<<<<<< HEAD
                   <div className="BL form-btn-add">
                     <Button htmlType="submit" className=" add-new">
                       Enviar
                     </Button>
                     <Link className="form-otherL" to="/register">
+=======
+                  <div className="form-btn-add btnL">
+                    <Button
+                      htmlType="submit"
+                      className="add-new "
+                      style={{ fontWeight: "bold" }}
+                    >
+                      Enviar
+                    </Button>
+
+                    <Link
+                      className="form-other linkR"
+                      to="/register"
+                      style={{ fontWeight: "bold" }}
+                    >
+>>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3
                       ¡Registrate aquí!
                     </Link>
                   </div>
