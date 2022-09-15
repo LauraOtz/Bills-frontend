@@ -13,9 +13,6 @@ import TextHome from "./TextHome";
 import "../home/home.css";
 import "../login/login.css";
 
-import "../home/home.css";
-
-
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -45,7 +42,6 @@ const Login = () => {
   return (
     <div className="ContainerL">
       <>
-
         <Row className="ContainerT">
           <Col>
             <TextHome />
@@ -65,8 +61,7 @@ const Login = () => {
                     rules={[
                       {
                         required: true,
-
-                        message: "Introduzca su correo electrónico",
+                       message: "Introduzca su correo electrónico",
                       },
                       {
                         max: 60,
@@ -83,7 +78,6 @@ const Login = () => {
                     rules={[
                       {
                         required: true,
-
                         message: "Introduzca una contraseña.",
                       },
                       {

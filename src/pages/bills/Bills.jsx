@@ -89,7 +89,7 @@ const Bills = () => {
 
   return (
     <Layout>
-      <h2>Mis presupuestos </h2>
+      <h2>Mis presupuestos</h2>
       <div className="ContainerTabla">
         <Table dataSource={billsData} columns={columns} bordered />
       </div>
@@ -139,7 +139,7 @@ const Bills = () => {
                 </span>
               </div>
               <div className="group">
-                <span>Monto total</span>
+                <span>Monto Total</span>
                 <span>
                   <b>${selectedBill.totalAmount}</b>
                 </span>
@@ -186,7 +186,7 @@ const Bills = () => {
           </div>
           <div className="bills-btn-add">
             <Button onClick={handlePrint} htmlType="submit" className="add-new">
-              Generar presupuesto
+              Generar Presupuesto
             </Button>
           </div>
         </Modal>

@@ -146,7 +146,9 @@ const Cart = () => {
         userId: JSON.parse(localStorage.getItem("token"))._id,
       };
       await axios.post("/api/bills/addbills", newObject);
+
       message.success("Presupuesto generado con éxito");
+
       navigate("/bills");
     } catch (error) {
       message.error("Error!");
