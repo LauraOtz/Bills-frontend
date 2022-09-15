@@ -114,7 +114,7 @@ h2{
 @media  screen and (max-width:550px)  {
   .form-group
 {
-  background-color: rgba(220, 217, 213, 0.635);
+  background-color:  rgba(246, 245, 244, 0.635);
   display: flex;
   
   justify-content: center;
@@ -157,5 +157,22 @@ padding: 0;
 
 }
 
+@media only screen and (min-width:1130px){
+  .ContainerT {
+    display: flex;
+    justify-content: space-between;
+   padding: 40px;
+   padding-top: 5px;
+
+  }
+
+}
+.btnL{
+  
+    margin-right: 20px;
+}
+.linkR{
+  margin-left: 20px;
+}
 
 

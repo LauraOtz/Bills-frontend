@@ -22,7 +22,7 @@ const { Header, Sider, Content } = Layout;
 const LayoutApp = ({ children }) => {
   const { cartItems, loading } = useSelector((state) => state.rootReducer);
 
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const navigate = useNavigate();
 
   const toggle = () => {
