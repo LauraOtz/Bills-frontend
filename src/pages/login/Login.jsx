@@ -72,7 +72,6 @@ const Login = () => {
                           "El correo no debe contener más de 25 caracteres",
                       },
                     ]}
-                    hasFeedback
                   >
                     <Input />
                   </FormItem>
