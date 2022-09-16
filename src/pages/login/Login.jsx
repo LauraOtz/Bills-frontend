@@ -12,10 +12,6 @@ import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 import "../home/home.css";
 import "../login/login.css";
-<<<<<<< HEAD
-
-=======
->>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -80,7 +76,7 @@ const Login = () => {
                   >
                     <Input />
                   </FormItem>
-                  <FormItem className="Items"
+                  <FormItem className="ItemsA"
                     name="password"
                     label="Contraseña"
                     style={{ fontWeight: "bold" }}
@@ -98,28 +94,11 @@ const Login = () => {
                   >
                     <Input.Password />
                   </FormItem>
-<<<<<<< HEAD
                   <div className="BL form-btn-add">
                     <Button htmlType="submit" className=" add-new">
                       Enviar
                     </Button>
                     <Link className="form-otherL" to="/register">
-=======
-                  <div className="form-btn-add btnL">
-                    <Button
-                      htmlType="submit"
-                      className="add-new "
-                      style={{ fontWeight: "bold" }}
-                    >
-                      Enviar
-                    </Button>
-
-                    <Link
-                      className="form-other linkR"
-                      to="/register"
-                      style={{ fontWeight: "bold" }}
-                    >
->>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3
                       ¡Registrate aquí!
                     </Link>
                   </div>

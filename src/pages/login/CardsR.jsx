@@ -4,10 +4,6 @@ import { Card, Col, Row } from 'antd';
 
 import "../login/cards-style.css";
 
-<<<<<<< HEAD
-=======
-import {DollarCircleFilled, MailOutlined , LikeOutlined} from "@ant-design/icons";
->>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3
 
 
 class CardsR1 extends Component {

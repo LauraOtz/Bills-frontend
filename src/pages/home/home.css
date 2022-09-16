@@ -2,14 +2,9 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
-<<<<<<< HEAD
   background-color: white;}
 
 
-=======
-  background-color: rgb(234, 238, 238);
-}
->>>>>>> a88a10f49d905fcc4af2ae51a3c2fb61ca27c2f3
 
 .ant-row {
   display: flex;
