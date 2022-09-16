@@ -190,7 +190,7 @@ const Products = () => {
           Agregar Nuevo
         </Button>
         <Table
-          className="ContainerTable"
+          className="ContainerTabla"
           dataSource={productData}
           columns={columns}
           bordered
@@ -231,7 +231,6 @@ const Products = () => {
                 ]}
               >
                 <Input placeholder="Ingrese el nombre del producto." />
-
               </FormItem>
               <Form.Item
                 name="category"
@@ -240,9 +239,7 @@ const Products = () => {
                   { required: true, message: "Seleccione una categoría" },
                 ]}
               >
-
                 <Select placeholder="Seleccione una categoría">
-
                   <Select.Option value="accesorios">Accesorios</Select.Option>
                   <Select.Option value="celulares">Celulares</Select.Option>
                   <Select.Option value="herramientas">
@@ -268,7 +265,6 @@ const Products = () => {
               </FormItem>
               <FormItem name="image" label="URL Imagen (opcional)">
                 <Input placeholder="Ingrese dirección de la imagen de su producto." />
-
               </FormItem>
               <div className="form-btn-add">
                 <Button htmlType="submit" className="add-new">

@@ -1,4 +1,6 @@
-.H1Contactanos{
+.H1Contactanos {
+  display: flex;
+  justify-content: center;
 
     display: flex;
     justify-content: center;
@@ -24,6 +26,9 @@
         color: #fe642c !important;
     }
 
+.H3Contactanos {
+  display: flex;
+  justify-content: center;
 
     @media only screen and (max-width: 600px){
         .colC{
@@ -35,3 +40,4 @@
         
              
            }
+        }
