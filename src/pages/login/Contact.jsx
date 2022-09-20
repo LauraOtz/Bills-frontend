@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Button, Form, Input, Row, Col } from "antd";
-
 import "../login/Contact.css";
+import "../login/Contactanos.css";
 
 const { TextArea } = Input;
 

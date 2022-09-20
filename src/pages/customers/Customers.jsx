@@ -53,7 +53,7 @@ const Customers = () => {
 
   return (
     <Layout>
-      <div className="Table   ">
+      <div className="Hidden">
         <h2>Clientes </h2>
 
         <div className="ContainerTabla ">

@@ -21,6 +21,16 @@
   padding: auto;
   width: 80%;
 }
+<<<<<<< HEAD
+=======
+.kr{
+    border: 5px solid white !important;
+}
+ .ContainerC {
+    background-color:white;
+margin: 40px;}
+   
+>>>>>>> 1a02adb193c221a06a431f1cd9ab850605efd19d
 
 .container-fluid-row {
   padding-top: 6rem;
