@@ -1,42 +1,42 @@
 import React, { Component } from "react";
-
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row } from "antd";
 import "../login/cards-style.css";
-
-import {DollarCircleFilled, MailOutlined , LikeOutlined} from "@ant-design/icons";
-
 
 class CardsR1 extends Component {
   render() {
-    return(
-      <div className="ContainerC
-       site-card-wrapper">
-        <hr />
-        <Row gutter={20} >
+    return (
+      <div
+        className="ContainerC
+       site-card-wrapper"
+      >
+        <Row gutter={20}>
           <Col className="CC" span={7}>
-      
-            <Card   title=  "Armá tu presupuesto"    bordered={false}>
-            Crearás un archivo con todos los detalles de tus productos en sólo
-                  unos minutos.  {<DollarCircleFilled/>}
+            <Card title="Armá tu presupuesto" bordered={false}>
+              <p className="Par">
+                Crearás un archivo con todos los detalles de tus productos en
+                sólo unos minutos.{" "}
+              </p>
             </Card>
           </Col>
           <Col className="CC" span={7}>
             <Card title="Mandalo al instante" bordered={false}>
-            Archivo listo para enviar vía email desde el mismo sitio! todo
-                  automaticamente!  {<MailOutlined />}
+              <p className="Par">
+                Archivo listo para enviar vía email desde el mismo sitio! todo
+                automaticamente!
+              </p>
             </Card>
           </Col>
           <Col className="CC" span={7}>
             <Card title="Seguí disfrutando tu día" bordered={false}>
-            Presupuestar nunca fue tan rápido y tan fácil. Donde estés directo
-                  a tus clientes!  {<LikeOutlined />}
+              <p className="Par">
+                Presupuestar nunca fue tan rápido y tan fácil. Donde estés
+                directo a tus clientes!
+              </p>
             </Card>
           </Col>
         </Row>
-        <hr />
       </div>
     );
-    
   }
 }
 export default CardsR1;
