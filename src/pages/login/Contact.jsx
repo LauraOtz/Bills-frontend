@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Button, Form, Input, Row, Col } from "antd";
-// import "../home/home.css"
-import "../login/Contactanos.css";
+
+import "../login/Contact.css";
 
 const { TextArea } = Input;
 
@@ -28,28 +28,27 @@ const Contact = () => {
   return (
     <>
       <hr className="hr" />
-      <br />
 
-      
-    <div>
-      <h1 span={12} className="H1Contactanos">Contactanos</h1>
-      
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-        <Col offset={0}>
+        <Col offset={0} className="contC">
           <div>
-          <p>
+            <h1 span={12} className="H1Contactanos">
+              Contáctanos
+            </h1>
+
             <h3 className="H3Contactanos">
-              Ofrecemos un servicio personalizado, profesional y confiable.
+              ¿Querés hacer tus tareas más faciles, responder a tus clientes al
+              instante y mejorar la dinamica de tu empresa? dejanos tus datos y
+              responderemos a la brevedad.
             </h3>
-          </p>
-          <p>
-            <h3 className="H3Contactanos">Dejanos tu consulta y responderemos a la brevedad</h3>
-          </p>
+            <h3 className="H3Contactanos textC">
+              Personalizamos tu cuenta a tus necesitades!
+            </h3>
           </div>
         </Col>
-        <Col offset={0}>
+        <Col offset={0} className="contC">
           <Form
-          className="FormContactanos"
+            className="FormContactanos"
             ref={form}
             onFinish={sendEmail}
             name="basic"
@@ -62,109 +61,92 @@ const Contact = () => {
             }}
             initialValues={{
               remember: true,
-             
             }}
             autoComplete="off"
           >
             <Form.Item
-            
               label="Nombre"
               name="name"
-               
-               rules={[
-                
+              rules={[
                 {
-                
                   required: true,
                   message: "Por favor introduzca su nombre",
                 },
-                
-                // {
-                //   whitespace: true,
-                // },
-                
+
                 {
                   type: "regexp",
                   pattern: new RegExp("^[a-zA-Z]*$"),
-                  message: "Wrong format!"
+                  message: "Por favor ingrese un nombre válido",
                 },
-                
+
                 {
-                min: 4, 
-                max: 30,
-                message: "Tiene que tener entre 4 y 30 Caracteres"
+                  min: 2,
+                  max: 20,
+                  message: "En nombre debe contener entre 2 y 20 Caracteres",
                 },
                 {
-                validator: (_, value)=>
-                value.match(/^[a-zA-Z]+$/,)
-                ? Promise.resolve()
-                : Promise.reject("Solo se puede ingresar letras para el nombre!")
+                  validator: (_, value) =>
+                    value.match(/^[a-zA-Z]+$/)
+                      ? Promise.resolve()
+                      : Promise.reject(
+                          "Por favor ingrese sólo letras en el nombre."
+                        ),
                 },
-                
-                // {
-                //   validator:(_, value)=>
-                //   value && 
-                //   value.includes("a") 
-                //   || value.includes("b") 
-                // }
               ]}
               hasFeedback
             >
-              <Input/>
+              <Input placeholder="Ingrese su nombre." />
             </Form.Item>
             <Form.Item
-            
-              label="Correo electronico"
+              label="Correo electrónico"
               name="email"
               rules={[
                 {
                   required: true,
                   message: "Por favor introduzca su correo electrónico.",
-                },{
-                  type: "email",
-                   message: "Ingrese un Correo Electrónico Valido!"
                 },
                 {
-                  whitespace: true
-                }
+                  type: "email",
+                  message: "Por favor ingrese un correo electrónico válido",
+                },
+                {
+                  whitespace: true,
+                },
               ]}
-                hasFeedback
+              hasFeedback
             >
-              <Input />
+              <Input placeholder="Ingrese su correo electrónico" />
             </Form.Item>
 
-            <Form.Item 
-            
-            name="message" 
-            label="Mensaje"
+            <Form.Item
+              name="message"
+              label="Mensaje"
+              rules={[
+                {
+                  required: true,
+                  message: "Por favor ingrese un mensaje",
+                },
+                {
+                  min: 4,
+                  max: 400,
+                  message:
+                    "Ingrese un mensaje válido, entre 4 y 400 caracteres",
+                },
 
-                rules={[
-                  {
-                    required: true,
-                    message: "Ingrese su mensaje!",
-                  },
-                  {
-                    min: 4,
-                    max: 150,
-                    message: "Ingrese un mensaje valido, entre 4 y 150 Caracteres"
-                  },
-
-                  {
-                    whitespace: true
-                  }
-                ]}
-
-            hasFeedback
+                {
+                  whitespace: true,
+                },
+              ]}
+              hasFeedback
             >
               <TextArea
-              name="textarea"
-               cols={100}
+                name="textarea"
+                cols={100}
                 rows={4}
                 showCount
-                
-                maxLength={150}
-                
-            hasFeedback   
+                maxLength={400}
+                hasFeedback
+                placeholder="Ingrese su consulta"
               />
             </Form.Item>
 
@@ -174,15 +156,20 @@ const Contact = () => {
                 span: 16,
               }}
             >
-              <Button type="primary" htmlType="submit" value="Send" class="ant-btn ant-btn-default add-new">
+              <Button
+                type="primary"
+                htmlType="submit"
+                value="Send"
+                class="ant-btn ant-btn-default add-new"
+                className="add-new "
+                style={{ fontWeight: "bold" }}
+              >
                 Enviar
               </Button>
             </Form.Item>
           </Form>
         </Col>
       </Row>
-
-      </div>
     </>
   );
 };
