@@ -321,7 +321,11 @@ body {
   justify-content: center;
 }
 
-
+@media screen and (max-width: 480px) {
+  .cart-items span {
+    font-size: 10px;
+  }
+}
 
 @media only screen and (min-width: 1060px) {
   .ant-row {

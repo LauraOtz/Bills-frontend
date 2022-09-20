@@ -19,7 +19,6 @@ import {
 } from "antd";
 import FormItem from "antd/lib/form/FormItem";
 import "../home/home.css";
-import "../products/products.css";
 
 const Products = () => {
   const dispatch = useDispatch();
