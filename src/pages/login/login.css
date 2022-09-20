@@ -50,7 +50,9 @@ p.Par{
     min-height: 35em;
     margin: 0px;
     padding: 0;
+    width: 100%;
   }
+  
   h1.h1T {
     font-size: 90%;
   }
@@ -115,7 +117,7 @@ h2{
     display: flex;
     justify-content: center;
   }
-
+ 
   .ContainerT {
     background-image: url(../../assets/b3.jpg);
     background-size: cover;
@@ -123,12 +125,13 @@ h2{
     min-height: 25em;
     margin: 0px;
     padding: 0;
+    width: 100%;
   }
 
   div.ant-row {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
   }
   .ant-col-7 {
     max-width: 100%;
@@ -146,9 +149,7 @@ h2{
   .ant-col-7.ant-card {
     width: 100%;
   }
-  .ContainerT {
-    width: 100%;
-  }
+
   .contC {
     width: 100%;
     padding: 20px;
@@ -179,9 +180,7 @@ h2{
 .ant-col-7.ant-card{
   width: 100%;
 }
-.ContainerT{
-  width: 100%;
-}
+
 .img-c {
   width: 20%;
   height: 20%;
@@ -225,9 +224,10 @@ h2{
 }
 .ant-row.ContainerT{
 margin-top: 2px;
-margin-left: 5px;
+margin-left: 0px;
 margin-bottom: 0;
 padding: 0;
+width: 100%;
 }
 .form-otherL
 {
@@ -245,6 +245,7 @@ padding: 0%;
 .Items {
 margin-bottom: 0%;
 }
+
 
 }
 
@@ -284,7 +285,7 @@ margin-bottom: 0%;
 
 
   .ItemsA {
-    width: 91%;
+    width: 80%;
    margin-left: 24px;
   }
 
@@ -301,4 +302,6 @@ margin-bottom: 0%;
     font-size:15px !important;
     justify-content: center;
 }
+
+
 }
