@@ -2,9 +2,8 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
-  background-color: white;}
-
-
+  background-color: white;
+}
 
 .ant-row {
   display: flex;
@@ -42,6 +41,7 @@
   .category {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
   }
 }
 
@@ -50,98 +50,85 @@
   flex-direction: column;
 }
 
-       .aboutrow{
-        display: flex;
-        flex-direction: column;
-    }
-       
-     
-    @media only screen and (max-width: 1090px) {
-    .ContainerTabla {
-     
-      width: 100%;
-      margin-bottom: 15px;
-      overflow-y: hidden;
-      -ms-overflow-style: -ms-autohiding-scrollbar;
-      border: 1px solid #ddd;
-     
-       }
-       
-       
-     }
-    
-     @media screen and (max-width:480px){
-      .TextHomeContainer {
-        font-size:50%;
-    
-      } 
-     
+.aboutrow {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1090px) {
+  .ContainerTabla {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+}
 
 @media screen and (max-width: 480px) {
   .TextHomeContainer {
     font-size: 50%;
   }
 
-  .formLogin {
-    justify-content: center;
-    border: none;
-    outline: none;
-    width: 100%;
-    margin-bottom: 20px;
-  }
+  @media screen and (max-width: 480px) {
+    .TextHomeContainer {
+      font-size: 50%;
+    }
 
-  .form-group input {
-    border: none;
-    outline: none;
-    width: 100%;
-    margin-bottom: 5px;
-  }
+    .formLogin {
+      justify-content: center;
+      border: none;
+      outline: none;
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
-<<<<<<< HEAD
-    
-    
-    
-=======
-  .anticon {
-    margin-left: 1px;
-  }
+    .form-group input {
+      border: none;
+      outline: none;
+      width: 100%;
+      margin-bottom: 5px;
+    }
 
-  svg {
-    font-size: 15px !important;
-  }
+    .anticon {
+      margin-left: 1px;
+    }
 
-  .ant-table-tbody > tr > td,
-  .ant-table-thead > tr > th,
-  .ant-table tfoot > tr > td,
-  .ant-table tfoot > tr > th {
-    padding: 5px;
-    font-size: 8px;
-  }
+    svg {
+      font-size: 15px !important;
+    }
 
-  img {
-    height: 30px;
-    width: 30px;
-  }
+    .ant-table-tbody > tr > td,
+    .ant-table-thead > tr > th,
+    .ant-table tfoot > tr > td,
+    .ant-table tfoot > tr > th {
+      padding: 5px;
+      font-size: 8px;
+    }
 
-  main.ant-layout-content.site-layout-background {
-    padding: 0px !important;
-  }
->>>>>>> c58eda7ddc6b43c1c7822f41c0cbf41a4867a479
+    img {
+      height: 30px;
+      width: 30px;
+    }
 
-  button.ant-btn.ant-btn-default.add-new {
-    margin-left: 135px !important;
-  }
+    main.ant-layout-content.site-layout-background {
+      padding: 0px !important;
+    }
 
-  .ant-modal {
-    width: 70% !important;
-  }
+    button.ant-btn.ant-btn-default.add-new {
+      margin-left: 135px !important;
+    }
 
-  h2 {
-    margin-left: 10px;
-  }
+    .ant-modal {
+      width: 70% !important;
+    }
 
-  span.ant-menu-title-content {
-    font-size: 14px;
+    h2 {
+      margin-left: 10px;
+    }
+
+    span.ant-menu-title-content {
+      font-size: 14px;
+    }
   }
 }
-     }

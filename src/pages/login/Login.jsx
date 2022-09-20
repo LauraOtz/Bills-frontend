@@ -55,7 +55,8 @@ const Login = () => {
                 <Form layout="vertical" onFinish={handlerSubmit}>
                   <h1>Iniciar sesión</h1>
 
-                  <FormItem className="Items"
+                  <FormItem
+                    className="Items"
                     name="email"
                     label="Correo electrónico"
                     style={{ fontWeight: "bold" }}
@@ -72,10 +73,12 @@ const Login = () => {
                           "El correo no debe contener más de 25 caracteres",
                       },
                     ]}
+                    hasFeedback
                   >
                     <Input />
                   </FormItem>
-                  <FormItem className="ItemsA"
+                  <FormItem
+                    className="ItemsA"
                     name="password"
                     label="Contraseña"
                     style={{ fontWeight: "bold" }}
