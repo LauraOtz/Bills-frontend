@@ -17,6 +17,12 @@
 .ant-card {
   width: 100%;
 }
+.btnL {
+  margin-right: 20px;
+}
+.linkR {
+  margin-left: 20px;
+}
 
 @media only screen and (max-width: 970px) and (min-width: 550px) {
   .ContainerL.ContainerT {
@@ -151,10 +157,4 @@
     padding: 40px;
     padding-top: 5px;
   }
-}
-.btnL {
-  margin-right: 20px;
-}
-.linkR {
-  margin-left: 20px;
 }
