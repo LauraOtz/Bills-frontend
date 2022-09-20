@@ -26,10 +26,14 @@ const Contact = () => {
   };
 
   return (
+ 
     <>
       <hr className="hr" />
 
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row >
+        <div  className="ContainerContactanos" >
+
+       
         <Col offset={0} className="contC">
           <div>
             <h1 span={12} className="H1Contactanos">
@@ -169,8 +173,10 @@ const Contact = () => {
             </Form.Item>
           </Form>
         </Col>
+        </div>
       </Row>
     </>
+  
   );
 };
 export default Contact;
