@@ -1,5 +1,4 @@
 .about {
-<<<<<<< HEAD
   justify-content: center;
   display: -ms-flex;
   display: -webkit-flex;
@@ -10,19 +9,6 @@
 
   padding: 10px;
 }
-=======
-    justify-content: center;
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: space-between;
-    
-  
-    text-align:left;
-  
-    padding: 10px;
-  }
->>>>>>> 1a02adb193c221a06a431f1cd9ab850605efd19d
 
 @media only screen and (max-width: 600px) {
   .about {
