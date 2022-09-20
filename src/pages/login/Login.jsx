@@ -55,7 +55,7 @@ const Login = () => {
                 <Form layout="vertical" onFinish={handlerSubmit}>
                   <h1>Iniciar sesión</h1>
 
-                  <FormItem
+                  <FormItem className="Items"
                     name="email"
                     label="Correo electrónico"
                     style={{ fontWeight: "bold" }}
@@ -75,7 +75,7 @@ const Login = () => {
                   >
                     <Input />
                   </FormItem>
-                  <FormItem
+                  <FormItem className="ItemsA"
                     name="password"
                     label="Contraseña"
                     style={{ fontWeight: "bold" }}
@@ -93,20 +93,11 @@ const Login = () => {
                   >
                     <Input.Password />
                   </FormItem>
-                  <div className="form-btn-add btnL">
-                    <Button
-                      htmlType="submit"
-                      className="add-new "
-                      style={{ fontWeight: "bold" }}
-                    >
+                  <div className="BL form-btn-add">
+                    <Button htmlType="submit" className=" add-new">
                       Enviar
                     </Button>
-
-                    <Link
-                      className="form-other linkR"
-                      to="/register"
-                      style={{ fontWeight: "bold" }}
-                    >
+                    <Link className="form-otherL" to="/register">
                       ¡Registrate aquí!
                     </Link>
                   </div>

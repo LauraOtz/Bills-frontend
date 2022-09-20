@@ -2,8 +2,9 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
-  background-color: rgb(234, 238, 238);
-}
+  background-color: white;}
+
+
 
 .ant-row {
   display: flex;
@@ -49,15 +50,32 @@
   flex-direction: column;
 }
 
-@media only screen and (max-width: 1090px) {
-  .ContainerTabla {
-    width: 100%;
-    margin-bottom: 15px;
-    overflow-y: hidden;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
-  }
-}
+       .aboutrow{
+        display: flex;
+        flex-direction: column;
+    }
+       
+     
+    @media only screen and (max-width: 1090px) {
+    .ContainerTabla {
+     
+      width: 100%;
+      margin-bottom: 15px;
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      border: 1px solid #ddd;
+     
+       }
+       
+       
+     }
+    
+     @media screen and (max-width:480px){
+      .TextHomeContainer {
+        font-size:50%;
+    
+      } 
+     
 
 @media screen and (max-width: 480px) {
   .TextHomeContainer {
@@ -79,6 +97,11 @@
     margin-bottom: 5px;
   }
 
+<<<<<<< HEAD
+    
+    
+    
+=======
   .anticon {
     margin-left: 1px;
   }
@@ -103,6 +126,7 @@
   main.ant-layout-content.site-layout-background {
     padding: 0px !important;
   }
+>>>>>>> c58eda7ddc6b43c1c7822f41c0cbf41a4867a479
 
   button.ant-btn.ant-btn-default.add-new {
     margin-left: 135px !important;
@@ -120,3 +144,4 @@
     font-size: 14px;
   }
 }
+     }

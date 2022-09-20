@@ -88,6 +88,7 @@ const Bills = () => {
   });
 
   return (
+    <div className="Hidden" >
     <Layout>
       <h2>Mis presupuestos</h2>
       <div className="ContainerTabla">
@@ -192,6 +193,7 @@ const Bills = () => {
         </Modal>
       )}
     </Layout>
+    </div>
   );
 };
 

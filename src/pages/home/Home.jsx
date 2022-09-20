@@ -49,6 +49,7 @@ const Home = () => {
   }, [dispatch]);
 
   return (
+    <div className="Hidden">
     <LayoutApp>
       <div className="category ">
         {categories.map((category) => (
@@ -79,6 +80,7 @@ const Home = () => {
           ))}
       </Row>
     </LayoutApp>
+    </div>
   );
 };
 

@@ -39,10 +39,11 @@
     transition: transform 0.5s ease-in !important;;
 }
 .kr{
-    border: 5px solid rgba(2, 1, 0, .3) !important;
+    border: 5px solid white !important;
 }
  .ContainerC {
-    background-color: rgb(234, 238, 238);}
+    background-color:white;
+margin: 40px;}
    
 
 
