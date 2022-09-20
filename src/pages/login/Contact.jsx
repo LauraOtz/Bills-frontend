@@ -1,7 +1,14 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Button, Form, Input, Row, Col } from "antd";
+<<<<<<< HEAD
 import "../login/Contact.css";
+=======
+
+
+import "../login/Contact.css";
+
+>>>>>>> 7e781aa3113192e4e5c18a3d7b47834d0ff7ad3b
 
 const { TextArea } = Input;
 
@@ -25,10 +32,14 @@ const Contact = () => {
   };
 
   return (
+ 
     <>
       <hr className="hr" />
 
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+      <Row >
+        <div  className="ContainerContactanos" >
+
+       
         <Col offset={0} className="contC">
           <div>
             <h1 span={12} className="H1Contactanos">
@@ -168,8 +179,10 @@ const Contact = () => {
             </Form.Item>
           </Form>
         </Col>
+        </div>
       </Row>
     </>
+  
   );
 };
 export default Contact;
