@@ -117,11 +117,11 @@ p.Par {
     padding: 0;
   }
 
-  div.ant-row {
+  /* div.ant-row {
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
+  } */
   .ant-col-7 {
     max-width: 100%;
     display: flex;
