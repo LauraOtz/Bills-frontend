@@ -5,7 +5,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
-import logoBills1 from "../../assets/logoBills1.png";
+import logo6 from "../../assets/logo6.png";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -43,10 +43,11 @@ const Register = () => {
               wrapperCol={{ span: 14 }}
             >
               <Row>
-                <img src={logoBills1} alt="logo" className="logoR" />
+                <img src={logo6} alt="logo" className="logoR" />
                 <h1> Registro de Usuario</h1>
               </Row>
-              <FormItem 
+              <FormItem
+                className="imp"
                 name="nombre"
                 label="Nombre"
                 style={{ fontWeight: "bold" }}
@@ -63,11 +64,11 @@ const Register = () => {
                 ]}
                 hasFeedback
               >
-                <Input className="ItemR "/>
+                <Input className="ItemR " />
               </FormItem>
 
               <FormItem
-              
+                className="imp"
                 name="email"
                 label="Correo Electrónico"
                 style={{ fontWeight: "bold" }}
@@ -88,8 +89,8 @@ const Register = () => {
                 <Input className="ItemR" />
               </FormItem>
 
-              <FormItem  
-              className="ItemR"
+              <FormItem
+                className="ItemR imp"
                 name="password"
                 label="Contraseña"
                 style={{ fontWeight: "bold" }}
@@ -113,7 +114,7 @@ const Register = () => {
               </FormItem>
 
               <FormItem
-              className="ItemR"
+                className="ItemR imp"
                 name="confirmPassword"
                 label="Confirmar contraseña"
                 style={{ fontWeight: "bold" }}
@@ -171,4 +172,4 @@ const Register = () => {
   );
 };
 
-export default Register
+export default Register;
