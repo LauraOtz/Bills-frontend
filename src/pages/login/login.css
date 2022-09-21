@@ -1,5 +1,5 @@
 .ContainerT {
-  background-image: url(../../assets/b3.jpg);
+  background-image: url(../../assets/fondo2.jpg);
   background-size: cover;
   font-size: 14px;
   min-height: 35em;
@@ -43,7 +43,7 @@ p.Par{
 @media only screen and (max-width:970px) and ( min-width:550px) {
 
   .ContainerL.ContainerT {
-    background-image: url(../../assets/b3.jpg);
+    background-image: url(../../assets/fondo2.jpg);
     background-size: cover;
 
     font-size: 10px;
@@ -119,7 +119,7 @@ h2{
   }
  
   .ContainerT {
-    background-image: url(../../assets/b3.jpg);
+    background-image: url(../../assets/fondo2.jpg);
     background-size: cover;
     font-size: 14px;
     min-height: 25em;
@@ -269,7 +269,7 @@ margin-bottom: 0%;
 @media only screen and (min-width:1130px){
   .ContainerT {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
    padding: 40px;
    padding-top: 5px;
 

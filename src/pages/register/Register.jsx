@@ -5,7 +5,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
-import logo3 from "../../assets/logo3.png";
+import logo6 from "../../assets/logo6.png";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -43,7 +43,7 @@ const Register = () => {
               wrapperCol={{ span: 14 }}
             >
               <Row>
-                <img src={logo3} alt="logo" className="logoR" />
+                <img src={logo6} alt="logo" className="logoR" />
                 <h1> Registro de Usuario</h1>
               </Row>
               <FormItem
