@@ -1,49 +1,43 @@
-.btnR{
-    margin-right: 20px;
+.btnR {
+  margin-right: 20px;
 }
-.textR{
-    margin-left: 20px;
+.textR {
+  margin-left: 20px;
 }
-.logoR{
+.logoR {
   width: 20%;
   height: 20%;
   border-radius: 70px;
-  margin:5px;
+  margin: 5px;
 }
 .ContainerR {
-    background-image: url(../../assets/b1.jpg);
-    background-size: cover;
-    font-size: 8px;
-    min-height: 100vh;
-    margin: 0px;
-    position: relative;
-    
-  }
- 
-  .formRu{
-background-color: rgba(246, 245, 244, 0.635);
-display: flex;
+  background-image: url(../../assets/b1.jpg);
+  background-size: cover;
+  font-size: 8px;
+  min-height: 100vh;
+  margin: 0px;
+  position: relative;
+}
 
-justify-content: center;
-flex-direction: column;
-margin-bottom: 20%;
-margin-top: 0%;
-width: 80%;
+.formRu {
+  background-color: rgba(246, 245, 244, 0.635);
+  display: flex;
 
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20%;
+  margin-top: 0%;
+  width: 80%;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  color: black !important;
+}
+.logoR {
+  margin-left: -80px;
+}
 
-  }
-  h1{
-    display: flex;
-    justify-content: center;
-    color: black !important;
-  }
-  .logoR{
-    margin-left: -80px;
-   
-  }
-
-  .form-group .ItemR{
-
-    width: 90%;
-
-  }
+.form-group .ItemR {
+  width: 90%;
+}

@@ -60,9 +60,25 @@
   color: #ffffff;
 }
 
-@media only screen and (max-width: 920px) {
-  div.CardsA {
-    display: flex;
-    justify-content: center;
+.ant-table table {
+  text-align: center;
+}
+
+th.ant-table-cell {
+  text-align: center !important;
+}
+
+div.CardsA {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 414px) {
+  body {
+    font-size: 10px;
+  }
+
+  div.ant-card-bordered.ant-card-hoverable {
+    width: 143px !important;
   }
 }

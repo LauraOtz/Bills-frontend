@@ -183,7 +183,6 @@ const Products = () => {
   };
 
   return (
-    
     <div className="Hidden">
       <LayoutApp>
         <h2>Mis Productos</h2>
@@ -255,10 +254,13 @@ const Products = () => {
                   {
                     required: true,
 
-                    pattern: new RegExp(
-                      /^(\d*[1-9]\d*(\.\d+)?|0*\.\d*[1-9]\d*)$/
-                    ),
+                    pattern: /^(\d*[1-9]\d*(\.\d+)?|0*\.\d*[1-9]\d*)$/,
+
                     message: "Por favor ingrese un precio válido.",
+                  },
+                  {
+                    max: 7,
+                    message: "No es posible ingresar mas de 7 caracteres",
                   },
                 ]}
               >
