@@ -90,7 +90,7 @@ const Register = () => {
               </FormItem>
 
               <FormItem
-                className="ItemR imp"
+                className="imp"
                 name="password"
                 label="Contraseña"
                 style={{ fontWeight: "bold" }}
@@ -110,11 +110,11 @@ const Register = () => {
                 ]}
                 hasFeedback
               >
-                <Input.Password />
+                <Input.Password className="ItemR" />
               </FormItem>
 
               <FormItem
-                className="ItemR imp"
+                className="imp"
                 name="confirmPassword"
                 label="Confirmar contraseña"
                 style={{ fontWeight: "bold" }}
@@ -135,7 +135,7 @@ const Register = () => {
                 ]}
                 hasFeedback
               >
-                <Input.Password />
+                <Input.Password className="ItemR" />
               </FormItem>
 
               <div className="form-btn-add btnR">

@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import logo6 from "../../assets/logo6.png";
+import "../login/textHome.css";
 
 import "../home/home.css";
 import "./login.css";
