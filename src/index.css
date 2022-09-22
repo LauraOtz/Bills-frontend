@@ -196,14 +196,13 @@ body {
   padding: 10px 5px;
   border-radius: 20px;
 }
-
 .form-group input {
   border: none;
   outline: none !important;
   border-bottom: 1px solid #000000;
   width: 350px;
   height: 40px;
-  padding: 5px 15px;
+  /* padding: 5px 15px; */
 }
 
 .form-group input:focus,
@@ -240,7 +239,7 @@ body {
 .Items {
   padding: 20px;
   box-sizing: border-box;
-  color: rgba(0,0,0,.85);
+  color: rgba(0, 0, 0, 0.85);
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -249,7 +248,7 @@ body {
   margin: 0 0 24px;
   vertical-align: top;
 }
-.form-otherL{
+.form-otherL {
   padding: 20px;
   color: #000;
 }
@@ -308,7 +307,6 @@ body {
   font-size: 12px !important;
   padding: 5px !important;
 }
-
 
 .formLogin {
   padding: 20px;
