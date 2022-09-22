@@ -40,7 +40,7 @@ p.Par{
 }
 
 
-@media only screen and (max-width:970px) and ( min-width:550px) {
+@media only screen and (max-width:998px) and ( min-width:550px) {
 
   .ContainerL.ContainerT {
     background-image: url(../../assets/fondo2.jpg);
@@ -75,11 +75,12 @@ p.Par{
 .img-c {
   width: 20%;
   height: 20%;
-  border-radius: 150px;
+ 
   display: flex;
   justify-content: flex-start;
   margin:5px;
   margin-left: 5px;
+  
 }
 
 
@@ -99,7 +100,7 @@ h2{
 }
 .form-group
 {
-  background-color: rgba(220, 217, 213, 0.635);
+  background-color:  rgba(246, 245, 244, 0.635);
   display: flex;
   
   justify-content: center;
@@ -155,12 +156,7 @@ h2{
     padding: 20px;
   }
 }
-@media screen and (max-width: 550px) {
-  .form-group {
-    background-color: rgba(246, 245, 244, 0.635);
-    display: flex;
 
- }
 
  .BL{
   margin-right: 20px;
@@ -176,7 +172,7 @@ h2{
     margin-top: 0%;
   }
 
-}
+
 .ant-col-7.ant-card{
   width: 100%;
 }
@@ -188,7 +184,8 @@ h2{
   display: flex;
   justify-content: flex-start;
   margin:5px;
-  margin-left: 5px;
+ margin-left: 0px;
+  margin-top: 50px;
 }
 
 
@@ -221,6 +218,7 @@ h2{
   display: flex;
   justify-content: flex-start;
   margin:5px;
+  
 }
 .ant-row.ContainerT{
 margin-top: 2px;
@@ -266,7 +264,7 @@ margin-bottom: 0%;
 }
 
 
-@media only screen and (min-width:1130px){
+@media only screen and (min-width:1238px){
   .ContainerT {
     display: flex;
     justify-content: space-evenly;
@@ -274,14 +272,38 @@ margin-bottom: 0%;
    padding-top: 5px;
 
   }
+  .TextHomeContainer{
+    margin-left: 160px;
+  }
 
 }
+@media only screen and (max-width:998px){
+  .h1T{
+    
+    font-size: 25px !important; 
+  }
+}
+@media only screen and (min-width:831px) and (max-width:981px){
+.TextHomeContainer{
+  margin-left: 170px;
+  margin-top: -80px;
+}
+}
+@media only screen and (min-width:550px) and (max-width:830px){
+  .TextHomeContainer{
+   
+    margin-top: -60px;
+  }
+}
+
 .ItemsA {
   width: 82%;
  margin-left: 24px;
+
 }
 
-@media only screen and (max-width:830px) and (min-width: 480px){
+
+@media only screen and (min-width: 480px) and (max-width:830px) {
 
 
   .ItemsA {
@@ -308,4 +330,10 @@ margin-bottom: 0%;
 }
 
 
+}
+.pL{
+  color: #fafafa !important;
+  display: flex;
+  justify-content: center;
+  text-shadow: 0.1em 0.1em 0.2em black;
 }
