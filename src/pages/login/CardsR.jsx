@@ -12,7 +12,7 @@ class CardsR1 extends Component {
       >
         {/* <img src={txt} alt="" className="img-ca d-flex" /> */}
         <Row gutter={20}>
-          <Col className="CC1" span={7}>
+          <Col className="CC" span={7}>
             <Card title="Armá tu presupuesto" bordered={false}>
               <Row>
                 <p className="Par">
@@ -22,7 +22,7 @@ class CardsR1 extends Component {
               </Row>
             </Card>
           </Col>
-          <Col className="CC2" span={7}>
+          <Col className="CC" span={7}>
             <Card title="Mandalo al instante" bordered={false}>
               <p className="Par">
                 Archivo listo para enviar vía email desde el mismo sitio! todo
@@ -30,7 +30,7 @@ class CardsR1 extends Component {
               </p>
             </Card>
           </Col>
-          <Col className="CC3" span={7}>
+          <Col className="CC" span={7}>
             <Card title="Seguí disfrutando tu día" bordered={false}>
               <p className="Par">
                 Presupuestar nunca fue tan rápido y tan fácil. Donde estés

@@ -60,8 +60,21 @@ h3.H3Contactanos {
   display: flex;
   justify-content: center;
 }
-@media only screen and (max-width: 830px){
-.ant-row .contC {
-    width: 100%;
-    padding: 10px;
-}}
+
+@media only screen and (Min-width: 830px)  {
+  .ContainerContactos  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+.ant-col .ContC1 {
+    width: 20%; 
+
+ float:left;
+  }
+.ant-col  .ContC1 {
+    width: 20%; 
+
+ float:right;
+  }
+}

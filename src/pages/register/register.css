@@ -9,6 +9,8 @@
   height: 20%;
   border-radius: 70px;
   margin:5px;
+  object-fit: cover;
+  float: left;
 }
 .ContainerR {
     background-image: url(../../assets/b1.jpg);
@@ -40,6 +42,7 @@ width: 80%;
   }
   .logoR{
     margin-left: -80px;
+
    
   }
 
@@ -51,4 +54,27 @@ width: 80%;
   }
   .imp{
     margin-left: 30px;
+  }
+   .imp1{
+    margin-left: 40px;
+  }
+
+  @media only screen and (max-width: 830px ){
+    .logoR{
+      width: 20%;
+      height: 20%;
+      border-radius: 70px;
+      margin:5px;
+
+      object-fit: cover;
+      float: left;
+    }
+  }
+ .ant-row .ContReg {
+
+    justify-content: center;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
   }
