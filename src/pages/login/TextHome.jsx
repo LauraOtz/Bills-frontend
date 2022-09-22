@@ -19,12 +19,11 @@ function TextHome() {
           </h1>
 
           <p className="pL" style={{ fontWeight: "bold" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
-            nobis.
+            La automatización que le hacia falta a tu empresa en tus manos.
           </p>
           <p className="pL" style={{ fontWeight: "bold" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
-            nobis.
+            No pierdas tiempo ni un potencial cliente. La forma mas rápida y
+            eficaz de generar presupuestos la tenés aquí!
           </p>
         </Col>
       </Row>
