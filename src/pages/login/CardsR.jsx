@@ -11,7 +11,7 @@ class CardsR1 extends Component {
        site-card-wrapper"
       >
         {/* <img src={txt} alt="" className="img-ca d-flex" /> */}
-        <Row gutter={20}>
+        <Row gutter={20} className="CardRow">
           <Col className="CC" span={7}>
             <Card title="Armá tu presupuesto" bordered={false}>
               <Row>

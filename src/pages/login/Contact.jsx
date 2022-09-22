@@ -45,7 +45,7 @@ const Contact = () => {
               </h3>
             </div>
           </Col>
-          <Col offset={0} className="contC">
+          <Col offset={0} className="contC" id="contC">
             <Form
               className="FormContactanos"
               ref={form}
