@@ -62,20 +62,20 @@ h3.H3Contactanos {
   justify-content: center;
 }
 
-@media only screen and (Min-width: 830px)  {
-  .ContainerContactos  {
+@media only screen and (min-width: 830px) {
+  .ContainerContactos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
-.ant-col .ContC1 {
-    width: 20%; 
+  .ant-col .ContC1 {
+    width: 20%;
 
- float:left;
+    float: left;
   }
-.ant-col  .ContC1 {
-    width: 20%; 
+  .ant-col .ContC1 {
+    width: 20%;
 
- float:right;
+    float: right;
   }
 }
