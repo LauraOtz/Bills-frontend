@@ -60,6 +60,18 @@ h1 {
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 415px) {
+  #email.ant-input.ItemR {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (width: 540px) {
+  .ant-input-affix-wrapper.ant-input-password.ItemR {
+    margin: 0px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .ant-input-suffix {
     margin-left: 100px;
@@ -69,5 +81,21 @@ h1 {
 @media only screen and (min-width: 820px) {
   .ant-input-suffix {
     margin-left: 115px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .ant-input-affix-wrapper.ant-input-password.ItemR {
+    margin: 0px;
+    width: 90% !important;
+  }
+  #email.ant-input.ItemR {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .ant-input-affix-wrapper.ant-input-password.ItemR {
+    margin: 0px;
   }
 }
