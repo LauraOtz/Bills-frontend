@@ -10,7 +10,13 @@
   width: 20%;
   height: 20%;
   border-radius: 70px;
+<<<<<<< HEAD
+  margin:5px;
+  object-fit: cover;
+  float: left;
+=======
   margin: 5px;
+>>>>>>> 565f3de1a60031b245d58fc726c44f6ccae6a7d9
 }
 
 .ContainerR {
@@ -38,6 +44,53 @@ h1 {
   color: black !important;
 }
 
+<<<<<<< HEAD
+  }
+  h1{
+    display: flex;
+    justify-content: center;
+    color: black !important;
+    margin-top: 30px;
+  }
+  .logoR{
+    margin-left: -80px;
+
+   
+  }
+
+  .form-group .ItemR{
+
+    width: 90%;
+    margin-left: 20px;
+
+  }
+  .imp{
+    margin-left: 30px;
+  }
+   .imp1{
+    margin-left: 40px;
+  }
+
+  @media only screen and (max-width: 830px ){
+    .logoR{
+      width: 20%;
+      height: 20%;
+      border-radius: 70px;
+      margin:5px;
+
+      object-fit: cover;
+      float: left;
+    }
+  }
+ .ant-row .ContReg {
+
+    justify-content: center;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+=======
 .form-group .ItemR {
   width: 90%;
   border: none;
@@ -48,3 +101,4 @@ h1 {
 .imp {
   margin-left: 30px;
 }
+>>>>>>> 565f3de1a60031b245d58fc726c44f6ccae6a7d9

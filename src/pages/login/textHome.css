@@ -1,0 +1,38 @@
+@media only screen and (min-width:1238px){
+    .ContainerT {
+      display: flex;
+      justify-content: space-evenly;
+     padding: 40px;
+     padding-top: 5px;
+  
+    }
+    .TextHomeContainer{
+      margin-left: 160px;
+    }
+  
+  }
+  @media only screen and (max-width:998px){
+    .h1T{
+      
+      font-size: 25px !important; 
+    }
+  }
+  @media only screen and (min-width:831px) and (max-width:981px){
+  .TextHomeContainer{
+    margin-left: 170px;
+    margin-top: -80px;
+  }
+  }
+  @media only screen and (min-width:550px) and (max-width:830px){
+    .TextHomeContainer{
+     
+      margin-top: -80px;
+    }
+  }
+  .pL{
+    color: #fafafa !important;
+    display: flex;
+    justify-content: center;
+    text-shadow: 0.1em 0.1em 0.2em black;
+  }
+  

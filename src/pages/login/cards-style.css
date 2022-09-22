@@ -1,10 +1,14 @@
-.Card {
+.CC {
   width: 100%;
   display: flex;
   flex-direction: row;
   min-height: 100%;
-  justify-content: space-around;
-  padding: 10px;
+  margin-right: 5px;
+  justify-content: space-between;
+  padding: 0px;
+  box-shadow: 4px -1px 40px 0px rgba(130,129,129,0.75);
+  -webkit-box-shadow: 4px -1px 40px 0px rgba(130,129,129,0.75);
+  -moz-box-shadow: 4px -1px 40px 0px rgba(130,129,129,0.75);
 }
 
 .Card-body {
@@ -13,9 +17,6 @@
   margin-top: 20px;
 }
 
-.Card:hover {
-  box-shadow: rgba(rgb(74, 57, 57), green, blue, 0.5) !important;
-}
 
 .Card-text {
   padding: auto;

@@ -8,17 +8,17 @@
   padding: 10px;
 }
 
-.H3Contactanos {
+h3.H3Contactanos {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  font-size: 14px;
   padding: 10px;
 }
 
-.contC {
+.ant-col .contC {
   width: 50%;
-  padding: 20px;
+  padding: 10px;
 }
 
 .textC {
@@ -60,4 +60,22 @@
 .H3Contactanos {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (Min-width: 830px)  {
+  .ContainerContactos  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+.ant-col .ContC1 {
+    width: 20%; 
+
+ float:left;
+  }
+.ant-col  .ContC1 {
+    width: 20%; 
+
+ float:right;
+  }
 }
