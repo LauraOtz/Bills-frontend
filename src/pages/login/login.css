@@ -116,10 +116,6 @@ p.Par {
   .Items {
     margin-bottom: 0%;
   }
-
-  div.FooterColIcon col-md-12 col {
-    margin: auto;
-  }
 }
 
 @media only screen and (max-width: 970px) and (min-width: 550px) {
@@ -184,11 +180,13 @@ p.Par {
   }
 }
 
-@media only screen and (max-width: 830px) and (min-width: 480px) {
-  .ItemsA {
-    width: 81%;
-    margin-left: 24px;
+@media only screen and (max-width: 415px) and (min-width: 375px) {
+  #email.ant-input {
+    width: 180px;
   }
+  /* #password.ant-input{
+    width: ;
+  } */
 }
 
 @media only screen and (max-width: 830px) {
@@ -209,7 +207,6 @@ p.Par {
 
   div.ant-row {
     display: flex;
-    /* flex-direction: column; */
     width: 100%;
   }
   .ant-col-7 {
@@ -235,29 +232,27 @@ p.Par {
   }
 }
 
-@media only screen and (min-width: 1130px) {
+@media only screen and (min-width: 540px) and (max-width: 1024px) {
   .ContainerT {
     display: flex;
     justify-content: space-evenly;
     padding: 40px;
     padding-top: 5px;
   }
-}
-.ItemsA {
-  width: 82%;
-  margin-left: 24px;
+  #email.ant-input {
+    width: 350px;
+    height: 50px;
+  }
+  .ant-input-affix-wrapper {
+    width: 350px !important;
+    margin-left: 20px;
+  }
 }
 
 @media only screen and (min-width: 1279px) {
   .ant-input-affix-wrapper {
     padding: 0px;
     width: 350px;
-  }
-}
-
-@media only screen and (max-width: 821px) and (min-width: 767px) {
-  .ant-input-affix-wrapper {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    margin-left: 20px;
   }
 }
