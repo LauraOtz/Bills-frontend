@@ -6,6 +6,10 @@
   margin: 0px;
   padding: 0;
 }
+
+.form-group {
+  background-color: rgba(246, 245, 244, 0.635);
+}
 p.Par {
   font-size: small;
 }
@@ -232,7 +236,7 @@ p.Par {
   }
 }
 
-@media only screen and (min-width: 540px) and (max-width: 1024px) {
+@media only screen and (min-width: 540px) and (max-width: 1025px) {
   .ContainerT {
     display: flex;
     justify-content: space-evenly;
