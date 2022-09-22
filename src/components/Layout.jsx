@@ -16,7 +16,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Spinner from "./Spinner";
 import { Button, notification } from "antd";
-import logo6 from "../assets/logo6.png";
+import logo7 from "../assets/logo7.png";
 
 const { Header, Sider, Content } = Layout;
 
@@ -63,7 +63,7 @@ const LayoutApp = ({ children }) => {
       {loading && <Spinner />}
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo">
-          <img src={logo6} alt="" className="logoNav" />
+          <img src={logo7} alt="" className="logoNav" />
         </div>
         <Menu
           theme="dark"

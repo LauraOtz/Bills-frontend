@@ -100,7 +100,11 @@ const Login = () => {
                     <Button htmlType="submit" className=" add-new">
                       Enviar
                     </Button>
-                    <Link className="form-otherL" to="/register">
+                    <Link
+                      className="form-otherL"
+                      to="/register"
+                      style={{ fontWeight: "bold" }}
+                    >
                       ¡Registrate aquí!
                     </Link>
                   </div>

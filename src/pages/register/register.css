@@ -7,11 +7,8 @@
   height: 20%;
   border-radius: 70px;
   margin: 5px;
-<<<<<<< HEAD
   object-fit: cover;
   float: left;
-=======
->>>>>>> dcbfe5b70682a82a8034e85bc065ad2bdbe6c6c6
 }
 
 .ContainerR {
@@ -39,7 +36,6 @@ h1 {
   color: black !important;
 }
 
-<<<<<<< HEAD
 h1 {
   display: flex;
   justify-content: center;
@@ -48,14 +44,14 @@ h1 {
 }
 .logoR {
   margin-left: -80px;
-=======
+}
 .form-group .ItemR {
   width: 90%;
   border: none;
   padding: 0px;
   padding-right: 5px;
->>>>>>> dcbfe5b70682a82a8034e85bc065ad2bdbe6c6c6
 }
+
 
 .form-group .ItemR {
   width: 90%;
@@ -64,7 +60,6 @@ h1 {
 .imp {
   margin-left: 30px;
 }
-<<<<<<< HEAD
 .imp1 {
   margin-left: 40px;
 }
@@ -87,5 +82,3 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-=======
->>>>>>> dcbfe5b70682a82a8034e85bc065ad2bdbe6c6c6

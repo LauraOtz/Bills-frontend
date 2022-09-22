@@ -19,28 +19,28 @@ const FooterApp = () => {
           <Col className="FooterColIcon col-md-12">
             <div className="social__media--wrap">
               <div className="button">
-                <div className="icon">
-                  <i className="fa fa-instagram"></i>
-                </div>
                 <NavLink to="/*">
+                  <div className="icon tI">
+                    <i className="fa fa-instagram"></i>
+                  </div>
                   <span>Instagram</span>
                 </NavLink>
               </div>
 
-              <div className="button">
-                <div className="icon">
-                  <i className="fa fa-facebook-f"></i>
-                </div>
+              <div className="button ">
                 <NavLink to="/*">
+                  <div className="icon tI">
+                    <i className="fa fa-facebook-f"></i>
+                  </div>
                   <span>Facebook</span>
                 </NavLink>
               </div>
 
               <div className="button">
-                <div className="icon">
-                  <i className="fa fa-twitter"></i>
-                </div>
                 <NavLink to="/*">
+                  <div className="icon tI">
+                    <i className="fa fa-twitter"></i>
+                  </div>
                   <span>Twitter</span>
                 </NavLink>
               </div>

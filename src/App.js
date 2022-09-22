@@ -62,7 +62,7 @@ function App() {
               </ProtectedRouter>
             }
           />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/*" element={<NotFound />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

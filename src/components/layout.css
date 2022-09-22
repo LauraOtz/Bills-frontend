@@ -85,3 +85,9 @@ div.CardsA {
 .logoNav {
   width: 80px;
 }
+@media only screen and (max-width: 480px)  {
+  .logoNav {
+    height: 80px;
+  }
+ 
+}
