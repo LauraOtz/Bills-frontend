@@ -22,7 +22,7 @@ y el cliente a la hora de presupuestar productos y/o servicios.
 
  `Ant Design `
 
- `Redox `
+ `Redux `
 
  `Emailjs `
 
