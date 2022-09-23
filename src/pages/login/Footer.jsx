@@ -1,55 +1,66 @@
 import React from "react";
 import "font-awesome/css/font-awesome.css";
 import "../login/Footer.css";
+import { Col, Row } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const FooterApp = () => {
   return (
     <>
       <div className="footer__container">
-        <div className="social__media--wrap">
-          <div className="button">
-            <div className="icon">
-              <i className="fa fa-instagram"></i>
-            </div>
-            <span>Instagram</span>
-          </div>
+        <Row className="FooterRow ">
+          <Col className="FooterColMail col-md-12">
+            <a className="text-dark" href="">
+              Copyright © 2022 All rights reserved | ®Billscompany |
+              billscompany22@gmail.com
+            </a>
+          </Col>
 
-          <div className="button">
-            <div className="icon">
-              <i className="fa fa-facebook-f"></i>
-            </div>
-            <span>Facebook</span>
-          </div>
+          <Col className="FooterColIcon col-md-12">
+            <div className="social__media--wrap">
+              <div className="button">
+                <NavLink to="/*">
+                  <div className="icon tI">
+                    <i className="fa fa-instagram"></i>
+                  </div>
+                  <span>Instagram</span>
+                </NavLink>
+              </div>
 
-          <div className="button">
-            <div className="icon">
-              <i className="fa fa-twitter"></i>
-            </div>
-            <span>Twitter</span>
-          </div>
+              <div className="button ">
+                <NavLink to="/*">
+                  <div className="icon tI">
+                    <i className="fa fa-facebook-f"></i>
+                  </div>
+                  <span>Facebook</span>
+                </NavLink>
+              </div>
 
-          <div className="button">
+              <div className="button">
+                <NavLink to="/*">
+                  <div className="icon tI">
+                    <i className="fa fa-twitter"></i>
+                  </div>
+                  <span>Twitter</span>
+                </NavLink>
+              </div>
+
+              {/* <div className="button">
             <div className="icon">
               <i className="fa fa-linkedin"></i>
             </div>
-            <span>LinkedIn</span>
-          </div>
+            <NavLink to= "/*"><span>LinkeIn</span></NavLink>
+          </div> */}
 
-          <div className="button">
+              {/* <div className="button">
             <div className="icon">
               <i className="fa fa-youtube"></i>
             </div>
-            <span>YouTube</span>
-          </div>
-        </div>
-      </div>
-      <div
-        className="text-center text-light p-3"
-        style={{ backgroundColor: "rgba(70,70,70)" }}
-      >
-        <a className="text-light" href="">
-          © Bill$Company.com
-        </a>
+            <NavLink to= "/*"><span>Youtube</span></NavLink>
+          </div> */}
+            </div>
+          </Col>
+        </Row>
       </div>
     </>
   );

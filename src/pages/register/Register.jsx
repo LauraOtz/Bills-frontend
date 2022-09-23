@@ -5,7 +5,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
-import logoBills1 from "../../assets/logoBills1.png";
+import logo6 from "../../assets/logo6.png";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,10 @@ const Register = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      await axios.post("/api/usuarios", value);
+      await axios.post(
+        "https://billscompany.herokuapp.com/api/usuarios",
+        value
+      );
       message.success("Registro Exitoso!");
       navigate("/login");
       dispatch({
@@ -43,10 +46,11 @@ const Register = () => {
               wrapperCol={{ span: 14 }}
             >
               <Row>
-                <img src={logoBills1} alt="logo" className="logoR" />
+                <img src={logo6} alt="logo" className="logoR" />
                 <h1> Registro de Usuario</h1>
               </Row>
               <FormItem
+                className="imp"
                 name="nombre"
                 label="Nombre"
                 style={{ fontWeight: "bold" }}
@@ -63,10 +67,11 @@ const Register = () => {
                 ]}
                 hasFeedback
               >
-                <Input />
+                <Input className="ItemR " />
               </FormItem>
 
               <FormItem
+                className="imp"
                 name="email"
                 label="Correo Electrónico"
                 style={{ fontWeight: "bold" }}
@@ -78,16 +83,17 @@ const Register = () => {
                   },
                   { type: "email", message: "Introduzca un correo válido" },
                   {
-                    max: 60,
-                    message: "El correo no debe contener más de 60 caracteres",
+                    max: 25,
+                    message: "El correo no debe contener más de 25 caracteres",
                   },
                 ]}
                 hasFeedback
               >
-                <Input />
+                <Input className="ItemR" />
               </FormItem>
 
               <FormItem
+                className="imp"
                 name="password"
                 label="Contraseña"
                 style={{ fontWeight: "bold" }}
@@ -95,7 +101,7 @@ const Register = () => {
                   {
                     max: 10,
                     message:
-                      "El contraseña no debe contener más de 20 caracteres",
+                      "El contraseña no debe contener más de 10 caracteres",
                   },
 
                   {
@@ -107,10 +113,11 @@ const Register = () => {
                 ]}
                 hasFeedback
               >
-                <Input.Password />
+                <Input.Password className="ItemR" />
               </FormItem>
 
               <FormItem
+                className="imp"
                 name="confirmPassword"
                 label="Confirmar contraseña"
                 style={{ fontWeight: "bold" }}
@@ -131,7 +138,7 @@ const Register = () => {
                 ]}
                 hasFeedback
               >
-                <Input.Password />
+                <Input.Password className="ItemR" />
               </FormItem>
 
               <div className="form-btn-add btnR">

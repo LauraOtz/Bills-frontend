@@ -196,14 +196,13 @@ body {
   padding: 10px 5px;
   border-radius: 20px;
 }
-
 .form-group input {
   border: none;
   outline: none !important;
   border-bottom: 1px solid #000000;
   width: 350px;
   height: 40px;
-  padding: 5px 15px;
+  /* padding: 5px 15px; */
 }
 
 .form-group input:focus,
@@ -237,7 +236,22 @@ body {
   color: #001e28;
   letter-spacing: 1.3px;
 }
-
+.Items {
+  padding: 20px;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  margin: 0 0 24px;
+  vertical-align: top;
+}
+.form-otherL {
+  padding: 20px;
+  color: #000;
+}
 .cardBody {
   margin-top: 30px;
 }
@@ -293,12 +307,9 @@ body {
   font-size: 12px !important;
   padding: 5px !important;
 }
-.ant-row {
-  margin: 40px;
-}
 
 .formLogin {
-  padding: 10px;
+  padding: 20px;
 }
 .TextHomeContainer {
   padding: 10px;
@@ -308,9 +319,15 @@ body {
   justify-content: center;
 }
 
+@media screen and (max-width: 480px) {
+  .cart-items span {
+    font-size: 10px;
+  }
+}
+
 @media only screen and (min-width: 1060px) {
   .ant-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }

@@ -1,8 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Button, Form, Input, Row, Col } from "antd";
-import "../home/home.css"
-
+import "../login/Contact.css";
 const { TextArea } = Input;
 
 const Contact = () => {
@@ -27,89 +26,150 @@ const Contact = () => {
   return (
     <>
       <hr className="hr" />
-    <div className="Contacto" >
-      <h1>Contactanos</h1>
-      <Row >
-        <Col span={8}>
-          <p>
-            <h5>
-              Ofrecemos un servicio personalizado, profesional y confiable.
-            </h5>
-          </p>
-          <p>
-            <h5>Dejanos tu consulta y responderemos a la brevedad</h5>
-          </p>
-        </Col>
-        <Col span={16}>
-          <Form
-            ref={form}
-            onFinish={sendEmail}
-            name="basic"
-            labelCol={{
-              span: 8,
-            }}
-            wrapperCol={{
-              span: 16,
-            }}
-            initialValues={{
-              remember: true,
-             
-            }}
-            autoComplete="off"
-          >
-            <Form.Item
-              label="Nombre y apellido"
-              name="name"
-              rules={[
-                {
-                  required: true,
-                  message: "Por favor introduzca su nombre.",
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-            <Form.Item
-              label="Correo electronico"
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: "Por favor introduzca su correo electrónico.",
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
 
-            <Form.Item name="message" label="Mensaje">
-              <TextArea
-                rows={4}
-                showCount
-                maxLength={150}
+      <Row>
+        <div className="ContainerContactanos">
+          <Col offset={0} className="contC">
+            <div>
+              <h1 span={12} className="H1Contactanos">
+                Contáctanos
+              </h1>
+
+              <h3 className="H3Contactanos">
+                ¿Querés hacer tus tareas más faciles, responder a tus clientes
+                al instante y mejorar la dinamica de tu empresa? dejanos tus
+                datos y responderemos a la brevedad.
+              </h3>
+              <h3 className="H3Contactanos textC">
+                Personalizamos tu cuenta a tus necesitades!
+              </h3>
+            </div>
+          </Col>
+          <Col offset={0} className="contC" id="contC">
+            <Form
+              className="FormContactanos"
+              ref={form}
+              onFinish={sendEmail}
+              name="basic"
+              id="FormContactanos"
+              labelCol={{
+                span: 8,
+              }}
+              wrapperCol={{
+                span: 16,
+              }}
+              initialValues={{
+                remember: true,
+              }}
+              autoComplete="off"
+            >
+              <Form.Item
+                label="Nombre"
+                name="name"
+                rules={[
+                  {
+                    required: true,
+                    message: "Por favor introduzca su nombre",
+                  },
+
+                  {
+                    type: "regexp",
+                    pattern: new RegExp("^[a-zA-Z]*$"),
+                    message: "Por favor ingrese un nombre válido",
+                  },
+
+                  {
+                    min: 2,
+                    max: 20,
+                    message: "En nombre debe contener entre 2 y 20 Caracteres",
+                  },
+                  {
+                    validator: (_, value) =>
+                      value.match(/^[a-zA-Z]+$/)
+                        ? Promise.resolve()
+                        : Promise.reject(
+                            "Por favor ingrese sólo letras en el nombre."
+                          ),
+                  },
+                ]}
+                hasFeedback
+              >
+                <Input placeholder="Ingrese su nombre." />
+              </Form.Item>
+              <Form.Item
+                label="Correo electrónico"
+                name="email"
                 rules={[
                   {
                     required: true,
                     message: "Por favor introduzca su correo electrónico.",
                   },
+                  {
+                    type: "email",
+                    message: "Por favor ingrese un correo electrónico válido",
+                  },
+                  {
+                    whitespace: true,
+                  },
                 ]}
-              />
-            </Form.Item>
+                hasFeedback
+              >
+                <Input placeholder="Ingrese su correo electrónico" />
+              </Form.Item>
 
-            <Form.Item
-              wrapperCol={{
-                offset: 8,
-                span: 16,
-              }}
-            >
-              <Button type="primary" htmlType="submit" value="Send">
-                Enviar
-              </Button>
-            </Form.Item>
-          </Form>
-        </Col>
+              <Form.Item
+                name="message"
+                label="Mensaje"
+                rules={[
+                  {
+                    required: true,
+                    message: "Por favor ingrese un mensaje",
+                  },
+                  {
+                    min: 4,
+                    max: 400,
+                    message:
+                      "Ingrese un mensaje válido, entre 4 y 400 caracteres",
+                  },
+
+                  {
+                    whitespace: true,
+                  },
+                ]}
+                hasFeedback
+              >
+                <TextArea
+                  name="textarea"
+                  cols={100}
+                  rows={4}
+                  showCount
+                  maxLength={400}
+                  hasFeedback
+                  placeholder="Ingrese su consulta"
+                />
+              </Form.Item>
+
+              <Form.Item
+                wrapperCol={{
+                  offset: 20,
+                  span: 16,
+                }}
+              >
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  value="Send"
+                  class="ant-btn ant-btn-default add-new"
+                  className="add-new "
+                  style={{ fontWeight: "bold" }}
+                >
+                  Enviar
+                </Button>
+              </Form.Item>
+            </Form>
+          </Col>
+        </div>
       </Row>
-      </div>
     </>
   );
 };

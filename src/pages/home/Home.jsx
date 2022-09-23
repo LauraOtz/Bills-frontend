@@ -1,13 +1,10 @@
-
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import LayoutApp from '../../components/Layout'
-import { Row, Col } from 'antd';
-import Product from '../../components/Product';
-import { useDispatch } from 'react-redux';
-import "../home/home.css"
-
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import LayoutApp from "../../components/Layout";
+import { Row, Col } from "antd";
+import Product from "../../components/Product";
+import { useDispatch } from "react-redux";
+import "../home/home.css";
 const Home = () => {
   const dispatch = useDispatch();
 
@@ -37,7 +34,9 @@ const Home = () => {
         dispatch({
           type: "SHOW_LOADING",
         });
-        const { data } = await axios.get("/api/products/getproducts");
+        const { data } = await axios.get(
+          "https://billscompany.herokuapp.com/api/products/getproducts"
+        );
         setProductData(data);
         dispatch({
           type: "HIDE_LOADING",
@@ -52,36 +51,38 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <LayoutApp>
-      <div className="category ">
-        {categories.map((category) => (
-          <div
-            key={category.name}
-            className={`categoryFlex ${
-              selectedCategory === category.name && "category-active"
-            }`}
-            onClick={() => setSelectedCategory(category.name)}
-          >
-            <h3 className="categoryName">{category.name}</h3>
-            <img
-              src={category.imageUrl}
-              alt={category.name}
-              height={60}
-              width={60}
-            />
-          </div>
-        ))}
-      </div>
-      <Row className='prod'>
-        {productData
-          .filter((i) => i.category === selectedCategory)
-          .map((product) => (
-            <Col xs={24} sm={6} md={12} lg={6}>
-              <Product key={product.id} product={product} />
-            </Col>
+    <div className="Hidden">
+      <LayoutApp>
+        <div className="category ">
+          {categories.map((category) => (
+            <div
+              key={category.name}
+              className={`categoryFlex ${
+                selectedCategory === category.name && "category-active"
+              }`}
+              onClick={() => setSelectedCategory(category.name)}
+            >
+              <h3 className="categoryName">{category.name}</h3>
+              <img
+                src={category.imageUrl}
+                alt={category.name}
+                height={60}
+                width={60}
+              />
+            </div>
           ))}
-      </Row>
-    </LayoutApp>
+        </div>
+        <Row className="prod">
+          {productData
+            .filter((i) => i.category === selectedCategory)
+            .map((product) => (
+              <Col xs={24} sm={6} md={12} lg={6}>
+                <Product key={product.id} product={product} />
+              </Col>
+            ))}
+        </Row>
+      </LayoutApp>
+    </div>
   );
 };
 

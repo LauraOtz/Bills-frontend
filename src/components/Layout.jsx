@@ -3,10 +3,10 @@ import { Layout, Menu } from "antd";
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  HomeOutlined,
-  MenuOutlined,
+  FormOutlined,
+  OrderedListOutlined,
   UserSwitchOutlined,
-  MoneyCollectOutlined,
+  DollarOutlined,
   LogoutOutlined,
   FileTextOutlined,
   WarningOutlined,
@@ -16,13 +16,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Spinner from "./Spinner";
 import { Button, notification } from "antd";
+import logo7 from "../assets/logo7.png";
 
 const { Header, Sider, Content } = Layout;
 
 const LayoutApp = ({ children }) => {
   const { cartItems, loading } = useSelector((state) => state.rootReducer);
 
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const navigate = useNavigate();
 
   const toggle = () => {
@@ -62,24 +63,24 @@ const LayoutApp = ({ children }) => {
       {loading && <Spinner />}
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo">
-          <h2 className="logo-title">Bill$</h2>
+          <img src={logo7} alt="" className="logoNav" />
         </div>
         <Menu
           theme="dark"
           mode="inline"
           defaultSelectedKeys={window.location.pathname}
         >
-          <Menu.Item key="/" icon={<HomeOutlined />}>
-            <Link to="/">Hace tu presupuesto</Link>
+          <Menu.Item key="/" icon={<FormOutlined />}>
+            <Link to="/">Crear presupuesto</Link>
           </Menu.Item>
-          <Menu.Item key="/bills" icon={<MoneyCollectOutlined />}>
-            <Link to="/bills">Mis Bill$</Link>
+          <Menu.Item key="/bills" icon={<OrderedListOutlined />}>
+            <Link to="/bills">Mis presupuestos</Link>
           </Menu.Item>
-          <Menu.Item key="/products" icon={<MenuOutlined />}>
+          <Menu.Item key="/products" icon={<DollarOutlined />}>
             <Link to="/products">Productos</Link>
           </Menu.Item>
           <Menu.Item key="/customers" icon={<UserSwitchOutlined />}>
-            <Link to="/customers">Usuarios</Link>
+            <Link to="/customers">Clientes</Link>
           </Menu.Item>
 
           <Menu.Item

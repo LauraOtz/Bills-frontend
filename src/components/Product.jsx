@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card } from "antd";
 import { useDispatch } from "react-redux";
+import "./layout.css";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -15,18 +16,20 @@ const Product = ({ product }) => {
   const { Meta } = Card;
 
   return (
-    <Card
-      hoverable
-      style={{ width: 240, marginBottom: 30 }}
-      cover={
-        <img alt={product.name} src={product.image} style={{ height: 200 }} />
-      }
-    >
-      <Meta title={product.name} description={`$${product.price}`} />
-      <div className="product-btn">
-        <Button onClick={() => handlerToCart()}>Agregar</Button>
-      </div>
-    </Card>
+    <div className="CardsA">
+      <Card
+        hoverable
+        style={{ width: 200, marginBottom: 30 }}
+        cover={
+          <img alt={product.name} src={product.image} style={{ height: 150 }} />
+        }
+      >
+        <Meta title={product.name} description={`$${product.price}`} />
+        <div className="product-btn">
+          <Button onClick={() => handlerToCart()}>Agregar</Button>
+        </div>
+      </Card>
+    </div>
   );
 };
 

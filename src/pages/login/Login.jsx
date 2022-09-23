@@ -11,6 +11,7 @@ import Footer from "../login/Footer";
 import CardsR from "./CardsR";
 import TextHome from "./TextHome";
 import "../home/home.css";
+import "../login/login.css";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -22,12 +23,15 @@ const Login = () => {
       dispatch({
         type: "SHOW_LOADING",
       });
-      const res = await axios.post("/api/auth/login", value);
+      const res = await axios.post(
+        "https://billscompany.herokuapp.com/api/auth/login",
+        value
+      );
       dispatch({
         type: "HIDE_LOADING",
       });
-      message.success("Sesión Iniciada con Éxito!");
-      localStorage.setItem("auth", JSON.stringify(res.data));
+      message.success("Login Exitoso!");
+      localStorage.setItem("token", JSON.stringify(res.data));
       navigate("/");
     } catch (error) {
       dispatch({
@@ -41,8 +45,7 @@ const Login = () => {
   return (
     <div className="ContainerL">
       <>
-        {/* <NavBar /> */}
-        <Row>
+        <Row className="ContainerT">
           <Col>
             <TextHome />
           </Col>
@@ -53,49 +56,58 @@ const Login = () => {
 
               <div className="form-group">
                 <Form layout="vertical" onFinish={handlerSubmit}>
-                  <h2>Iniciar sesión</h2>
+                  <h1>Iniciar sesión</h1>
 
                   <FormItem
+                    className="Items"
                     name="email"
                     label="Correo electrónico"
+                    style={{ fontWeight: "bold" }}
                     rules={[
                       {
                         required: true,
 
                         message: "Introduzca su correo electrónico",
                       },
+                      { type: "email", message: "Introduzca un correo válido" },
                       {
-                        max: 60,
+                        max: 25,
                         message:
-                          "El correo no debe contener más de 60 caracteres",
+                          "El correo no debe contener más de 25 caracteres",
                       },
                     ]}
+                    hasFeedback
                   >
                     <Input />
                   </FormItem>
                   <FormItem
+                    className="ItemsA"
                     name="password"
                     label="Contraseña"
+                    style={{ fontWeight: "bold" }}
                     rules={[
                       {
                         required: true,
-
                         message: "Introduzca una contraseña.",
                       },
                       {
                         max: 20,
                         message:
-                          "El contraseña no debe contener más de 20 caracteres",
+                          "La contraseña no debe contener más de 20 caracteres",
                       },
                     ]}
                   >
-                    <Input type="password" />
+                    <Input.Password />
                   </FormItem>
-                  <div className="form-btn-add">
-                    <Button htmlType="submit" className="add-new">
+                  <div className="BL form-btn-add">
+                    <Button htmlType="submit" className=" add-new">
                       Enviar
                     </Button>
-                    <Link className="form-other" to="/register">
+                    <Link
+                      className="form-otherL"
+                      to="/register"
+                      style={{ fontWeight: "bold" }}
+                    >
                       ¡Registrate aquí!
                     </Link>
                   </div>
