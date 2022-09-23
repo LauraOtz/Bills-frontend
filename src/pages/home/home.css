@@ -5,6 +5,10 @@
   background-color: white;
 }
 
+.modalinput {
+  text-transform: uppercase;
+}
+
 .ant-row {
   display: flex;
   justify-content: center;

@@ -241,7 +241,10 @@ const Products = () => {
                   },
                 ]}
               >
-                <Input placeholder="Ingrese el nombre del producto." />
+                <Input
+                  placeholder="Ingrese el nombre del producto"
+                  className="modalinput"
+                />
               </FormItem>
               <Form.Item
                 name="category"
@@ -250,7 +253,10 @@ const Products = () => {
                   { required: true, message: "Seleccione una categoría" },
                 ]}
               >
-                <Select placeholder="Seleccione una categoría">
+                <Select
+                  placeholder="Seleccione una categoría"
+                  className="modalinput"
+                >
                   <Select.Option value="accesorios">Accesorios</Select.Option>
                   <Select.Option value="celulares">Celulares</Select.Option>
                   <Select.Option value="herramientas">
@@ -275,10 +281,16 @@ const Products = () => {
                   },
                 ]}
               >
-                <Input placeholder="Ingrese el precio del producto sin el signo $" />
+                <Input
+                  placeholder="Ingrese el precio del producto sin el signo $"
+                  className="modalinput"
+                />
               </FormItem>
               <FormItem name="image" label="URL Imagen (opcional)">
-                <Input placeholder="Ingrese dirección de la imagen de su producto." />
+                <Input
+                  placeholder="Ingrese dirección de la imagen de su producto."
+                  className="modalinput"
+                />
               </FormItem>
               <div className="form-btn-add">
                 <Button htmlType="submit" className="add-new">
