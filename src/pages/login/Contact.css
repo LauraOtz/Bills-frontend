@@ -84,3 +84,10 @@ h3.H3Contactanos {
     float: right;
   }
 }
+
+@media only screen and (min-width: 1279px) {
+  textarea#basic_message.ant-input {
+    margin-left: 20px;
+    padding-right: 10px;
+  }
+}

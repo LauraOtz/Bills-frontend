@@ -158,6 +158,7 @@ const Contact = () => {
                 <Button
                   type="primary"
                   htmlType="submit"
+                  id="botoncontacto"
                   value="Send"
                   class="ant-btn ant-btn-default add-new"
                   className="add-new "
