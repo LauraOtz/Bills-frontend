@@ -74,7 +74,7 @@ const Products = () => {
     });
   };
 
-  //---------------------------------
+
   const handlerDelete = async (record) => {
     try {
       dispatch({
@@ -100,9 +100,7 @@ const Products = () => {
       console.log(error);
     }
   };
-  //-------------------------
 
-  //------------------------
 
   const columns = [
     {
@@ -142,7 +140,7 @@ const Products = () => {
   ];
 
   const handlerSubmit = async (value) => {
-    //console.log(value);
+ 
     if (editProduct === false) {
       try {
         dispatch({

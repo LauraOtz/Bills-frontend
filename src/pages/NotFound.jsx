@@ -12,7 +12,7 @@ export default function NotFound() {
         <Col>
           <div className="containerNF">
             <div className="div404">
-              {/* <img className="img404" src={Monitor} alt="Image404"></img> */}
+              
               <Image
                 className="img404 animate__animated animate__rubberBand"
                 src={not}

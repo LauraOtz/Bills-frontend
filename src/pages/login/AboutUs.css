@@ -18,17 +18,6 @@
   }
 }
 
-/* @media  screen and (Max-width:700px) and (Min-width:520px){
-  .about {
-        
-    justify-content: center;
-    display: -ms-flex;
-    display: -webkit-flex;
-       }
-    } */
-/* @media only screen and (min-width: 600px) {
-       
-    } */
 
 h3.hA {
   display: flex;

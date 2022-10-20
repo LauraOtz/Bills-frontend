@@ -45,19 +45,7 @@ const FooterApp = () => {
                 </NavLink>
               </div>
 
-              {/* <div className="button">
-            <div className="icon">
-              <i className="fa fa-linkedin"></i>
-            </div>
-            <NavLink to= "/*"><span>LinkeIn</span></NavLink>
-          </div> */}
-
-              {/* <div className="button">
-            <div className="icon">
-              <i className="fa fa-youtube"></i>
-            </div>
-            <NavLink to= "/*"><span>Youtube</span></NavLink>
-          </div> */}
+          
             </div>
           </Col>
         </Row>

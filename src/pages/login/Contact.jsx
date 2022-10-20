@@ -8,7 +8,7 @@ const Contact = () => {
   const form = useRef();
   //envío de email js
   const sendEmail = (e) => {
-    console.log(e);
+ 
     emailjs
       .send("service_j674jg8", "template_vay33bg", e, "p-NgmvCaKTkomPPlV")
       .then(

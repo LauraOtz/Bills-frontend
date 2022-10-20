@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Card, Col, Row } from "antd";
 import "../login/cards-style.css";
-//import txt from "../../assets/txt.png";
 
 class CardsR1 extends Component {
   render() {
@@ -10,7 +9,7 @@ class CardsR1 extends Component {
         className="ContainerC
        site-card-wrapper"
       >
-        {/* <img src={txt} alt="" className="img-ca d-flex" /> */}
+       
         <Row gutter={20} className="CardRow">
           <Col className="CC" span={7}>
             <Card title="Armá tu presupuesto" bordered={false}>

@@ -44,7 +44,7 @@ const Cart = () => {
       });
     }
   };
-  //---------------
+ 
   const openNotification = (record) => {
     const key = `open${Date.now()}`;
     const btn = (
@@ -68,7 +68,7 @@ const Cart = () => {
     });
   };
 
-  //--------------
+
 
   const handlerDelete = (record) => {
     dispatch({
@@ -131,7 +131,7 @@ const Cart = () => {
   }, [cartItems]);
 
   const handlerSubmit = async (value) => {
-    //console.log(value);
+
     try {
       const newObject = {
         ...value,
